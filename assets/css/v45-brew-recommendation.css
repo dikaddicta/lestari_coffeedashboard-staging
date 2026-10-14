@@ -1,0 +1,732 @@
+/* V45 Phase 4A Brew Recommendation workspace.
+   Route-scoped presentation layered after legacy CSS and the shared foundation. */
+
+body.v45-ui-foundation #tab-brew {
+  width: 100%;
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-workspace {
+  display: grid;
+  gap: var(--v45-space-5);
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-5);
+  padding: var(--v45-space-1) 0 var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header__eyebrow,
+body.v45-ui-foundation #tab-brew .brew-section-heading__eyebrow {
+  display: block;
+  margin: 0 0 var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header h2,
+body.v45-ui-foundation #tab-brew .brew-section-heading h3 {
+  margin: 0;
+  color: var(--v45-color-text);
+  letter-spacing: -0.02em;
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header h2 {
+  font-size: var(--v45-font-size-2xl);
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header p {
+  max-width: 62ch;
+  margin: var(--v45-space-2) 0 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation #tab-brew .brew-page-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-brew .brew-recommendation-state[hidden] {
+  display: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recommendation-state[data-state="error"] {
+  min-height: auto;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recommendation-state:not([data-state="loading"]) .v45-spinner {
+  display: none;
+}
+
+body.v45-ui-foundation #tab-brew .brew-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(420px, 1.06fr);
+  align-items: start;
+  gap: var(--v45-space-5);
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-brew :where(.brew-setup-panel, .brew-result-panel, .brew-pour-panel, .brew-recipe-lab-panel, .brew-analysis-panel, .brew-next-actions) {
+  min-width: 0;
+  overflow: visible;
+}
+
+body.v45-ui-foundation #tab-brew .brew-setup-panel,
+body.v45-ui-foundation #tab-brew .brew-result-panel {
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-5);
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-panel {
+  position: sticky;
+  top: calc(var(--v45-topbar-min-height) + var(--v45-space-4));
+  border-color: color-mix(in srgb, var(--v45-color-brand) 28%, var(--v45-color-border)) !important;
+  box-shadow: var(--v45-shadow-md) !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-4);
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-section-heading h3 {
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation #tab-brew .brew-section-heading--compact {
+  align-items: center;
+}
+
+body.v45-ui-foundation #tab-brew .brew-section-heading__meta {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: 1.4;
+  text-align: right;
+}
+
+body.v45-ui-foundation #tab-brew .brew-field-group {
+  min-width: 0;
+  margin: 0;
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-brew .brew-field-group > legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--v45-space-2);
+  padding: 0 var(--v45-space-2);
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+  font-weight: var(--v45-weight-bold);
+}
+
+body.v45-ui-foundation #tab-brew .brew-field-group > legend > span {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-inverse);
+  background: var(--v45-color-brand);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-brew .brew-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-4);
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-field {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-2);
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-field--wide,
+body.v45-ui-foundation #tab-brew .brew-coffee-context {
+  grid-column: 1 / -1;
+}
+
+body.v45-ui-foundation #tab-brew .brew-field small {
+  margin: 0;
+  line-height: 1.45;
+}
+
+body.v45-ui-foundation #tab-brew .brew-field.hidden,
+body.v45-ui-foundation #tab-brew label.hidden {
+  display: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup {
+  display: grid;
+  gap: var(--v45-space-3);
+  padding-top: var(--v45-space-4);
+  border-top: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup:first-of-type {
+  padding-top: var(--v45-space-2);
+  border-top: 0;
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup + .brew-subgroup {
+  margin-top: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup__heading strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation #tab-brew .brew-subgroup__heading small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-brew .brew-coffee-context {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border-left: 3px solid var(--v45-color-accent);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-accent-soft);
+}
+
+body.v45-ui-foundation #tab-brew .brew-coffee-context__label {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation #tab-brew .brew-coffee-context strong,
+body.v45-ui-foundation #tab-brew .brew-coffee-context small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body.v45-ui-foundation #tab-brew .brew-coffee-context small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-brew .brew-unit-input {
+  position: relative;
+  display: block;
+}
+
+body.v45-ui-foundation #tab-brew .brew-unit-input input {
+  padding-right: 42px !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-unit-input > span {
+  position: absolute;
+  top: 50%;
+  right: var(--v45-space-3);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+  font-weight: var(--v45-weight-semibold);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+body.v45-ui-foundation #tab-brew .brew-generate-row {
+  display: grid;
+  grid-template-columns: minmax(180px, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--v45-space-4);
+  padding-top: var(--v45-space-1);
+}
+
+body.v45-ui-foundation #tab-brew .brew-generate-row p {
+  margin: 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: 1.5;
+}
+
+body.v45-ui-foundation #tab-brew .brew-generate-row p strong {
+  color: var(--v45-color-success);
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context.brew-visualizer {
+  min-height: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: var(--v45-space-4) !important;
+  overflow: hidden;
+  border: var(--v45-border-thin) !important;
+  border-left: 3px solid var(--v45-color-brand) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-brand-soft) !important;
+  box-shadow: none !important;
+  isolation: auto !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context.brew-visualizer::before,
+body.v45-ui-foundation #tab-brew .brew-result-context.brew-visualizer::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context .brew-visualizer-copy {
+  position: static !important;
+  z-index: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  display: grid;
+  gap: var(--v45-space-2);
+  padding: 0 !important;
+  color: var(--v45-color-text) !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context .visual-pill {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 3px var(--v45-space-2) !important;
+  border: 0 !important;
+  border-radius: var(--v45-radius-pill) !important;
+  color: var(--v45-color-brand) !important;
+  background: var(--v45-color-surface) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  font-weight: var(--v45-weight-semibold) !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context .brew-visualizer-copy strong {
+  margin: 0 !important;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-font-size-lg) !important;
+  line-height: var(--v45-line-tight) !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-result-context .brew-visualizer-copy p {
+  max-width: 68ch;
+  margin: 0 !important;
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  line-height: 1.5 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary.output-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--v45-space-2) !important;
+  margin: 0 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card {
+  min-width: 0;
+  min-height: 92px !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: var(--v45-space-1) !important;
+  padding: var(--v45-space-3) !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-sm) !important;
+  color: var(--v45-color-text) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card::before,
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card > span,
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card > small {
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  line-height: 1.35 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card > strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-font-size-md) !important;
+  line-height: 1.25 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card:nth-child(-n + 4) {
+  border-color: color-mix(in srgb, var(--v45-color-brand) 26%, var(--v45-color-border)) !important;
+  background: color-mix(in srgb, var(--v45-color-brand-soft) 46%, var(--v45-color-surface)) !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-water-note.callout {
+  margin: 0 !important;
+  padding: var(--v45-space-3) var(--v45-space-4) !important;
+  border: 0 !important;
+  border-left: 3px solid var(--v45-color-info) !important;
+  border-radius: var(--v45-radius-sm) !important;
+  color: var(--v45-color-text-muted) !important;
+  background: var(--v45-color-info-soft) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  line-height: 1.5 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-pour-panel,
+body.v45-ui-foundation #tab-brew .brew-recipe-lab-panel,
+body.v45-ui-foundation #tab-brew .brew-next-actions {
+  display: grid;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-brew .brew-section-intro,
+body.v45-ui-foundation #tab-brew .brew-next-actions__note {
+  max-width: 82ch;
+  margin: calc(var(--v45-space-2) * -1) 0 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: 1.55;
+}
+
+body.v45-ui-foundation #tab-brew .brew-pour-table-wrap {
+  margin: 0 !important;
+}
+
+body.v45-ui-foundation #tab-brew #brewStepsTable {
+  min-width: 920px;
+  table-layout: auto;
+}
+
+body.v45-ui-foundation #tab-brew #brewStepsTable th,
+body.v45-ui-foundation #tab-brew #brewStepsTable td {
+  vertical-align: top;
+  white-space: normal;
+}
+
+body.v45-ui-foundation #tab-brew #brewStepsTable th:nth-child(1) { width: 13%; }
+body.v45-ui-foundation #tab-brew #brewStepsTable th:nth-child(2) { width: 11%; }
+body.v45-ui-foundation #tab-brew #brewStepsTable th:nth-child(3) { width: 16%; }
+body.v45-ui-foundation #tab-brew #brewStepsTable th:nth-child(4) { width: 13%; }
+body.v45-ui-foundation #tab-brew #brewStepsTable th:nth-child(5) { width: 14%; }
+
+body.v45-ui-foundation #tab-brew .brew-step-index {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  margin-right: var(--v45-space-2);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-brand);
+  background: var(--v45-color-brand-soft);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-bold);
+}
+
+body.v45-ui-foundation #tab-brew .brew-pour-check {
+  margin: 0;
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-success);
+  background: var(--v45-color-success-soft);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-medium);
+}
+
+body.v45-ui-foundation #tab-brew .recipe-active-summary {
+  margin: 0 !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-surface-subtle) !important;
+  box-shadow: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .recipe-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--v45-space-3) !important;
+}
+
+body.v45-ui-foundation #tab-brew .recipe-card {
+  min-width: 0;
+  margin: 0 !important;
+  padding: var(--v45-space-4) !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: var(--v45-shadow-xs) !important;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-brew .recipe-card.active {
+  border-color: var(--v45-color-brand) !important;
+  box-shadow: 0 0 0 2px var(--v45-color-brand-soft) !important;
+}
+
+body.v45-ui-foundation #tab-brew .recipe-card :where(h3, p) {
+  overflow-wrap: anywhere;
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-panel {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v45-space-4);
+  padding: var(--v45-space-4) var(--v45-space-5);
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary:hover {
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  text-align: right;
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-content {
+  display: grid;
+  gap: var(--v45-space-5);
+  padding: 0 var(--v45-space-5) var(--v45-space-5);
+  border-top: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-section {
+  display: grid;
+  gap: var(--v45-space-3);
+  padding-top: var(--v45-space-5);
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-section + .brew-analysis-section {
+  border-top: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-brew .brew-analysis-section :where(.brew-input-compass, .brew-preflight-panel, .brew-insight-panel, .brew-decision-grid, .recommendation-evidence-layout, .dial-timeline) {
+  margin: 0 !important;
+}
+
+body.v45-ui-foundation #tab-brew .brew-next-actions__grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-brew .brew-next-actions__grid .hidden,
+body.v45-ui-foundation #tab-brew .brew-next-actions__grid [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 1199px) {
+  body.v45-ui-foundation #tab-brew .brew-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-result-panel {
+    position: static;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-recipe-summary.output-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  body.v45-ui-foundation #tab-brew .recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.v45-ui-foundation #tab-brew .brew-workspace {
+    gap: var(--v45-space-4);
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-page-header,
+  body.v45-ui-foundation #tab-brew .brew-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--v45-space-2);
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-page-header__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-page-header__actions button {
+    flex: 1 1 auto;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-section-heading__meta,
+  body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary small {
+    text-align: left;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-field-grid,
+  body.v45-ui-foundation #tab-brew .brew-recipe-summary.output-grid,
+  body.v45-ui-foundation #tab-brew .recipe-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-field--wide,
+  body.v45-ui-foundation #tab-brew .brew-coffee-context {
+    grid-column: auto;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-field-group {
+    padding: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-subgroup__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-generate-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-generate-row button {
+    width: 100%;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card {
+    min-height: 0 !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center !important;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-recipe-summary .output-card > strong {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    text-align: right;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-pour-table-wrap {
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable {
+    min-width: 0;
+    display: block;
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable tbody {
+    display: grid;
+    gap: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--v45-space-2) var(--v45-space-3);
+    padding: var(--v45-space-3);
+    border: var(--v45-border-thin);
+    border-radius: var(--v45-radius-md);
+    background: var(--v45-color-surface);
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable td {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+    padding: 0 !important;
+    border: 0 !important;
+    font-size: var(--v45-font-size-sm);
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable td::before {
+    color: var(--v45-color-text-muted);
+    content: attr(data-label);
+    font-size: var(--v45-font-size-xs);
+    font-weight: var(--v45-weight-semibold);
+  }
+
+  body.v45-ui-foundation #tab-brew #brewStepsTable td:first-child,
+  body.v45-ui-foundation #tab-brew #brewStepsTable td:last-child {
+    grid-column: 1 / -1;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-analysis-panel > summary {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 0;
+    padding: var(--v45-space-4);
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-analysis-content {
+    padding: 0 var(--v45-space-4) var(--v45-space-4);
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-next-actions__grid {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation #tab-brew .brew-next-actions__grid button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.v45-ui-foundation #tab-brew *,
+  body.v45-ui-foundation #tab-brew *::before,
+  body.v45-ui-foundation #tab-brew *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

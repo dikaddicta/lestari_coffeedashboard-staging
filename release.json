@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "product": "Lestari Coffee Dashboard",
+  "brand": "Lestari",
+  "version": "44.0.0-rc.4",
+  "release": "Release Candidate 4",
+  "build": "20260820-v44-rc4-routing-stability",
+  "commit": "d74d1ff0654d",
+  "releasedAt": "2026-08-20T03:20:00Z",
+  "environment": "staging",
+  "siteUrl": "https://dikaddicta.github.io/lestari_coffeedashboard-staging/",
+  "statusUrl": "https://dikaddicta.github.io/lestari_coffeedashboard-staging/status/",
+  "supportUrl": "https://dikaddicta.github.io/lestari_coffeedashboard-staging/saran/",
+  "legalVersion": "1.0",
+  "databaseMigration": "v42_security_audit_rls",
+  "releaseStage": "candidate"
+}

@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <base href="../" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akses & Keamanan — Lestari Coffee Dashboard</title>
+  <meta name="description" content="Kelola sesi, anggota, pembagian peran, dan riwayat aktivitas workspace." />
+  <link rel="canonical" href="https://dikaddicta.github.io/lestari_coffeedashboard-staging/akun-role/" />
+  <meta name="theme-color" content="#1F1D1A" />
+  <meta name="application-name" content="Lestari Coffee Dashboard" />
+  <meta name="apple-mobile-web-app-title" content="Lestari Coffee Dashboard" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta property="og:title" content="Akses & Keamanan — Lestari Coffee Dashboard" />
+  <meta property="og:description" content="Kelola sesi, anggota, pembagian peran, dan riwayat aktivitas workspace." />
+  <meta property="og:url" content="https://dikaddicta.github.io/lestari_coffeedashboard-staging/akun-role/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lestari Coffee Dashboard" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:image" content="https://dikaddicta.github.io/lestari_coffeedashboard-staging/assets/social-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lestari Coffee Dashboard — Jelajahi berbagai rekomendasi seduh dan bagikan pengalaman seduhmu." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Akses & Keamanan — Lestari Coffee Dashboard" />
+  <meta name="twitter:description" content="Kelola sesi, anggota, pembagian peran, dan riwayat aktivitas workspace." />
+  <meta name="twitter:image" content="https://dikaddicta.github.io/lestari_coffeedashboard-staging/assets/social-preview.png" />
+  <link rel="manifest" href="manifest.webmanifest?v=20260820-v44-rc4-routing-stability" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="preload" href="assets/brand/lestari-logo.png" as="image" />
+  <link rel="stylesheet" href="assets/styles.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/styles-v35-quiet-luxury.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/styles-v35-1-functional.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/base.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/layout.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/components.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/pages.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/welcome.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/workflow.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/intelligence.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/analytics-insight.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/security-audit.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/commercial-readiness.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/brand.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-foundation.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-home.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-brew-recommendation.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-manual-brew.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-brew-log-qa.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-coffee-inventory.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-analytics-public-brews.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-operations-admin.css?v=20260820-v44-rc4-routing-stability" />
+  <link rel="stylesheet" href="assets/css/v45-global-polish.css?v=20260820-v44-rc4-routing-stability" />
+</head>
+<body class="quiet-luxury-ui modular-pages-ui modular-scripts-ui v45-ui-foundation" data-initial-route="akun-role">
+
+  <section id="welcomeScreen" class="welcome-screen" aria-labelledby="welcomeTitle">
+    <div class="welcome-screen__backdrop" aria-hidden="true"></div>
+    <div class="welcome-screen__card">
+      <div class="welcome-primary">
+        <div class="welcome-brand">
+          <span class="welcome-brand__icon"><img src="assets/brand/lestari-logo.png" alt="" /></span>
+          <div>
+            <p class="welcome-eyebrow">Lestari Coffee Dashboard</p>
+            <span class="welcome-product-note">Dashboard seduh untuk homebrewer dan penikmat kopi</span>
+          </div>
+        </div>
+
+        <div class="welcome-hero-copy">
+          <h1 id="welcomeTitle">Jelajahi rekomendasi seduh.<br />Bagikan pengalamanmu.</h1>
+          <p class="welcome-copy">
+            Susun resep, catat setiap percobaan, pantau stok, dan evaluasi hasil seduh dalam satu dashboard yang mudah digunakan.
+          </p>
+        </div>
+
+        <div class="welcome-access-block" aria-label="Pilihan akses dashboard">
+          <div class="welcome-actions welcome-actions--primary">
+            <button id="welcomeLoginBtn" class="primary welcome-btn" type="button">Masuk ke Dashboard</button>
+            <button id="welcomeSignupBtn" class="secondary welcome-btn welcome-signup-btn" type="button">Buat Akun</button>
+          </div>
+          <div class="welcome-actions welcome-actions--secondary">
+            <button id="welcomeGuestBtn" class="welcome-text-btn" type="button">Jelajahi sebagai Tamu</button>
+            <button id="welcomeDemoBtn" class="welcome-text-btn welcome-demo-btn" type="button">Lihat Data Demo</button>
+          </div>
+          <p class="welcome-note">Masuk untuk menyimpan data, mengelola stok, dan membuka seluruh fitur workspace.</p>
+        </div>
+
+        <div class="welcome-capabilities" aria-label="Fitur utama">
+          <span>Resep &amp; QA</span>
+          <span>Stok Biji</span>
+          <span>Analitik</span>
+          <span>Pustaka Kopi</span>
+        </div>
+      </div>
+
+      <aside class="welcome-guide" aria-label="Panduan memilih akses">
+        <div class="welcome-guide__header">
+          <p class="welcome-guide__eyebrow">Mulai dari sini</p>
+          <h2>Pilih cara masuk yang paling sesuai.</h2>
+          <p>Semua pilihan dapat digunakan tanpa mengubah data utama dashboard.</p>
+        </div>
+
+        <div class="welcome-path-list">
+          <article class="welcome-path-item">
+            <span class="welcome-path-number">01</span>
+            <div>
+              <strong>Sudah punya akun?</strong>
+              <p>Masuk untuk melanjutkan data, stok, log seduh, QA, dan laporan yang pernah disimpan.</p>
+            </div>
+          </article>
+          <article class="welcome-path-item">
+            <span class="welcome-path-number">02</span>
+            <div>
+              <strong>Baru ingin mencoba?</strong>
+              <p>Gunakan mode Tamu untuk melihat alur dashboard dan mencoba rekomendasi seduh.</p>
+            </div>
+          </article>
+          <article class="welcome-path-item">
+            <span class="welcome-path-number">03</span>
+            <div>
+              <strong>Perlu contoh yang sudah terisi?</strong>
+              <p>Buka Data Demo untuk melihat contoh resep dan hasil seduh tanpa mengisi dari awal.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="welcome-guide__footer">
+          <span class="welcome-guide__status-dot" aria-hidden="true"></span>
+          <p><strong>Data lokal tetap aman.</strong> Mode Tamu dan Demo tidak mengubah akun atau workspace milik pengguna lain.</p>
+        </div>
+      </aside>
+    </div>
+    <nav class="welcome-legal-links" aria-label="Informasi layanan">
+      <a href="privasi/">Privasi</a><span aria-hidden="true">·</span>
+      <a href="ketentuan/">Ketentuan</a><span aria-hidden="true">·</span>
+      <a href="disclaimer/">Batasan Rekomendasi</a><span aria-hidden="true">·</span>
+      <a href="status/">Status Sistem</a><span aria-hidden="true">·</span>
+      <a href="rilis/">Catatan Rilis</a>
+    </nav>
+  </section>
+
+<div class="app-shell">
+    <svg class="v45-icon-sprite" aria-hidden="true">
+      <symbol id="v45-icon-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/></symbol>
+      <symbol id="v45-icon-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.3 4.2L17.5 8.5l-4.2 1.3L12 14l-1.3-4.2-4.2-1.3 4.2-1.3L12 3Z"/><path d="m18.5 14 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z"/></symbol>
+      <symbol id="v45-icon-edit" viewBox="0 0 24 24"><path d="M4 20h4l11-11-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></symbol>
+      <symbol id="v45-icon-clipboard" viewBox="0 0 24 24"><path d="M8 5H6.5A1.5 1.5 0 0 0 5 6.5v13A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 17.5 5H16"/><rect x="8" y="3" width="8" height="4" rx="1.5"/><path d="m8.5 14 2 2 5-5"/></symbol>
+      <symbol id="v45-icon-coffee" viewBox="0 0 24 24"><path d="M14.8 4.3c3.2 2.1 4.1 6.4 2 9.6-2.1 3.2-6.4 4.1-9.6 2-3.2-2.1-4.1-6.4-2-9.6 2.1-3.2 6.4-4.1 9.6-2Z"/><path d="M15.8 4.9c-1.1 2.8-3.1 4.1-5.6 5.2-2 .9-3.4 2.5-3.7 4.9"/></symbol>
+      <symbol id="v45-icon-inventory" viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M3 4h18v3H3zM9 11h6"/></symbol>
+      <symbol id="v45-icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+      <symbol id="v45-icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9S14.2 18.6 12 21c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z"/></symbol>
+      <symbol id="v45-icon-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 8h18c0-1-3-1-3-8Z"/><path d="M10 21h4"/></symbol>
+      <symbol id="v45-icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 20h16"/></symbol>
+      <symbol id="v45-icon-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21V5.5ZM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21V5.5Z"/></symbol>
+      <symbol id="v45-icon-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.4 2.4 0 1 1 3.7 2c-.9.6-1.4 1-1.4 2.2M12 17h.01"/></symbol>
+      <symbol id="v45-icon-message" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></symbol>
+      <symbol id="v45-icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5.1-3.4 8.5-8 10-4.6-1.5-8-4.9-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="v45-icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="v45-icon-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+      <symbol id="v45-icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></symbol>
+    </svg>
+
+    <div id="appToast" class="app-toast hidden" role="status" aria-live="polite"></div>
+    <div id="syncGuardWidget" class="sync-guard-widget" data-state="idle" role="status" aria-live="polite">
+      <span class="sync-guard-dot" aria-hidden="true"></span>
+      <div class="sync-guard-copy">
+        <strong id="syncGuardTitle">Draft aman</strong>
+        <small id="syncGuardText">Autosave lokal aktif.</small>
+      </div>
+      <button id="syncRetryBtn" class="sync-retry-btn hidden" type="button">Sync ulang</button>
+    </div>
+
+    <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+    <div class="dashboard-layout">
+      <aside id="dashboardSidebar" class="dashboard-sidebar" aria-label="Navigasi aplikasi">
+        <div class="sidebar-brand">
+          <span class="sidebar-brand__icon"><img src="assets/brand/lestari-logo.png" alt="" /></span>
+          <div class="sidebar-brand__copy">
+            <span class="sidebar-brand__eyebrow">Coffee operations</span>
+            <strong>Lestari</strong>
+          </div>
+          <button id="sidebarCollapseBtn" class="v45-icon-button sidebar-collapse-btn" type="button" aria-label="Ciutkan sidebar" aria-controls="dashboardSidebar" aria-expanded="true">
+            <svg aria-hidden="true"><use href="#v45-icon-chevron"></use></svg>
+          </button>
+          <button id="sidebarCloseBtn" class="v45-icon-button sidebar-close-btn" type="button" aria-label="Tutup menu">×</button>
+        </div>
+
+        <div class="sidebar-user-state" id="sidebarUserState">
+          <span class="mini-label">Mode akses</span>
+          <strong id="sidebarModeLabel">Tamu</strong>
+          <small id="sidebarModeHint">Akses terbatas hingga kamu login.</small>
+        </div>
+
+        <nav class="v45-sidebar-navigation" aria-label="Navigasi utama">
+          <section class="sidebar-nav-group" data-nav-group="Dashboard" aria-labelledby="navGroupDashboard">
+            <h2 id="navGroupDashboard" class="sidebar-section-label">Dashboard</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn active" type="button" data-tab="home" data-route="beranda" data-nav-label="Dashboard" aria-label="Dashboard" title="Dashboard">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-home"></use></svg></span><span class="nav-label">Dashboard</span><small class="lock-pill">Privat</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Brewing" aria-labelledby="navGroupBrewing">
+            <h2 id="navGroupBrewing" class="sidebar-section-label">Seduh</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="brew" data-route="rekomendasi-seduh" data-nav-label="Rekomendasi Seduh" aria-label="Rekomendasi Seduh" title="Rekomendasi Seduh">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-sparkles"></use></svg></span><span class="nav-label">Rekomendasi Seduh</span>
+              </button>
+              <button class="tab-btn" type="button" data-tab="input-seduhan" data-route="input-seduhan" data-nav-label="Seduh Manual" aria-label="Seduh Manual" title="Seduh Manual">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-edit"></use></svg></span><span class="nav-label">Seduh Manual</span>
+              </button>
+              <button class="tab-btn" type="button" data-tab="qa" data-route="brew-log-qa" data-nav-label="Log Seduh &amp; QA" aria-label="Log Seduh dan QA" title="Log Seduh &amp; QA">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-clipboard"></use></svg></span><span class="nav-label">Log Seduh &amp; QA</span><small class="lock-pill">Privat</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Coffee" aria-labelledby="navGroupCoffee">
+            <h2 id="navGroupCoffee" class="sidebar-section-label">Kopi</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="beans" data-route="beans" data-nav-label="Biji Kopi" aria-label="Biji Kopi" title="Biji Kopi">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-coffee"></use></svg></span><span class="nav-label">Biji Kopi</span><small class="lock-pill">Privat</small>
+              </button>
+              <button class="tab-btn" type="button" data-tab="stock" data-route="stock" data-nav-label="Inventori" aria-label="Inventori" title="Inventori">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-inventory"></use></svg></span><span class="nav-label">Inventori</span><small class="lock-pill">Privat</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Insights" aria-labelledby="navGroupInsights">
+            <h2 id="navGroupInsights" class="sidebar-section-label">Insight</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="analytics" data-route="data-analytics" data-nav-label="Analitik" aria-label="Analitik" title="Analitik">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-chart"></use></svg></span><span class="nav-label">Analitik</span><small class="lock-pill">Privat</small>
+              </button>
+              <button class="tab-btn" type="button" data-tab="public-brews" data-route="hasil-seduhan-publik" data-nav-label="Hasil Publik" aria-label="Hasil Publik" title="Hasil Publik">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-globe"></use></svg></span><span class="nav-label">Hasil Publik</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Operations" aria-labelledby="navGroupOperations">
+            <h2 id="navGroupOperations" class="sidebar-section-label">Operasional</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="quality" data-route="notification" data-nav-label="Notifikasi" aria-label="Notifikasi" title="Notifikasi">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-bell"></use></svg></span><span class="nav-label">Notifikasi</span><small class="lock-pill">Privat</small>
+              </button>
+              <button class="tab-btn" type="button" data-tab="reports" data-route="export-report" data-nav-label="Laporan &amp; Ekspor" aria-label="Laporan dan Ekspor" title="Laporan &amp; Ekspor">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-download"></use></svg></span><span class="nav-label">Laporan &amp; Ekspor</span><small class="lock-pill">Privat</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Resources" aria-labelledby="navGroupResources">
+            <h2 id="navGroupResources" class="sidebar-section-label">Referensi</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="library" data-route="pustaka-data" data-nav-label="Pustaka Data" aria-label="Pustaka Data" title="Pustaka Data">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-book"></use></svg></span><span class="nav-label">Pustaka Data</span>
+              </button>
+              <button class="tab-btn" type="button" data-tab="guide" data-route="cara-pakai" data-nav-label="Panduan" aria-label="Panduan" title="Panduan">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-help"></use></svg></span><span class="nav-label">Panduan</span>
+              </button>
+              <button class="tab-btn" type="button" data-tab="suggestion" data-route="saran" data-nav-label="Saran" aria-label="Saran" title="Saran">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-message"></use></svg></span><span class="nav-label">Saran</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-nav-group" data-nav-group="Administration" aria-labelledby="navGroupAdministration">
+            <h2 id="navGroupAdministration" class="sidebar-section-label">Administrasi</h2>
+            <div class="sidebar-nav">
+              <button class="tab-btn" type="button" data-tab="admin" data-route="akun-role" data-nav-label="Akses &amp; Workspace" aria-label="Akses dan Workspace" title="Akses &amp; Workspace">
+                <span class="nav-icon" aria-hidden="true"><svg><use href="#v45-icon-shield"></use></svg></span><span class="nav-label">Akses &amp; Workspace</span><small class="lock-pill">Privat</small>
+              </button>
+            </div>
+          </section>
+        </nav>
+
+        <div class="sidebar-footer-card">
+          <span class="mini-label">Akses awal</span>
+          <p>Pilih Guest untuk menjelajah atau masuk untuk membuka modul workspace.</p>
+          <button id="returnWelcomeBtn" class="secondary" type="button">Kembali ke Welcome</button>
+          <nav class="sidebar-legal-links" aria-label="Informasi layanan">
+            <a href="privasi/">Privasi</a><a href="ketentuan/">Ketentuan</a><a href="disclaimer/">Batasan</a><a href="status/">Status</a><a href="rilis/">Rilis</a>
+          </nav>
+          <small class="sidebar-build-version">v44.0.0-rc.4 · Release Candidate 4</small>
+        </div>
+      </aside>
+
+      <div class="dashboard-main-shell">
+        <header class="dashboard-topbar" aria-label="Header halaman">
+          <div class="dashboard-topbar__leading">
+            <button id="sidebarToggleBtn" class="v45-icon-button sidebar-toggle-btn" type="button" aria-label="Buka menu dashboard" aria-controls="dashboardSidebar" aria-expanded="false">
+              <svg aria-hidden="true"><use href="#v45-icon-menu"></use></svg><span>Menu</span>
+            </button>
+            <div class="v45-page-header">
+              <span class="dashboard-topbar__eyebrow" id="pageBreadcrumb">Lestari Coffee Dashboard / Dashboard</span>
+              <h1 id="pageTitle" tabindex="-1">Beranda</h1>
+              <p id="pageSubtitle">Ringkasan workspace, akses cepat, dan pustaka referensi seduh.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-topbar__actions">
+            <button id="topbarWorkspaceBtn" class="topbar-context-button" type="button" data-jump-tab="admin" aria-label="Buka pengaturan workspace">
+              <span class="topbar-context-button__icon" aria-hidden="true"><svg><use href="#v45-icon-shield"></use></svg></span>
+              <span><small>Workspace</small><strong id="topbarWorkspaceName">Mode tamu</strong></span>
+            </button>
+            <button id="topbarNotificationBtn" class="v45-icon-button topbar-notification-btn" type="button" data-jump-tab="quality" aria-label="Buka notifikasi" hidden>
+              <svg aria-hidden="true"><use href="#v45-icon-bell"></use></svg><span id="topbarNotificationCount" class="topbar-notification-count" hidden>0</span>
+            </button>
+            <div class="topbar-profile">
+              <button id="topbarProfileBtn" class="topbar-profile-button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="topbarProfileMenu">
+                <span id="topbarAvatar" class="topbar-avatar" aria-hidden="true">T</span>
+                <span class="topbar-profile-copy"><strong id="topbarProfileName">Tamu</strong><small id="topbarProfileRole">Akses publik</small></span>
+                <svg class="topbar-profile-chevron" aria-hidden="true"><use href="#v45-icon-chevron"></use></svg>
+              </button>
+              <div id="topbarProfileMenu" class="topbar-profile-menu hidden" role="menu" aria-labelledby="topbarProfileBtn">
+                <div class="topbar-profile-summary">
+                  <span id="topbarMenuAvatar" class="topbar-avatar" aria-hidden="true">T</span>
+                  <div><strong id="topbarMenuName">Tamu</strong><small id="topbarMenuRole">Akses publik</small></div>
+                </div>
+                <button id="topbarDemoBtn" class="topbar-menu-item demo-recipe-btn" type="button" role="menuitem">Coba Demo SOLO</button>
+                <button id="installAppBtn" class="topbar-menu-item install-app-btn hidden" type="button" role="menuitem">Install App</button>
+                <button id="topbarSignupBtn" class="topbar-menu-item topbar-signup-btn" type="button" role="menuitem">Buat akun</button>
+                <button id="topbarAccessBtn" class="topbar-menu-item topbar-menu-item--primary" type="button" role="menuitem">Masuk / Daftar</button>
+                <a class="topbar-menu-item topbar-status-link" href="status/" role="menuitem">Status sistem</a>
+                <div class="system-status-pills" id="systemStatusPills" aria-label="Status sistem">
+                  <span id="systemOnlineStatus">Online</span><span id="systemCacheStatus">PWA Ready</span><span id="systemDataStatus">Data Ready</span>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-tab-switcher v45-compat-select" aria-hidden="true">
+              <label class="sr-only" for="mobileTabSelect">Pilih menu</label>
+              <select id="mobileTabSelect" class="input-select" tabindex="-1">
+                <option value="home">Dashboard</option><option value="guide">Panduan</option><option value="brew">Rekomendasi Seduh</option><option value="input-seduhan">Seduh Manual</option><option value="public-brews">Hasil Publik</option><option value="beans">Biji Kopi</option><option value="stock">Inventori</option><option value="qa">Log Seduh &amp; QA</option><option value="analytics">Analitik</option><option value="quality">Notifikasi</option><option value="reports">Laporan &amp; Ekspor</option><option value="admin">Akses &amp; Workspace</option><option value="suggestion">Saran</option><option value="library">Pustaka Data</option>
+              </select>
+            </div>
+          </div>
+        </header>
+
+        <div id="guestPrivateNotice" class="guest-private-notice hidden" role="status" aria-live="polite">
+          <div>
+            <span class="mini-label">Mode Guest</span>
+            <strong>Masuk untuk membuka menu lengkap</strong>
+            <p>Beranda, Biji Kopi, Stok, Log Seduh &amp; QA, Analitik Seduhan, Notifikasi, Ekspor &amp; Laporan, serta Akun &amp; Peran hanya tersedia setelah masuk.</p>
+          </div>
+          <button class="secondary" type="button" data-jump-tab="admin">Masuk / Daftar</button>
+        </div>
+
+        <main id="mainContent" class="dashboard-main" tabindex="-1">
+          <!-- PAGE_CONTENT: generated from src/pages via npm run build -->
+          <section id="tab-home" class="tab-panel active" aria-labelledby="homeDashboardTitle">
+            <div id="homeCommandCenter" class="home-command-center" data-home-state="loading" data-home-role="guest" aria-busy="true">
+              <section class="home-command-header" aria-labelledby="homeDashboardTitle">
+                <div>
+                  <span class="home-command-header__eyebrow">Status · Insight · Aksi</span>
+                  <h2 id="homeDashboardTitle">Ringkasan operasional</h2>
+                  <p id="homeDashboardSubtitle">Memuat status workspace dan aktivitas terbaru.</p>
+                </div>
+                <div id="homeContextBadges" class="home-context-badges" aria-label="Konteks dashboard"></div>
+              </section>
+              <div id="homeStatusAlert" class="home-status-alert" role="status" aria-live="polite"></div>
+              <section class="home-command-section" aria-labelledby="homeKpiTitle">
+                <div class="home-section-heading home-section-heading--compact">
+                  <div>
+                    <span class="home-section-heading__eyebrow">Ringkasan</span>
+                    <h3 id="homeKpiTitle">Kondisi saat ini</h3>
+                  </div>
+                </div>
+                <div id="homeKpiGrid" class="v45-kpi-grid home-kpi-grid"></div>
+              </section>
+              <div class="home-primary-grid">
+                <section class="v45-card home-panel home-panel--attention" aria-labelledby="homeAttentionTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Prioritas</span>
+                      <h3 id="homeAttentionTitle">Perlu perhatian</h3>
+                    </div>
+                    <span id="homeAttentionCount" class="v45-badge">0 item</span>
+                  </div>
+                  <ul id="homeAttentionList" class="home-attention-list"></ul>
+                </section>
+                <section class="v45-card home-panel home-panel--actions" aria-labelledby="homeQuickActionsTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Berikutnya</span>
+                      <h3 id="homeQuickActionsTitle">Aksi cepat</h3>
+                    </div>
+                  </div>
+                  <div id="homeQuickActions" class="home-quick-actions"></div>
+                </section>
+              </div>
+              <div class="home-content-grid">
+                <section class="v45-card home-panel home-panel--brews" aria-labelledby="homeRecentBrewsTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Seduhan</span>
+                      <h3 id="homeRecentBrewsTitle">Aktivitas seduh terbaru</h3>
+                    </div>
+                    <button id="homeRecentBrewsAction" class="ghost small-action" type="button" data-jump-tab="qa">Buka Brew Log</button>
+                  </div>
+                  <div id="homeRecentBrews" class="home-brew-list"></div>
+                </section>
+                <section class="v45-card home-panel home-panel--qa" aria-labelledby="homeQaTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Kualitas</span>
+                      <h3 id="homeQaTitle">Snapshot QA</h3>
+                    </div>
+                    <button id="homeQaAction" class="ghost small-action" type="button" data-jump-tab="qa">Buka QA</button>
+                  </div>
+                  <div id="homeQaSnapshot" class="home-qa-snapshot"></div>
+                </section>
+                <section class="v45-card home-panel home-panel--stock" aria-labelledby="homeStockTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Inventori</span>
+                      <h3 id="homeStockTitle">Kesehatan stok</h3>
+                    </div>
+                    <button id="homeStockAction" class="ghost small-action" type="button" data-jump-tab="stock">Buka Inventori</button>
+                  </div>
+                  <div id="homeStockHealth" class="home-stock-list"></div>
+                </section>
+                <section class="v45-card home-panel home-panel--activity" aria-labelledby="homeActivityTitle">
+                  <div class="home-section-heading">
+                    <div>
+                      <span class="home-section-heading__eyebrow">Workspace</span>
+                      <h3 id="homeActivityTitle">Aktivitas terbaru</h3>
+                    </div>
+                  </div>
+                  <ol id="homeActivityList" class="home-activity-list"></ol>
+                </section>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-guide" class="tab-panel global-route-workspace">
+                    <header class="v45-page-header global-page-header guide-page-header" aria-labelledby="guidePageTitle">
+                      <div>
+                        <span class="global-page-eyebrow">Resources · Panduan Alur Kerja</span>
+                        <h2 id="guidePageTitle">Cara Pakai</h2>
+                        <p>Pahami alur dari resep awal dan pencatatan seduhan hingga evaluasi QA serta publikasi hasil.</p>
+                      </div>
+                      <div class="global-page-actions" aria-label="Aksi terkait panduan">
+                        <button class="secondary" type="button" data-jump-tab="brew">Mulai Rekomendasi</button>
+                      </div>
+                    </header>
+
+                    <section class="guide-first-run-lane" aria-label="Pilih titik awal">
+                      <button class="panel first-run-card" type="button" data-jump-tab="brew">
+                        <b aria-hidden="true">01</b><strong>Buat resep awal</strong><small>Gunakan Rekomendasi Seduh untuk membuat resep dasar.</small>
+                      </button>
+                      <button class="panel first-run-card" type="button" data-jump-tab="input-seduhan">
+                        <b aria-hidden="true">02</b><strong>Catat percobaan</strong><small>Gunakan Input Seduhan untuk mencatat eksperimen manual.</small>
+                      </button>
+                      <button class="panel first-run-card" type="button" data-jump-tab="public-brews">
+                        <b aria-hidden="true">03</b><strong>Bandingkan referensi</strong><small>Lihat Hasil Seduhan Publik sebagai referensi dial-in.</small>
+                      </button>
+                    </section>
+
+                    <section class="panel guide-demo-callout">
+                      <div>
+                        <span class="mini-label">Product Demo</span>
+                        <strong>Butuh validasi cepat?</strong>
+                        <p>Gunakan SOLO Demo untuk mengisi rekomendasi awal secara otomatis, lalu bandingkan dengan input manual atau hasil seduhan publik.</p>
+                      </div>
+                      <button id="guideDemoRecipeBtn" class="secondary" type="button">Coba SOLO Demo</button>
+                    </section>
+
+                  <section class="panel wide guide-panel guide-operational-shell" aria-labelledby="guideFlowTitle">
+                    <div class="global-section-heading">
+                      <div>
+                        <span class="global-section-eyebrow">Alur utama</span>
+                        <h3 id="guideFlowTitle">Dari tujuan hingga publikasi</h3>
+                      </div>
+                      <p>Ikuti empat langkah ini, lalu gunakan panduan peran untuk detail akses dan tanggung jawab.</p>
+                    </div>
+
+                    <div class="guide-flow-grid" aria-label="Alur utama dashboard">
+                      <article class="guide-flow-card">
+                        <span class="guide-flow-step">01</span>
+                        <h3>Pilih Tujuan</h3>
+                        <p>Tentukan apakah kamu ingin mencari titik awal resep, mencatat seduhan manual, menilai kualitas, atau membaca hasil publik.</p>
+                      </article>
+                      <article class="guide-flow-card">
+                        <span class="guide-flow-step">02</span>
+                        <h3>Isi Data Seduhan</h3>
+                        <p>Masukkan data beans, alat, mode seduh, suhu, rasio, dan detail penting lainnya agar hasil rekomendasi atau catatan seduhan lebih relevan.</p>
+                      </article>
+                      <article class="guide-flow-card">
+                        <span class="guide-flow-step">03</span>
+                        <h3>Evaluasi Hasil</h3>
+                        <p>Gunakan evaluasi seduhan dan QA untuk membaca karakter ekstraksi, mencatat insight, dan menyimpan eksperimen yang layak dipakai ulang.</p>
+                      </article>
+                      <article class="guide-flow-card">
+                        <span class="guide-flow-step">04</span>
+                        <h3>Publikasikan Jika Layak</h3>
+                        <p>Hanya hasil dengan kualitas yang cukup baik yang sebaiknya dibagikan. Threshold publik di dashboard ini menggunakan nilai QA minimal 6.5.</p>
+                      </article>
+                    </div>
+
+                    <div class="guide-section-head">
+                      <div>
+                        <p class="guide-kicker small">Pilih Peran</p>
+                        <h3>Panduan Berdasarkan Cara Pakai</h3>
+                      </div>
+                      <p class="guide-section-copy">Setiap peran memiliki jalur kerja yang sedikit berbeda. Pilih peran yang paling mendekati kebutuhanmu untuk melihat menu yang paling relevan dan urutan langkah yang disarankan.</p>
+                    </div>
+
+                    <div class="guide-role-tabs guide-role-tabs-premium" aria-label="Pilihan panduan berdasarkan peran">
+                      <button class="guide-role-btn active" type="button" data-guide-role="guest">
+                        <span class="role-btn-kicker">Jelajah</span>
+                        <strong>Tamu</strong>
+                        <small>Untuk mencoba dashboard tanpa login</small>
+                      </button>
+                      <button class="guide-role-btn" type="button" data-guide-role="admin">
+                        <span class="role-btn-kicker">Kelola</span>
+                        <strong>Admin</strong>
+                        <small>Untuk workspace, member, dan moderasi</small>
+                      </button>
+                      <button class="guide-role-btn" type="button" data-guide-role="qa">
+                        <span class="role-btn-kicker">Tinjau</span>
+                        <strong>QA</strong>
+                        <small>Untuk evaluasi, validasi, dan persetujuan</small>
+                      </button>
+                      <button class="guide-role-btn" type="button" data-guide-role="brewer">
+                        <span class="role-btn-kicker">Seduh</span>
+                        <strong>Brewer</strong>
+                        <small>Untuk seduh, eksperimen, dan pencatatan</small>
+                      </button>
+                    </div>
+
+                    <div class="guide-role-panel guide-role-panel-premium" data-guide-panel="guest">
+                      <div class="guide-role-header">
+                        <div>
+                          <p class="guide-kicker small">Mode Guest</p>
+                          <h3>Jelajah tanpa login, pahami alur dasarnya lebih dulu</h3>
+                        </div>
+                        <p>Mode ini cocok untuk pengguna yang ingin mengenal dashboard, mencoba rekomendasi seduh, menginput seduhan manual, dan membaca hasil seduhan publik sebelum memutuskan membuat akun.</p>
+                      </div>
+                      <div class="guide-path"><span>Rekomendasi</span><span>Input</span><span>Hasil Seduhan Publik</span><span>Saran</span><span>Akun &amp; Peran</span></div>
+                      <div class="guide-menu-grid">
+                        <article class="guide-menu-card"><h4>Rekomendasi</h4><p>Gunakan menu ini sebagai titik awal. Isi <b>Data Seduhan</b> untuk mendapatkan rekomendasi dasar, tahapan seduh, dan referensi dari brew log terverifikasi dengan kemiripan variabel utama.</p></article>
+                        <article class="guide-menu-card"><h4>Input</h4><p>Pakai menu ini jika kamu ingin mencatat resep manual dengan biji kopi dan rumus sendiri. Hasil hanya bisa disimpan ke publik ketika <b>Final QA ≥ 6.5</b>.</p></article>
+                        <article class="guide-menu-card"><h4>Hasil Seduhan Publik</h4><p>Baca hasil seduhan pengguna lain untuk membandingkan pendekatan, memahami pola ekstraksi, dan mencari referensi brew dengan nilai QA yang layak.</p></article>
+                        <article class="guide-menu-card"><h4>Kotak Saran & Akun</h4><p>Gunakan <b>Saran</b> untuk memberi masukan, lalu masuk ke <b>Akun & Peran</b> jika kamu ingin menyimpan data pribadi atau bekerja di dalam workspace.</p></article>
+                      </div>
+                      <div class="guide-note-box">
+                        <strong>Best practice untuk Guest</strong>
+                        <ul>
+                          <li>Mulai dari <b>Rekomendasi</b> jika kamu butuh titik awal yang cepat.</li>
+                          <li>Pakai <b>Input</b> untuk menguji rumus pribadi dan membandingkan hasilnya.</li>
+                          <li>Gunakan hasil publik sebagai referensi, bukan patokan mutlak.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="guide-role-panel guide-role-panel-premium hidden" data-guide-panel="admin">
+                      <div class="guide-role-header">
+                        <div>
+                          <p class="guide-kicker small">Mode Admin</p>
+                          <h3>Kendalikan workspace, akses anggota, dan kualitas data</h3>
+                        </div>
+                        <p>Mode ini ditujukan untuk pengelola dashboard di level workspace. Fokusnya adalah pengaturan member, kontrol akses, manajemen stok, dan moderasi hasil brew log atau QA.</p>
+                      </div>
+                      <div class="guide-path"><span>Akun & Peran</span><span>Stok</span><span>Biji Kopi</span><span>Log Seduh & QA</span><span>Publikasi</span></div>
+                      <div class="guide-menu-grid">
+                        <article class="guide-menu-card"><h4>Akun & Peran</h4><p>Pusat kontrol utama untuk membuat workspace, mengelola member, memberi atau mencabut akses, dan memoderasi data pada panel <b>Menunggu Tinjau / Disetujui / Ditolak</b>.</p></article>
+                        <article class="guide-menu-card"><h4>Stok</h4><p>Gunakan menu ini untuk menjaga data stok tetap akurat. Admin dapat menambah, mengedit, dan menghapus stok, sehingga workflow brewer dan QA tetap terhubung ke data yang rapi.</p></article>
+                        <article class="guide-menu-card"><h4>Biji Kopi</h4><p>Menu ini membantu melihat stok mana yang paling sesuai dengan target rasa atau parameter seduh tertentu, sehingga keputusan penggunaan biji kopi menjadi lebih terarah.</p></article>
+                        <article class="guide-menu-card"><h4>Log Seduh & QA</h4><p>Tinjau hasil seduhan tim, pantau kualitas, dan pastikan hanya data yang layak yang diloloskan ke ranah publik atau arsip internal.</p></article>
+                      </div>
+                      <div class="guide-note-box">
+                        <strong>Best practice untuk Admin</strong>
+                        <ul>
+                          <li>Buat struktur workspace dan role dengan jelas sebelum tim mulai input data.</li>
+                          <li>Pastikan stok kopi aktif selalu terbarui agar rekomendasi dan log tetap relevan.</li>
+                          <li>Gunakan moderasi untuk menjaga kualitas data publik.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="guide-role-panel guide-role-panel-premium hidden" data-guide-panel="qa">
+                      <div class="guide-role-header">
+                        <div>
+                          <p class="guide-kicker small">Mode QA</p>
+                          <h3>Evaluasi karakter ekstraksi dan jaga standar kualitas</h3>
+                        </div>
+                        <p>Mode ini cocok untuk pengguna yang fokus pada penilaian hasil seduhan, moderasi kualitas, dan validasi apakah sebuah brew layak dibagikan sebagai referensi publik.</p>
+                      </div>
+                      <div class="guide-path"><span>Rekomendasi</span><span>Input</span><span>Log Seduh & QA</span><span>Moderasi</span><span>Publikasi</span></div>
+                      <div class="guide-menu-grid">
+                        <article class="guide-menu-card"><h4>Rekomendasi</h4><p>Gunakan untuk membangun baseline sebelum pengujian. Menu ini berguna saat kamu ingin membandingkan resep rekomendasi dengan hasil evaluasi aktual.</p></article>
+                        <article class="guide-menu-card"><h4>Input Seduhan & Log Seduh</h4><p>Catat detail resep, hasil seduhan, dan evaluasi rasa secara lengkap. Ini membantu QA membaca pola ekstraksi dan menyusun insight yang lebih terukur.</p></article>
+                        <article class="guide-menu-card"><h4>Panel Moderasi</h4><p>Di dalam <b>Akun & Peran</b>, QA dapat menyetujui, menolak, atau menghapus data pada panel moderasi. Fokus QA adalah kualitas data, bukan pengelolaan member workspace.</p></article>
+                        <article class="guide-menu-card"><h4>Hasil Seduhan Publik</h4><p>Gunakan menu ini untuk memeriksa hasil akhir yang sudah lolos standar serta membaca data mana yang paling berguna sebagai referensi bersama.</p></article>
+                      </div>
+                      <div class="guide-note-box">
+                        <strong>Best practice untuk QA</strong>
+                        <ul>
+                          <li>Gunakan catatan evaluasi untuk menjelaskan perubahan variabel dan hasilnya.</li>
+                          <li>Jadikan threshold publik sebagai standar minimum, bukan akhir dari penilaian.</li>
+                          <li>Pastikan insight yang dipublikasikan tetap jelas, jujur, dan mudah dipahami.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="guide-role-panel guide-role-panel-premium hidden" data-guide-panel="brewer">
+                      <div class="guide-role-header">
+                        <div>
+                          <p class="guide-kicker small">Mode Brewer</p>
+                          <h3>Eksplorasi resep, catat seduhan, dan bangun rutinitas yang konsisten</h3>
+                        </div>
+                        <p>Mode ini cocok untuk brewer yang aktif menyeduh, menguji recipe, mengelola stok kerja, dan menyimpan hasil seduhan yang ingin dipakai ulang atau dibagikan ke tim.</p>
+                      </div>
+                      <div class="guide-path"><span>Rekomendasi</span><span>Biji Kopi</span><span>Input</span><span>Stok</span><span>Log Seduh & QA</span></div>
+                      <div class="guide-menu-grid">
+                        <article class="guide-menu-card"><h4>Rekomendasi</h4><p>Mulai dari sini jika kamu ingin baseline cepat. Menu ini ideal untuk memahami arah resep sebelum melakukan penyesuaian manual.</p></article>
+                        <article class="guide-menu-card"><h4>Biji Kopi</h4><p>Gunakan untuk memilih biji kopi yang paling sesuai dari stok berdasarkan target rasa, proses, roast profile, atau kebutuhan brew tertentu.</p></article>
+                        <article class="guide-menu-card"><h4>Input</h4><p>Pakai untuk eksperimen manual yang lebih bebas. Di sinilah kamu bisa menyimpan resep sendiri, mencatat evaluasi, dan mengunci hasil terbaik dengan struktur yang rapi.</p></article>
+                        <article class="guide-menu-card"><h4>Stok Kopi & Log Seduh</h4><p>Pastikan stok dan catatan seduhan selalu sinkron. Ini membantu menghubungkan penggunaan biji kopi dengan hasil brew yang dihasilkan dari waktu ke waktu.</p></article>
+                      </div>
+                      <div class="guide-note-box">
+                        <strong>Best practice untuk Brewer</strong>
+                        <ul>
+                          <li>Simpan eksperimen yang penting, terutama ketika kamu mengubah satu variabel utama.</li>
+                          <li>Gunakan detail pour, valve plan, dan catatan evaluasi agar resep bisa direplikasi.</li>
+                          <li>Bandingkan recipe pribadi dengan rekomendasi sistem untuk menemukan pola yang paling cocok.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="guide-section-head guide-section-head-faq">
+                      <div>
+                        <p class="guide-kicker small">Tips & FAQ</p>
+                        <h3>Hal yang Perlu Diingat</h3>
+                      </div>
+                      <p class="guide-section-copy">Bagian ini merangkum prinsip dasar penggunaan dashboard agar pengalaman membaca data dan menyimpan seduhan terasa lebih konsisten.</p>
+                    </div>
+                    <div class="guide-faq-grid">
+                      <article class="guide-faq-card">
+                        <h4>Kapan memakai Rekomendasi Seduh?</h4>
+                        <p>Gunakan saat kamu ingin baseline cepat dan tidak ingin memulai dari nol. Menu ini ideal untuk membuka arah awal resep sebelum masuk ke eksperimen yang lebih manual.</p>
+                      </article>
+                      <article class="guide-faq-card">
+                        <h4>Kapan memakai Input Seduhan?</h4>
+                        <p>Gunakan saat kamu sudah punya rumus sendiri, ingin menguji resep pribadi, atau ingin mencatat seduhan dengan detail yang lebih bebas tanpa bergantung pada stok workspace.</p>
+                      </article>
+                      <article class="guide-faq-card">
+                        <h4>Mengapa ada batas QA 6.5?</h4>
+                        <p>Batas ini dipakai agar hasil yang dibagikan ke publik tetap punya kualitas minimum yang cukup baik sebagai referensi. Nilai ini bukan kebenaran mutlak, tetapi standar awal untuk menjaga mutu data.</p>
+                      </article>
+                    </div>
+                  </section>
+                </section>
+
+          <section id="tab-brew" class="tab-panel">
+            <div class="brew-workspace" data-brew-foundation="v45-phase-4a">
+              <header class="v45-page-header brew-page-header" aria-labelledby="brewPageTitle">
+                <div>
+                  <span class="brew-page-header__eyebrow">Brewing</span>
+                  <h2 id="brewPageTitle">Rekomendasi Seduh</h2>
+                  <p>Atur kopi dan perangkat, lalu gunakan resep awal sebagai control untuk dial-in.</p>
+                </div>
+                <div class="brew-page-header__actions">
+                  <span class="v45-badge v45-badge--success">Diperbarui otomatis</span>
+                  <button id="brewDemoRecipeBtn" class="secondary" type="button">Gunakan demo SOLO</button>
+                </div>
+              </header>
+              <div id="brewRecommendationState" class="brew-recommendation-state v45-loading-state" data-state="loading" role="status" aria-live="polite">
+                <span class="v45-spinner" aria-hidden="true"></span>
+                <span id="brewRecommendationStateText">Menyiapkan rekomendasi dari pilihan awal…</span>
+              </div>
+              <div class="brew-workbench">
+                <section class="panel brew-setup-panel" aria-labelledby="brewSetupTitle">
+                  <div class="brew-section-heading">
+                    <div>
+                      <span class="brew-section-heading__eyebrow">Konfigurasi</span>
+                      <h3 id="brewSetupTitle">Atur rekomendasi</h3>
+                    </div>
+                    <span class="brew-section-heading__meta">Semua perubahan langsung dihitung ulang</span>
+                  </div>
+                  <fieldset class="brew-field-group" data-group="coffee">
+                    <legend><span>1</span> Coffee</legend>
+                    <div class="brew-field-grid">
+                      <label id="brewStockWrap" class="brew-field brew-field--wide hidden" for="brewStockSelect">Biji kopi dari stok
+                        <select id="brewStockSelect">
+                          <option value="non_stock">Non Stock / Manual</option>
+                        </select>
+                        <small id="brewStockHint" class="field-hint">Pilih stok kopi agar varietas, proses pascapanen, dan profil sangrai terisi otomatis.</small>
+                      </label>
+                      <label id="brewBeanNameWrap" class="brew-field brew-field--wide hidden" for="brewBeanName">Nama kopi
+                        <input id="brewBeanName" placeholder="Contoh: Gayo Natural Lot 03" autocomplete="off" />
+                      </label>
+                      <label class="brew-field" for="brewVariety">Varietas
+                        <select id="brewVariety" required></select>
+                      </label>
+                      <label class="brew-field" for="brewProcess">Pascapanen
+                        <select id="brewProcess" required></select>
+                        <small class="field-hint">Gunakan opsi custom bila proses belum ada di katalog.</small>
+                      </label>
+                      <label id="brewProcessCustomWrap" class="brew-field brew-field--wide hidden" for="brewProcessCustom">Pascapanen manual
+                        <input id="brewProcessCustom" placeholder="Contoh: Double Anaerobic Washed" autocomplete="off" />
+                      </label>
+                      <label class="brew-field" for="brewRoast">Profil sangrai
+                        <select id="brewRoast" required></select>
+                      </label>
+                      <div id="brewCoffeeContext" class="brew-coffee-context" aria-live="polite">
+                        <span class="v45-skeleton"></span>
+                        <span class="v45-skeleton"></span>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="brew-field-group" data-group="setup">
+                    <legend><span>2</span> Brewing setup</legend>
+                    <div class="brew-subgroup">
+                      <div class="brew-subgroup__heading">
+                        <strong>Method</strong>
+                        <small>Brewer dan pola aliran</small>
+                      </div>
+                      <div class="brew-field-grid">
+                        <label class="brew-field" for="brewDripper">Dripper
+                          <select id="brewDripper" required></select>
+                        </label>
+                        <label class="brew-field" for="brewMode">Mode seduh
+                          <select id="brewMode">
+                            <option>Hot V60</option>
+                            <option>Japanese Iced</option>
+                          </select>
+                        </label>
+                        <label id="switchModeWrap" class="brew-field brew-field--wide" for="switchValveMode">Switch valve mode
+                          <select id="switchValveMode">
+                            <option value="Auto">Otomatis</option>
+                            <option>Full Immersion</option>
+                            <option>Hybrid</option>
+                            <option>Full Open</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="brew-subgroup">
+                      <div class="brew-subgroup__heading">
+                        <strong>Grind</strong>
+                        <small>Kalibrasi grinder aktif</small>
+                      </div>
+                      <div class="brew-field-grid">
+                        <label class="brew-field brew-field--wide" for="brewGrinder">Grinder
+                          <select id="brewGrinder" required></select>
+                        </label>
+                        <label id="customGrinderNameWrap" class="brew-field hidden" for="customGrinderName">Nama grinder
+                          <input id="customGrinderName" placeholder="Contoh: Grinder manual 38 mm" autocomplete="off" />
+                        </label>
+                        <label id="customGrinderSettingWrap" class="brew-field hidden" for="customGrinderSetting">Setting grinder
+                          <input id="customGrinderSetting" placeholder="klik/dial" autocomplete="off" />
+                        </label>
+                      </div>
+                    </div>
+                    <div class="brew-subgroup">
+                      <div class="brew-subgroup__heading">
+                        <strong>Recipe &amp; water</strong>
+                        <small>Dosis input; rasio, suhu, dan air dihitung mesin</small>
+                      </div>
+                      <div class="brew-field-grid">
+                        <label class="brew-field" for="brewWater">Profil air
+                          <select id="brewWater" required></select>
+                        </label>
+                        <label class="brew-field" for="brewDose">Dosis
+                          <span class="brew-unit-input">
+                            <input id="brewDose" type="number" min="5" max="50" step="0.1" value="15" inputmode="decimal" aria-describedby="brewDoseHint brewDoseError" />
+                            <span aria-hidden="true">g</span>
+                          </span>
+                          <small id="brewDoseHint" class="field-hint">Rentang simpan 5–50 g.</small>
+                          <small id="brewDoseError" class="field-error" role="alert" hidden></small>
+                        </label>
+                        <label class="brew-field brew-field--wide" for="pourPattern">Pola tuang
+                          <select id="pourPattern">
+                            <option value="Auto">Otomatis</option>
+                            <option>2x Tuang</option>
+                            <option>3x Tuang</option>
+                            <option>4x Tuang</option>
+                            <option value="Immersion Full">Full Immersion</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="brew-generate-row">
+                    <button id="brewGenerateRecommendation" class="primary" type="button">Perbarui rekomendasi</button>
+                    <p><strong>Auto-update aktif.</strong> Tombol ini menghitung ulang dengan pilihan yang sama tanpa mengubah rumus.</p>
+                  </div>
+                </section>
+                <aside class="panel brew-result-panel" aria-labelledby="brewResultTitle">
+                  <div class="brew-section-heading brew-section-heading--result">
+                    <div>
+                      <span class="brew-section-heading__eyebrow">Recommended recipe</span>
+                      <h3 id="brewResultTitle">Resep awal</h3>
+                    </div>
+                    <span id="brewResultStatus" class="v45-badge v45-badge--info">Live</span>
+                  </div>
+                  <div class="brew-visualizer brew-result-context" id="brewVisualizer" data-mood="balanced" aria-live="polite">
+                    <div class="brew-visualizer-copy">
+                      <span class="visual-pill" id="brewVisualBadge">Balanced Seduh</span>
+                      <strong id="brewVisualTitle">Menyiapkan profil seduh</strong>
+                      <p id="brewVisualText">Rekomendasi akan mengikuti konfigurasi di sebelah kiri.</p>
+                    </div>
+                  </div>
+                  <div class="output-grid brew-recipe-summary" id="brewOutputs" aria-live="polite" aria-label="Ringkasan resep rekomendasi">
+                    <span class="v45-skeleton"></span>
+                    <span class="v45-skeleton"></span>
+                    <span class="v45-skeleton"></span>
+                  </div>
+                  <div class="callout brew-water-note" id="waterNote" role="note"></div>
+                </aside>
+              </div>
+              <section class="panel brew-pour-panel" aria-labelledby="brewPourTitle">
+                <div class="brew-section-heading">
+                  <div>
+                    <span class="brew-section-heading__eyebrow">Pour plan</span>
+                    <h3 id="brewPourTitle">Urutan seduh</h3>
+                  </div>
+                  <span class="brew-section-heading__meta">Air tahap ≠ target kumulatif</span>
+                </div>
+                <p class="brew-section-intro">Ikuti air yang ditambahkan pada tiap tahap. Kolom target kumulatif menunjukkan total yang seharusnya sudah masuk.</p>
+                <div class="table-wrap brew-pour-table-wrap">
+                  <table id="brewStepsTable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Tahap</th>
+                        <th scope="col">Air tahap</th>
+                        <th scope="col">Target kumulatif</th>
+                        <th scope="col">Waktu</th>
+                        <th scope="col">Valve</th>
+                        <th scope="col">Instruksi</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <p class="brew-pour-check" id="pourCheck" role="status"></p>
+              </section>
+              <section class="panel brew-recipe-lab-panel" aria-labelledby="brewOptionsTitle">
+                <div class="brew-section-heading">
+                  <div>
+                    <span class="brew-section-heading__eyebrow">Dial-in options</span>
+                    <h3 id="brewOptionsTitle">Bandingkan arah resep</h3>
+                  </div>
+                  <span class="brew-section-heading__meta">Pilih satu sebagai control</span>
+                </div>
+                <p class="brew-section-intro">Opsi pembanding memakai mesin yang sama. Histori terverifikasi hanya muncul bila cocok dengan workspace aktif.</p>
+                <div class="recipe-active-summary" id="recipeActiveSummary" aria-live="polite"></div>
+                <div class="recipe-grid" id="recipeOptions"></div>
+              </section>
+              <details class="panel brew-analysis-panel">
+                <summary>
+                  <span>
+                    <span class="brew-section-heading__eyebrow">Advanced</span>
+                    <strong>Analisis dan panduan dial-in</strong>
+                  </span>
+                  <small>Confidence, guardrail, evidence, dan timeline</small>
+                </summary>
+                <div class="brew-analysis-content">
+                  <section class="brew-analysis-section" aria-labelledby="brewCompassTitle">
+                    <div class="brew-section-heading brew-section-heading--compact">
+                      <h3 id="brewCompassTitle">Kompas &amp; pemeriksaan awal</h3>
+                    </div>
+                    <div class="brew-assistant-grid">
+                      <div class="brew-input-compass" id="brewInputCompass" aria-live="polite"></div>
+                      <div class="brew-preflight-panel" id="brewPreflightPanel" aria-live="polite"></div>
+                    </div>
+                  </section>
+                  <section class="brew-analysis-section" aria-labelledby="brewInsightTitle">
+                    <div class="brew-section-heading brew-section-heading--compact">
+                      <h3 id="brewInsightTitle">Insight seduh &amp; referensi</h3>
+                    </div>
+                    <div class="brew-insight-panel wide-mode" id="brewInsightPanel" aria-live="polite"></div>
+                    <div class="brew-decision-grid" id="brewDecisionGrid" aria-live="polite"></div>
+                  </section>
+                  <section class="brew-analysis-section recommendation-evidence-panel" aria-labelledby="brewEvidenceTitle">
+                    <div class="brew-section-heading brew-section-heading--compact">
+                      <h3 id="brewEvidenceTitle">Kenapa resep ini dipilih</h3>
+                    </div>
+                    <div class="recommendation-evidence-layout" aria-live="polite">
+                      <div id="brewRecommendationConfidence" class="recommendation-confidence-card"></div>
+                      <div id="brewRecommendationRationale" class="recommendation-rationale-card"></div>
+                      <div id="brewNextExperiment" class="recommendation-experiment-card"></div>
+                    </div>
+                  </section>
+                  <section class="brew-analysis-section dial-timeline-panel" aria-labelledby="brewTimelineTitle">
+                    <div class="brew-section-heading brew-section-heading--compact">
+                      <h3 id="brewTimelineTitle">Timeline dial-in</h3>
+                    </div>
+                    <div class="dial-timeline" id="dialInTimeline" aria-live="polite"></div>
+                  </section>
+                </div>
+              </details>
+              <section class="panel brew-next-actions" aria-labelledby="brewNextActionsTitle">
+                <div class="brew-section-heading">
+                  <div>
+                    <span class="brew-section-heading__eyebrow">Next actions</span>
+                    <h3 id="brewNextActionsTitle">Lanjutkan dari resep ini</h3>
+                  </div>
+                </div>
+                <div class="brew-next-actions__grid">
+                  <button id="saveCurrentBrew" class="secondary" type="button" data-action="save-brew-draft">Simpan draf ke Log Seduh</button>
+                  <button id="applyBeanToBrew" class="secondary" type="button">Gunakan biji ranking #1</button>
+                  <button class="secondary" type="button" data-jump-tab="input-seduhan">Buka Input Manual</button>
+                  <button class="ghost" type="button" data-jump-tab="library">Buka Pustaka Data</button>
+                </div>
+                <p class="brew-next-actions__note">Penyimpanan dan stok hanya tersedia untuk anggota workspace aktif. Input Manual dibuka tanpa mengubah halaman tujuannya.</p>
+              </section>
+              <div id="brewResultAnnouncer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+            </div>
+          </section>
+
+          <section id="tab-input-seduhan" class="tab-panel manual-brew-workspace" data-manual-foundation="v45-phase-4b">
+            <header class="v45-page-header manual-brew-page-header" aria-labelledby="manualBrewPageTitle">
+              <div>
+                <span class="manual-brew-page-header__eyebrow">Brewing workspace</span>
+                <h2 id="manualBrewPageTitle">Manual Brew</h2>
+                <p>Catat seduhan aktual, periksa parameter utama, lalu simpan hasil dan evaluasinya.</p>
+              </div>
+              <div class="manual-brew-page-header__actions" aria-label="Aksi terkait Manual Brew">
+                <button class="secondary" type="button" data-jump-tab="public-brews">Lihat hasil publik</button>
+                <button class="ghost" type="button" data-jump-tab="qa">Buka Brew Log &amp; QA</button>
+              </div>
+            </header>
+
+            <div id="manualEditBanner" class="manual-edit-banner v45-alert v45-alert--info hidden" role="status">
+              <div>
+                <strong id="manualEditTitle">Mode edit hasil seduhan</strong>
+                <small>Form memakai kontrak yang sama. Edit hanya tersedia bagi akun yang membuat hasil tersebut.</small>
+              </div>
+              <button id="manualCancelEditBtn" class="ghost small-action" type="button">Batalkan edit</button>
+            </div>
+
+            <form id="manualBrewForm" class="manual-brew-form-v45">
+              <div class="manual-brew-layout">
+                <div class="manual-brew-flow">
+                  <section class="panel manual-brew-section manual-brew-context" aria-labelledby="manualContextTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">Context</span><h3 id="manualContextTitle">Brew Context</h3></div>
+                      <span class="v45-badge v45-badge--info">Manual entry</span>
+                    </div>
+                    <div class="manual-brew-context__grid">
+                      <div>
+                        <strong>Resep aktual</strong>
+                        <p>Nilai pada halaman ini diisi atau dipulihkan dari draft Manual Brew. Recommendation hanya membuka halaman ini dan tidak mengirim payload resep.</p>
+                      </div>
+                      <div class="manual-brew-stock-safety" role="note">
+                        <strong>Non-stock workflow</strong>
+                        <p>Manual Brew tidak menautkan atau mengurangi inventori. Gunakan simpan draft pada Brew Recommendation untuk alur berbasis stok.</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="panel manual-brew-section" aria-labelledby="manualCoffeeTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">01</span><h3 id="manualCoffeeTitle">Coffee</h3></div>
+                      <small>Identitas kopi yang benar-benar diseduh</small>
+                    </div>
+                    <div class="manual-field-grid">
+                      <label class="manual-field manual-field--wide" for="manualBeanName">
+                        <span>Nama kopi <em aria-hidden="true">*</em></span>
+                        <input id="manualBeanName" placeholder="Contoh: Kintamani Natural Lot 02" required aria-describedby="manualBeanNameHint manualBeanNameError" />
+                        <small id="manualBeanNameHint">Gunakan nama pada kemasan atau lot agar hasil mudah ditemukan kembali.</small>
+                        <small id="manualBeanNameError" class="manual-field-error" hidden>Nama kopi wajib diisi.</small>
+                      </label>
+                      <label class="manual-field" for="manualOrigin"><span>Origin / daerah</span><input id="manualOrigin" placeholder="Contoh: Bali, Gayo, Kerinci" /></label>
+                      <label class="manual-field" for="manualEvaluator"><span>Brewer / penilai</span><input id="manualEvaluator" placeholder="Nama brewer" /></label>
+                      <label class="manual-field" for="manualVariety"><span>Varietas 1</span><select id="manualVariety"></select><small>Gunakan “Mix Varietas” bila label hanya menyebut campuran.</small></label>
+                      <label class="manual-field" for="manualVariety2"><span>Varietas 2</span><select id="manualVariety2"></select><small>Opsional.</small></label>
+                      <label class="manual-field" for="manualVariety3"><span>Varietas 3</span><select id="manualVariety3"></select><small>Opsional.</small></label>
+                      <label class="manual-field" for="manualProcess"><span>Pascapanen</span><select id="manualProcess"></select><small>Pilih Kustom bila proses tidak tersedia.</small></label>
+                      <label id="manualProcessCustomWrap" class="manual-field manual-field--wide hidden" for="manualProcessCustom">
+                        <span>Pascapanen manual</span>
+                        <input id="manualProcessCustom" placeholder="Contoh: Anaerobic Natural 120h" aria-describedby="manualProcessCustomError" />
+                        <small id="manualProcessCustomError" class="manual-field-error" hidden>Isi nama proses pascapanen manual.</small>
+                      </label>
+                      <label class="manual-field" for="manualRoast"><span>Profil sangrai</span><select id="manualRoast"></select></label>
+                    </div>
+                  </section>
+
+                  <section class="panel manual-brew-section" aria-labelledby="manualSetupTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">02</span><h3 id="manualSetupTitle">Brewing Setup</h3></div>
+                      <small>Metode, alat, grinder, dan air</small>
+                    </div>
+                    <div class="manual-field-grid">
+                      <label class="manual-field" for="manualDripper"><span>Dripper</span><select id="manualDripper"></select></label>
+                      <label class="manual-field" for="manualMode"><span>Mode seduh</span><select id="manualMode"><option>Hot V60</option><option>Japanese Iced</option></select></label>
+                      <label id="manualSwitchValveModeWrap" class="manual-field" for="manualSwitchValveMode">
+                        <span>Switch valve mode</span>
+                        <select id="manualSwitchValveMode"><option value="N/A">N/A</option><option>Full Open</option><option>Hybrid</option><option>Full Immersion</option></select>
+                        <small>Aktif otomatis untuk dripper Switch.</small>
+                      </label>
+                      <label id="manualIceWrap" class="manual-field hidden" for="manualIce">
+                        <span>Es batu</span><span class="manual-unit-input"><input id="manualIce" type="number" min="0" max="700" step="1" value="90" /><span aria-hidden="true">g</span></span>
+                        <small>Air panas adalah total air dikurangi es.</small>
+                      </label>
+                      <label class="manual-field" for="manualGrinder"><span>Grinder</span><select id="manualGrinder"></select></label>
+                      <label class="manual-field" for="manualGrindSetting"><span>Setting grinder</span><input id="manualGrindSetting" placeholder="Contoh: 72 klik / 6.5 dial" /></label>
+                      <label class="manual-field manual-field--wide" for="manualWater"><span>Air</span><select id="manualWater"></select></label>
+                    </div>
+                  </section>
+
+                  <section class="panel manual-brew-section" aria-labelledby="manualRecipeTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">03</span><h3 id="manualRecipeTitle">Recipe</h3></div>
+                      <small>Total air mengikuti dosis × rasio sampai diedit manual</small>
+                    </div>
+                    <div class="manual-field-grid manual-field-grid--recipe">
+                      <label class="manual-field" for="manualDose">
+                        <span>Dosis kopi</span><span class="manual-unit-input"><input id="manualDose" type="number" min="5" max="50" step="0.1" value="15" aria-describedby="manualDoseHint manualDoseError" /><span aria-hidden="true">g</span></span>
+                        <small id="manualDoseHint">Rentang simpan 5–50 g.</small><small id="manualDoseError" class="manual-field-error" hidden>Dosis harus 5–50 g.</small>
+                      </label>
+                      <label class="manual-field" for="manualRatio">
+                        <span>Rasio</span><span class="manual-unit-input manual-unit-input--prefix"><span aria-hidden="true">1:</span><input id="manualRatio" type="number" min="8" max="25" step="0.1" value="15" aria-describedby="manualRatioError" /></span>
+                        <small id="manualRatioError" class="manual-field-error" hidden>Rasio harus 8–25.</small>
+                      </label>
+                      <label class="manual-field" for="manualTotalWater">
+                        <span>Total air</span><span class="manual-unit-input"><input id="manualTotalWater" type="number" min="50" max="1000" step="1" value="225" aria-describedby="manualTotalWaterError" /><span aria-hidden="true">ml</span></span>
+                        <small id="manualTotalWaterError" class="manual-field-error" hidden>Total air harus 50–1000 ml.</small>
+                      </label>
+                      <label class="manual-field" for="manualTemp">
+                        <span>Suhu</span><span class="manual-unit-input"><input id="manualTemp" type="number" min="70" max="100" step="1" value="92" aria-describedby="manualTempError" /><span aria-hidden="true">°C</span></span>
+                        <small id="manualTempError" class="manual-field-error" hidden>Suhu harus 70–100°C.</small>
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="panel manual-brew-section" aria-labelledby="manualPourTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">04</span><h3 id="manualPourTitle">Pour &amp; Timing</h3></div>
+                      <small id="manualPourModeHint">Isi volume Pour 1 sampai Pour 4 sesuai resep manual.</small>
+                    </div>
+                    <div class="manual-field-grid manual-field-grid--timing">
+                      <label class="manual-field" for="manualBrewTime">
+                        <span>Waktu seduh</span><span class="manual-unit-input"><input id="manualBrewTime" type="number" min="30" max="600" step="1" value="165" aria-describedby="manualBrewTimeError" /><span aria-hidden="true">detik</span></span>
+                        <small id="manualBrewTimeError" class="manual-field-error" hidden>Waktu harus 30–600 detik.</small>
+                      </label>
+                      <label class="manual-field" for="manualBloom">
+                        <span>Bloom</span><span class="manual-unit-input"><input id="manualBloom" type="number" min="0" max="200" step="1" value="45" aria-describedby="manualBloomError" /><span aria-hidden="true">ml</span></span>
+                        <small id="manualBloomError" class="manual-field-error" hidden>Bloom harus 0–200 ml.</small>
+                      </label>
+                    </div>
+
+                    <div id="manualPourSection" class="manual-pour-section">
+                      <div class="manual-pour-grid">
+                        <article class="manual-pour-card" data-manual-pour-card="1">
+                          <div class="manual-pour-card__heading"><strong>Pour 1</strong><span>ml</span></div>
+                          <label class="manual-field" for="manualPour1"><span>Volume</span><input id="manualPour1" class="manual-pour-input" type="number" min="0" max="1000" step="1" placeholder="45" /></label>
+                          <label class="manual-field manual-pour-valve" data-manual-valve-for="1" for="manualPour1Valve"><span>Valve</span><select id="manualPour1Valve" class="manual-pour-valve-select"><option>Open</option><option>Closed</option></select></label>
+                          <label class="manual-field manual-pour-note" data-manual-note-for="1" for="manualPour1Note"><span>Keterangan</span><input id="manualPour1Note" class="manual-pour-note-input" placeholder="Bloom / center pour" /></label>
+                        </article>
+                        <article class="manual-pour-card" data-manual-pour-card="2">
+                          <div class="manual-pour-card__heading"><strong>Pour 2</strong><span>ml</span></div>
+                          <label class="manual-field" for="manualPour2"><span>Volume</span><input id="manualPour2" class="manual-pour-input" type="number" min="0" max="1000" step="1" placeholder="90" /></label>
+                          <label class="manual-field manual-pour-valve" data-manual-valve-for="2" for="manualPour2Valve"><span>Valve</span><select id="manualPour2Valve" class="manual-pour-valve-select"><option>Open</option><option>Closed</option></select></label>
+                          <label class="manual-field manual-pour-note" data-manual-note-for="2" for="manualPour2Note"><span>Keterangan</span><input id="manualPour2Note" class="manual-pour-note-input" placeholder="Spiral lembut" /></label>
+                        </article>
+                        <article class="manual-pour-card" data-manual-pour-card="3">
+                          <div class="manual-pour-card__heading"><strong>Pour 3</strong><span>ml</span></div>
+                          <label class="manual-field" for="manualPour3"><span>Volume</span><input id="manualPour3" class="manual-pour-input" type="number" min="0" max="1000" step="1" placeholder="150" /></label>
+                          <label class="manual-field manual-pour-valve" data-manual-valve-for="3" for="manualPour3Valve"><span>Valve</span><select id="manualPour3Valve" class="manual-pour-valve-select"><option>Open</option><option>Closed</option></select></label>
+                          <label class="manual-field manual-pour-note" data-manual-note-for="3" for="manualPour3Note"><span>Keterangan</span><input id="manualPour3Note" class="manual-pour-note-input" placeholder="Maintain bed" /></label>
+                        </article>
+                        <article class="manual-pour-card" data-manual-pour-card="4">
+                          <div class="manual-pour-card__heading"><strong>Pour 4</strong><span>ml</span></div>
+                          <label class="manual-field" for="manualPour4"><span>Volume</span><input id="manualPour4" class="manual-pour-input" type="number" min="0" max="1000" step="1" placeholder="225" /></label>
+                          <label class="manual-field manual-pour-valve" data-manual-valve-for="4" for="manualPour4Valve"><span>Valve</span><select id="manualPour4Valve" class="manual-pour-valve-select"><option>Open</option><option>Closed</option></select></label>
+                          <label class="manual-field manual-pour-note" data-manual-note-for="4" for="manualPour4Note"><span>Keterangan</span><input id="manualPour4Note" class="manual-pour-note-input" placeholder="Finish pour" /></label>
+                        </article>
+                      </div>
+                      <label id="manualValveOpenTimeWrap" class="manual-field manual-field--wide manual-valve-open-time hidden" for="manualValveOpenTime">
+                        <span>Valve open</span><input id="manualValveOpenTime" placeholder="Contoh: buka valve di 1:30" /><small>Khusus Full Immersion.</small>
+                      </label>
+                      <label class="manual-field manual-field--wide" for="manualPourPlan">
+                        <span>Catatan tahapan tambahan</span><textarea id="manualPourPlan" rows="3" placeholder="Opsional: agitasi, swirl, atau target drawdown"></textarea>
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="panel manual-brew-section" aria-labelledby="manualObservationTitle">
+                    <div class="manual-brew-section__heading">
+                      <div><span class="manual-brew-section__step">05</span><h3 id="manualObservationTitle">Notes &amp; Observation</h3></div>
+                      <small>Evaluasi bawaan alur Manual Brew publik</small>
+                    </div>
+                    <div class="manual-field-grid">
+                      <label class="manual-field manual-field--wide" for="manualVariable"><span>Variabel / fokus seduhan</span><input id="manualVariable" placeholder="Contoh: grind lebih halus / suhu 92°C" /></label>
+                      <label class="manual-field manual-field--wide" for="manualHypothesis"><span>Hipotesis</span><textarea id="manualHypothesis" rows="2" placeholder="Apa yang ingin dicapai dari resep ini?"></textarea></label>
+                    </div>
+                    <div class="manual-qa-block" aria-labelledby="manualQaScoresTitle">
+                      <div class="manual-qa-block__heading">
+                        <div><strong id="manualQaScoresTitle">Evaluasi QA</strong><small>Final QA minimal 6.5 diperlukan oleh alur simpan saat ini.</small></div>
+                        <div class="manual-qa-total">Final QA <strong id="manualFinalPreview">8.50</strong> <span id="manualStatusPreview" class="qa-pass">QA PASS</span></div>
+                      </div>
+                      <div class="manual-qa-grid">
+                        <label class="manual-field" for="manualAroma"><span>Aroma</span><input class="manual-qa-score" id="manualAroma" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualFlavor"><span>Rasa</span><input class="manual-qa-score" id="manualFlavor" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualAftertaste"><span>Aftertaste</span><input class="manual-qa-score" id="manualAftertaste" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualAcidityQuality"><span>Kualitas acidity</span><input class="manual-qa-score" id="manualAcidityQuality" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualSweetness"><span>Sweetness</span><input class="manual-qa-score" id="manualSweetness" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualBody"><span>Body</span><input class="manual-qa-score" id="manualBody" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualBalance"><span>Balance</span><input class="manual-qa-score" id="manualBalance" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualClarity"><span>Clarity</span><input class="manual-qa-score" id="manualClarity" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualFinish"><span>Finish</span><input class="manual-qa-score" id="manualFinish" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualConsistency"><span>Konsistensi</span><input class="manual-qa-score" id="manualConsistency" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="manual-field" for="manualDefect"><span>Pengurang nilai</span><input id="manualDefect" type="number" min="0" max="10" step="0.1" value="0" /></label>
+                      </div>
+                    </div>
+                    <label class="manual-field manual-field--wide" for="manualNotes"><span>Catatan hasil</span><textarea id="manualNotes" rows="3" placeholder="Rasa, clarity, aftertaste, kekurangan, dan keputusan dial-in berikutnya"></textarea></label>
+                  </section>
+                </div>
+
+                <aside class="panel manual-review-rail" aria-labelledby="manualReviewTitle">
+                  <div class="manual-brew-section__heading manual-brew-section__heading--compact">
+                    <div><span class="manual-brew-section__step">Review</span><h3 id="manualReviewTitle">Before Save</h3></div>
+                    <span class="v45-badge">Live summary</span>
+                  </div>
+                  <div class="manual-review-list" aria-live="polite">
+                    <div class="manual-review-item manual-review-item--wide"><span>Coffee</span><strong id="manualReviewCoffee">Nama kopi belum diisi</strong><small id="manualReviewCoffeeMeta">Lengkapi identitas kopi.</small></div>
+                    <div class="manual-review-item"><span>Method</span><strong id="manualReviewMethod">—</strong></div>
+                    <div class="manual-review-item"><span>Recipe</span><strong id="manualReviewRecipe">—</strong></div>
+                    <div class="manual-review-item"><span>Grind</span><strong id="manualReviewGrind">—</strong></div>
+                    <div class="manual-review-item"><span>Timing</span><strong id="manualReviewTiming">—</strong></div>
+                    <div class="manual-review-item"><span>Stock</span><strong id="manualReviewStock">Non-stock · tidak dikurangi</strong></div>
+                    <div class="manual-review-item"><span>Final QA</span><strong id="manualReviewQA">8.50 · QA PASS</strong></div>
+                  </div>
+                  <div id="manualValidationSummary" class="workflow-validation-card" data-status="ready" role="status" aria-live="polite">
+                    <strong>Parameter sudah konsisten</strong><small>Validasi resep akan diperbarui otomatis.</small>
+                  </div>
+                  <div id="manualSaveState" class="manual-save-state v45-alert v45-alert--info" data-state="ready" role="status" aria-live="polite" aria-atomic="true">
+                    <span class="manual-save-state__indicator" aria-hidden="true"></span>
+                    <div><strong id="manualSaveStateTitle">READY</strong><small id="manualSaveStateText">Periksa ringkasan sebelum menyimpan.</small></div>
+                  </div>
+                  <p id="manualGateHint" class="manual-gate-hint">Tombol simpan aktif karena Final QA memenuhi batas publik 6.5.</p>
+                  <button id="manualSubmitBtn" class="primary manual-save-button" type="submit" aria-describedby="manualGateHint manualSaveStateText">Simpan Hasil Seduhan Publik</button>
+                  <small class="manual-save-footnote">Simpan membuat satu Brew Log dan satu QA terkait. Draft lokal dipertahankan bila sinkronisasi gagal.</small>
+                </aside>
+              </div>
+            </form>
+          </section>
+
+          <section id="tab-beans" class="tab-panel coffee-beans-workspace" data-coffee-inventory-foundation="v45-phase-4d">
+            <header class="v45-page-header coffee-page-header" aria-labelledby="coffeePageTitle">
+              <div>
+                <span class="coffee-page-header__eyebrow">Coffee master data</span>
+                <h2 id="coffeePageTitle">Biji Kopi</h2>
+                <p>Temukan identitas kopi, profil, dan keterkaitan stok dalam workspace aktif.</p>
+              </div>
+              <div class="coffee-page-header__actions">
+                <button id="beansAddCoffeeBtn" class="primary" type="button" data-jump-tab="stock">Tambah Coffee</button>
+                <button class="secondary" type="button" data-jump-tab="brew">Buka Rekomendasi</button>
+              </div>
+            </header>
+
+            <div id="beansAccessNotice" class="access-notice hidden" role="status" aria-live="polite"></div>
+
+            <section class="coffee-summary" aria-label="Ringkasan Coffee workspace">
+              <article class="coffee-summary__item"><span>Total Coffee</span><strong id="coffeeTotalCount">0</strong><small>Record workspace</small></article>
+              <article class="coffee-summary__item"><span>Aktif</span><strong id="coffeeActiveCount">0</strong><small>Siap digunakan</small></article>
+              <article class="coffee-summary__item"><span>Origin</span><strong id="coffeeOriginCount">0</strong><small>Asal tercatat</small></article>
+              <article class="coffee-summary__item"><span>Dengan stok</span><strong id="coffeeAvailableCount">0</strong><small>Kuantitas di atas 0 g</small></article>
+            </section>
+
+            <section class="panel coffee-directory" aria-labelledby="coffeeDirectoryTitle">
+              <div class="coffee-section-heading">
+                <div>
+                  <span class="coffee-section-heading__eyebrow">Workspace aktif</span>
+                  <h3 id="coffeeDirectoryTitle">Daftar Coffee</h3>
+                  <p>Identitas kopi dan stok memakai record yang sama. Detail sekunder tersedia tanpa memenuhi tabel.</p>
+                </div>
+                <p id="beansResultStatus" class="coffee-result-status" role="status" aria-live="polite">Menyiapkan Coffee…</p>
+              </div>
+
+              <div class="coffee-filters" role="search" aria-label="Cari dan filter Coffee">
+                <label class="coffee-filter coffee-filter--search" for="beansSearch"><span>Cari Coffee</span><input id="beansSearch" type="search" placeholder="Nama, produsen, origin, varietas…" autocomplete="off" /></label>
+                <label class="coffee-filter" for="beansOriginFilter"><span>Origin</span><select id="beansOriginFilter"><option value="all">Semua origin</option></select></label>
+                <label class="coffee-filter" for="beansProcessFilter"><span>Proses</span><select id="beansProcessFilter"><option value="all">Semua proses</option></select></label>
+                <label class="coffee-filter" for="beansActiveFilter"><span>Status</span><select id="beansActiveFilter"><option value="all">Semua status</option><option value="yes">Aktif</option><option value="no">Tidak aktif</option></select></label>
+                <button id="beansClearFilters" class="ghost coffee-filter-reset" type="button">Reset filter</button>
+              </div>
+
+              <div id="beansListState" class="coffee-list-state hidden" data-state="loading" role="status" aria-live="polite"></div>
+
+              <div class="table-wrap coffee-table-shell">
+                <table id="beansTable">
+                  <thead>
+                    <tr><th scope="col">Coffee</th><th scope="col">Origin</th><th scope="col">Varietas &amp; Proses</th><th scope="col">Roast &amp; Profile</th><th scope="col">Inventory</th><th scope="col">Diperbarui</th><th scope="col">Aksi</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div id="beansMobileList" class="coffee-mobile-list" role="list" aria-label="Daftar Coffee versi mobile"></div>
+            </section>
+
+            <div class="beans-ranking-compat" hidden aria-hidden="true">
+              <input id="targetSweet" type="number" min="1" max="5" step="1" value="5" tabindex="-1" />
+              <input id="targetAcid" type="number" min="1" max="5" step="1" value="3" tabindex="-1" />
+              <input id="targetBody" type="number" min="1" max="5" step="1" value="5" tabindex="-1" />
+              <select id="filterFlavor1" tabindex="-1"></select><select id="filterFlavor2" tabindex="-1"></select><select id="filterFlavor3" tabindex="-1"></select>
+              <select id="filterVariety1" tabindex="-1"></select><select id="filterVariety2" tabindex="-1"></select>
+              <select id="filterBrew" tabindex="-1"><option value="Both">Keduanya</option><option>Hot V60</option><option>Japanese Iced</option></select>
+              <input id="minStock" type="number" min="0" step="1" value="15" tabindex="-1" />
+            </div>
+
+            <div id="coffeeDetailModal" class="modal-overlay v45-modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="coffeeDetailTitle">
+              <div class="modal-card coffee-detail-card">
+                <button class="modal-close" type="button" data-ui-close aria-label="Tutup detail Coffee">×</button>
+                <div class="coffee-detail-header"><span>Coffee detail</span><h2 id="coffeeDetailTitle">Detail Coffee</h2><p id="coffeeDetailMeta"></p></div>
+                <div id="coffeeDetailBody" class="coffee-detail-body"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-stock" class="tab-panel inventory-workspace" data-coffee-inventory-foundation="v45-phase-4d">
+            <header class="v45-page-header inventory-page-header" aria-labelledby="inventoryPageTitle">
+              <div>
+                <span class="inventory-page-header__eyebrow">Inventory operations</span>
+                <h2 id="inventoryPageTitle">Inventori</h2>
+                <p>Pantau kuantitas per Coffee dan lakukan perubahan melalui record workspace yang tepat.</p>
+              </div>
+              <div class="inventory-page-header__actions">
+                <button id="stockAddRecordBtn" class="primary" type="button">Tambah record</button>
+                <button class="secondary" type="button" data-jump-tab="beans">Lihat Coffee</button>
+              </div>
+            </header>
+
+            <div id="stockAccessNotice" class="access-notice hidden" role="status" aria-live="polite"></div>
+
+            <section class="inventory-summary" aria-label="Ringkasan Inventory">
+              <article class="inventory-summary__item"><span>Record</span><strong id="stockBeanCount">0</strong><small>Coffee dalam workspace</small></article>
+              <article class="inventory-summary__item"><span>Tersedia</span><strong id="stockAvailableCount">0</strong><small>Kuantitas di atas 0 g</small></article>
+              <article class="inventory-summary__item"><span>Perlu perhatian</span><strong id="stockAttentionCount">0</strong><small>Rendah / hampir habis</small></article>
+              <article class="inventory-summary__item"><span>Habis</span><strong id="stockEmptyCount">0</strong><small>Kuantitas 0 g</small></article>
+            </section>
+
+            <section class="panel inventory-list" aria-labelledby="inventoryListTitle">
+              <div class="inventory-section-heading">
+                <div>
+                  <span class="inventory-section-heading__eyebrow">Kuantitas saat ini</span>
+                  <h3 id="inventoryListTitle">Daftar Inventory</h3>
+                  <p>Status mengikuti aturan yang sudah digunakan aplikasi: estimasi cangkir berbasis dosis 15 g.</p>
+                </div>
+                <p id="stockResultStatus" class="inventory-result-status" role="status" aria-live="polite">Menyiapkan Inventory…</p>
+              </div>
+
+              <div class="inventory-filters" role="search" aria-label="Cari dan filter Inventory">
+                <label class="inventory-filter inventory-filter--search" for="stockSearch"><span>Cari Inventory</span><input id="stockSearch" type="search" placeholder="Nama Coffee, kode, origin…" autocomplete="off" /></label>
+                <label class="inventory-filter" for="stockStatusFilter"><span>Status stok</span><select id="stockStatusFilter"><option value="all">Semua status</option><option value="ready">Siap digunakan</option><option value="low">Stok rendah</option><option value="critical">Hampir habis</option><option value="empty">Habis</option></select></label>
+                <label class="inventory-filter" for="stockActiveFilter"><span>Status Coffee</span><select id="stockActiveFilter"><option value="all">Semua Coffee</option><option value="yes">Aktif</option><option value="no">Tidak aktif</option></select></label>
+                <button id="stockClearFilters" class="ghost inventory-filter-reset" type="button">Reset filter</button>
+              </div>
+
+              <div id="stockListState" class="inventory-list-state hidden" data-state="loading" role="status" aria-live="polite"></div>
+
+              <div class="table-wrap inventory-table-shell">
+                <table id="stockTable">
+                  <thead><tr><th scope="col">Coffee</th><th scope="col">Kuantitas</th><th scope="col">Status</th><th scope="col">Origin</th><th scope="col">Profil</th><th scope="col">Diperbarui</th><th scope="col">Aksi</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div id="stockMobileList" class="inventory-mobile-list" role="list" aria-label="Daftar Inventory versi mobile"></div>
+            </section>
+
+            <div class="inventory-management-grid">
+              <section id="stockEditorPanel" class="panel inventory-editor" aria-labelledby="stockFormTitle">
+                <div class="inventory-section-heading inventory-section-heading--form">
+                  <div>
+                    <span class="inventory-section-heading__eyebrow">Coffee + quantity</span>
+                    <h3 id="stockFormTitle">Tambah record Inventory</h3>
+                    <p>Satu record menyimpan identitas Coffee dan kuantitasnya. Anggota dapat membuat; hanya Admin dapat mengubah atau menghapus.</p>
+                  </div>
+                  <span id="stockFormModeBadge" class="v45-badge v45-badge--info">Record baru</span>
+                </div>
+
+                <form id="stockForm" class="inventory-form" novalidate aria-describedby="stockFormError">
+                  <fieldset class="inventory-field-group">
+                    <legend>Identity</legend>
+                    <div class="inventory-field-grid">
+                      <label class="inventory-field inventory-field--wide" for="stockName"><span>Nama Coffee <em aria-hidden="true">*</em></span><input id="stockName" required maxlength="180" placeholder="Contoh: Indonesia Kerinci Anaerobic" aria-describedby="stockNameHint stockFormError" /><small id="stockNameHint">Nama operasional yang muncul di selector dan Brew Log.</small></label>
+                      <label class="inventory-field" for="stockOrigin"><span>Origin</span><input id="stockOrigin" maxlength="120" placeholder="Indonesia" /></label>
+                      <label class="inventory-field" for="stockProducer"><span>Produsen / farm</span><input id="stockProducer" maxlength="180" placeholder="Farm / Producer" /></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="inventory-field-group">
+                    <legend>Coffee</legend>
+                    <div class="inventory-field-grid">
+                      <label class="inventory-field" for="stockVariety1"><span>Varietas 1</span><select id="stockVariety1"></select></label>
+                      <label class="inventory-field" for="stockVariety2"><span>Varietas 2</span><select id="stockVariety2"></select><small>Opsional.</small></label>
+                      <label class="inventory-field" for="stockProcess"><span>Proses</span><select id="stockProcess"></select><small>Pilih Custom bila proses belum ada di pustaka.</small></label>
+                      <label id="stockProcessCustomWrap" class="inventory-field hidden" for="stockProcessCustom"><span>Proses manual</span><input id="stockProcessCustom" maxlength="180" placeholder="Contoh: Experimental Honey Anaerobic" /></label>
+                      <label class="inventory-field" for="stockRoast"><span>Profil sangrai</span><select id="stockRoast"></select></label>
+                      <label class="inventory-field" for="stockRoastDate"><span>Tanggal roast</span><input id="stockRoastDate" type="date" /></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="inventory-field-group">
+                    <legend>Profile</legend>
+                    <div class="inventory-field-grid inventory-field-grid--profile">
+                      <label class="inventory-field" for="stockFlavor1"><span>Kelompok rasa 1</span><select id="stockFlavor1"></select></label>
+                      <label class="inventory-field" for="stockFlavor2"><span>Kelompok rasa 2</span><select id="stockFlavor2"></select></label>
+                      <label class="inventory-field" for="stockFlavor3"><span>Kelompok rasa 3</span><select id="stockFlavor3"></select></label>
+                      <label class="inventory-field" for="stockSweet"><span>Sweetness</span><input id="stockSweet" type="number" min="1" max="5" step="1" value="4" inputmode="numeric" /></label>
+                      <label class="inventory-field" for="stockAcid"><span>Acidity</span><input id="stockAcid" type="number" min="1" max="5" step="1" value="4" inputmode="numeric" /></label>
+                      <label class="inventory-field" for="stockBody"><span>Body</span><input id="stockBody" type="number" min="1" max="5" step="1" value="3" inputmode="numeric" /></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="inventory-field-group inventory-field-group--quantity">
+                    <legend>Inventory</legend>
+                    <div class="inventory-quantity-context" aria-live="polite">
+                      <div><span>Kuantitas saat ini</span><strong id="stockCurrentQty">—</strong></div>
+                      <div><span>Setelah disimpan</span><strong id="stockResultQty">100 g</strong></div>
+                    </div>
+                    <div class="inventory-field-grid">
+                      <label class="inventory-field" for="stockQty"><span>Kuantitas baru</span><span class="inventory-unit-input"><input id="stockQty" type="number" min="0" max="100000" step="0.1" value="100" inputmode="decimal" aria-describedby="stockQtyHint" /><span aria-hidden="true">g</span></span><small id="stockQtyHint">Nilai ini menetapkan kuantitas saat ini; aplikasi tidak memiliki ledger adjustment terpisah.</small></label>
+                      <label class="inventory-field" for="stockBestBrew"><span>Seduhan terbaik</span><select id="stockBestBrew"><option value="Both">Keduanya</option><option>Hot V60</option><option>Japanese Iced</option></select></label>
+                      <label class="inventory-field" for="stockPrice"><span>Harga pembelian</span><span class="inventory-unit-input inventory-unit-input--prefix"><input id="stockPrice" type="number" min="0" max="100000000" step="1" value="0" inputmode="numeric" /><span aria-hidden="true">Rp</span></span><small>Harga total pembelian yang sudah digunakan oleh analitik.</small></label>
+                      <label class="inventory-field" for="stockActive"><span>Status Coffee</span><select id="stockActive"><option value="Yes">Aktif</option><option value="No">Tidak aktif</option></select></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="inventory-field-group">
+                    <legend>Notes</legend>
+                    <label class="inventory-field" for="stockNotes"><span>Catatan</span><textarea id="stockNotes" rows="4" maxlength="1000" placeholder="Tasting notes, roast info, atau konteks operasional"></textarea></label>
+                  </fieldset>
+
+                  <div id="stockFormError" class="inventory-form-error hidden" role="alert" aria-live="assertive"></div>
+                  <div class="inventory-form-actions">
+                    <button id="stockSubmitBtn" class="primary" type="button">Simpan record Inventory</button>
+                    <button id="stockCancelEditBtn" class="ghost hidden" type="button">Batal edit</button>
+                  </div>
+                </form>
+              </section>
+
+              <aside class="panel inventory-workspace-status" aria-labelledby="inventoryWorkspaceTitle">
+                <div class="inventory-section-heading inventory-section-heading--compact"><div><span class="inventory-section-heading__eyebrow">Workspace</span><h3 id="inventoryWorkspaceTitle">Koneksi &amp; sinkronisasi</h3></div></div>
+                <div class="db-status" id="dbStatus" role="status" aria-live="polite"><span class="status-dot offline"></span><div><strong>Mode penyimpanan lokal</strong><small>Isi <code>assets/supabase-config.js</code> untuk mengaktifkan database online.</small></div></div>
+                <label class="inventory-field" for="activeWorkspaceSelect"><span>Workspace aktif</span><select id="activeWorkspaceSelect"></select><small id="workspaceHint">Masuk untuk memilih workspace yang sedang digunakan.</small></label>
+                <div class="inventory-workspace-actions"><button id="syncCloud" class="secondary" type="button">Sinkronkan dari Supabase</button><button class="ghost" type="button" data-jump-tab="admin">Buka Akses &amp; Workspace</button></div>
+                <p class="inventory-safety-note"><strong>Privat per workspace.</strong> Guest tidak menerima record Coffee atau Inventory. Perubahan kuantitas mengikuti izin dan kontrak database yang sudah ada.</p>
+              </aside>
+            </div>
+
+            <div id="stockDetailModal" class="modal-overlay v45-modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="stockDetailTitle">
+              <div class="modal-card inventory-detail-card">
+                <button class="modal-close" type="button" data-ui-close aria-label="Tutup detail Inventory">×</button>
+                <div class="inventory-detail-header"><span>Inventory detail</span><h2 id="stockDetailTitle">Detail Inventory</h2><p id="stockDetailMeta"></p></div>
+                <div id="stockDetailBody" class="inventory-detail-body"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-qa" class="tab-panel brew-log-qa-workspace" data-brew-log-qa-foundation="v45-phase-4c">
+            <header class="brew-log-page-header" aria-labelledby="brewLogPageTitle">
+              <div>
+                <span class="brew-log-page-header__eyebrow">Operational history</span>
+                <h2 id="brewLogPageTitle">Brew Log</h2>
+                <p>Telusuri riwayat seduhan workspace, periksa status QA, dan buka detail tanpa meninggalkan konteks kerja.</p>
+              </div>
+              <div class="brew-log-page-header__actions" aria-label="Aksi terkait Brew Log">
+                <button class="secondary" type="button" data-jump-tab="analytics">Buka Analitik</button>
+                <button class="ghost" type="button" data-jump-tab="reports">Laporan</button>
+              </div>
+            </header>
+
+            <div id="qaAccessNotice" class="access-notice hidden" role="status" aria-live="polite"></div>
+
+            <section class="brew-log-summary" aria-label="Ringkasan Brew Log">
+              <article class="brew-log-summary__item">
+                <span>Total Brew</span>
+                <strong id="brewLogTotalCount">0</strong>
+                <small>Dalam workspace aktif</small>
+              </article>
+              <article class="brew-log-summary__item">
+                <span>Pending QA</span>
+                <strong id="brewLogPendingCount">0</strong>
+                <small>Belum memiliki evaluasi</small>
+              </article>
+              <article class="brew-log-summary__item">
+                <span>Sudah Ditinjau</span>
+                <strong id="brewLogReviewedCount">0</strong>
+                <small>QA PASS atau RETEST</small>
+              </article>
+            </section>
+
+            <section class="panel brew-log-history" id="brewLogHistoryPanel" aria-labelledby="brewLogHistoryTitle">
+              <div class="brew-log-section-heading">
+                <div>
+                  <span class="brew-log-section-heading__eyebrow">Workspace records</span>
+                  <h3 id="brewLogHistoryTitle">Riwayat Seduhan</h3>
+                  <p>Informasi utama tetap ringkas; detail resep, catatan, dan QA tersedia pada panel detail.</p>
+                </div>
+                <p id="brewLogResultStatus" class="brew-log-result-status" role="status" aria-live="polite">Menyiapkan Brew Log…</p>
+              </div>
+
+              <div class="v45-filter-bar brew-log-filters" role="search" aria-label="Cari dan filter Brew Log">
+                <label class="brew-log-filter brew-log-filter--search" for="brewLogSearch">
+                  <span>Cari Brew</span>
+                  <input id="brewLogSearch" type="search" placeholder="Brew ID, kopi, metode, brewer…" autocomplete="off" />
+                </label>
+                <label class="brew-log-filter" for="brewLogMethodFilter">
+                  <span>Metode</span>
+                  <select id="brewLogMethodFilter"><option value="all">Semua metode</option></select>
+                </label>
+                <label class="brew-log-filter" for="brewLogQAFilter">
+                  <span>Status QA</span>
+                  <select id="brewLogQAFilter">
+                    <option value="all">Semua status</option>
+                    <option value="pending">Pending QA</option>
+                    <option value="pass">QA PASS</option>
+                    <option value="retest">RETEST</option>
+                  </select>
+                </label>
+                <label class="brew-log-filter" for="brewLogDateFrom"><span>Dari tanggal</span><input id="brewLogDateFrom" type="date" /></label>
+                <label class="brew-log-filter" for="brewLogDateTo"><span>Sampai tanggal</span><input id="brewLogDateTo" type="date" /></label>
+                <button id="brewLogClearFilters" class="ghost brew-log-filter-reset" type="button">Reset filter</button>
+              </div>
+
+              <div id="brewLogState" class="brew-log-state hidden" role="status" aria-live="polite"></div>
+
+              <div class="v45-table-shell brew-log-table-shell">
+                <table id="brewLogTable">
+                  <caption class="sr-only">Brew Log workspace aktif</caption>
+                  <thead></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div id="brewLogMobileList" class="brew-log-mobile-list" role="list" aria-label="Brew Log workspace aktif"></div>
+
+              <div id="brewLogEditPanel" class="admin-edit-panel professional-edit-panel brew-log-admin-editor hidden">
+                <div class="edit-panel-header">
+                  <div>
+                    <span class="edit-kicker">Admin correction</span>
+                    <h3>Perbaiki Log Seduh</h3>
+                    <p>Gunakan hanya untuk koreksi data salah input. Perubahan memengaruhi data workspace dan hasil publik bila record sudah disetujui.</p>
+                  </div>
+                  <div class="edit-brew-summary"><small>Brew ID</small><strong id="editBrewHeaderId">-</strong></div>
+                </div>
+                <form id="brewLogEditForm" class="brew-edit-form">
+                  <input id="editBrewCloudId" type="hidden" />
+                  <section class="edit-group">
+                    <h4>Identitas Kopi</h4>
+                    <div class="form-grid compact nested-grid">
+                      <label>Brew ID<input id="editBrewId" readonly /></label>
+                      <label>Tanggal<input id="editBrewDate" type="date" /></label>
+                      <label>Nama Kopi<input id="editBrewBeanName" /></label>
+                      <label>Origin<input id="editBrewOrigin" /></label>
+                      <label>Varietas<input id="editBrewVariety" /></label>
+                      <label>Pascapanen<input id="editBrewProcess" /></label>
+                      <label class="span-2">Profil Sangrai<input id="editBrewRoast" /></label>
+                    </div>
+                  </section>
+                  <section class="edit-group">
+                    <h4>Parameter Seduh</h4>
+                    <div class="form-grid compact nested-grid">
+                      <label>Metode<input id="editBrewMethod" /></label>
+                      <label>Dripper<input id="editBrewDripper" /></label>
+                      <label>Grinder<input id="editBrewGrinder" /></label>
+                      <label>Gilingan<input id="editBrewGrind" /></label>
+                      <label>Suhu (°C)<input id="editBrewTemp" type="number" step="0.1" /></label>
+                      <label>Rasio<input id="editBrewRatio" type="number" step="0.1" /></label>
+                      <label>QA<input id="editBrewQA" type="number" min="0" max="10" step="0.1" /></label>
+                      <label class="span-2">Disetujui<select id="editBrewApproved"><option value="No">No</option><option value="Yes">Yes</option><option value="Belum diverifikasi">Belum diverifikasi</option></select></label>
+                    </div>
+                  </section>
+                  <section class="edit-group edit-group-wide">
+                    <h4>Detail Evaluasi</h4>
+                    <div class="form-grid compact nested-grid">
+                      <label class="span-2">Variabel Utama<textarea id="editBrewVariable" rows="2" placeholder="Contoh: grind lebih halus / suhu +1°C"></textarea></label>
+                      <label class="span-2">Hipotesis<textarea id="editBrewHypothesis" rows="2" placeholder="Apa yang ingin diperbaiki dari brew sebelumnya?"></textarea></label>
+                      <label class="span-2">Catatan Hasil<textarea id="editBrewResultNotes" rows="3" placeholder="Catatan sensorik dan hasil dial-in"></textarea></label>
+                    </div>
+                  </section>
+                  <div class="edit-actions">
+                    <button class="primary" type="submit">Simpan Perubahan Log Seduh</button>
+                    <button class="ghost" id="cancelBrewEdit" type="button">Batal</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            <section class="qa-workflow" aria-labelledby="qaWorkflowTitle">
+              <div class="brew-log-section-heading qa-workflow__heading">
+                <div>
+                  <span class="brew-log-section-heading__eyebrow">Quality assurance</span>
+                  <h3 id="qaWorkflowTitle">Evaluasi Brew</h3>
+                  <p>Pilih Brew yang belum memiliki QA, nilai profil sensorik, lalu periksa ringkasan sebelum menyimpan.</p>
+                </div>
+                <span class="v45-badge v45-badge--info">Skala 0–10 · batas PASS 6.5</span>
+              </div>
+
+              <div class="qa-workflow__layout">
+                <form id="qaForm" class="qa-form-v45">
+                  <section class="panel qa-section" aria-labelledby="qaContextTitle">
+                    <div class="qa-section__heading">
+                      <div><span>01 · Brew Context</span><h4 id="qaContextTitle">Brew yang Dinilai</h4></div>
+                      <small>Hanya Brew workspace aktif tanpa QA yang dapat dipilih.</small>
+                    </div>
+                    <div class="qa-field-grid qa-field-grid--context">
+                      <label id="qaParentWrap" class="qa-field qa-field--wide" for="qaParent">
+                        <span>Brew ID Asal</span>
+                        <select id="qaParent" aria-describedby="qaParentHint"></select>
+                        <small id="qaParentHint">Pilihan berasal dari Brew Log yang belum memiliki QA.</small>
+                      </label>
+                      <label class="qa-field" for="qaBeanName"><span>Nama Kopi</span><input id="qaBeanName" placeholder="Bean / sample name" /></label>
+                      <label class="qa-field" for="qaEvaluator"><span>Penilai</span><input id="qaEvaluator" value="Head Brewer" /></label>
+                    </div>
+                    <div id="qaBrewContext" class="qa-brew-context" aria-live="polite">
+                      <div><span>Konteks belum dipilih</span><strong>Pilih Brew ID untuk melihat kopi, metode, resep, tanggal, dan brewer.</strong></div>
+                    </div>
+                  </section>
+
+                  <section class="panel qa-section" aria-labelledby="qaEvaluationTitle">
+                    <div class="qa-section__heading">
+                      <div><span>02 · Evaluation</span><h4 id="qaEvaluationTitle">Profil Sensorik</h4></div>
+                      <small>Semua atribut memiliki bobot yang sama; pengurang nilai diterapkan setelah rata-rata.</small>
+                    </div>
+                    <fieldset class="qa-score-fieldset">
+                      <legend class="sr-only">Nilai atribut sensorik dari 0 sampai 10</legend>
+                      <div class="qa-score-grid">
+                        <label class="qa-score-field" for="qaAroma"><span>Aroma</span><input class="qa-score" id="qaAroma" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaFlavor"><span>Rasa</span><input class="qa-score" id="qaFlavor" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaAftertaste"><span>Kesan Akhir</span><input class="qa-score" id="qaAftertaste" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaAcidityQuality"><span>Kualitas Acidity</span><input class="qa-score" id="qaAcidityQuality" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaSweetness"><span>Kemanisan</span><input class="qa-score" id="qaSweetness" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaBody"><span>Body / Tekstur</span><input class="qa-score" id="qaBody" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaBalance"><span>Keseimbangan</span><input class="qa-score" id="qaBalance" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaClarity"><span>Kejernihan Rasa</span><input class="qa-score" id="qaClarity" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaFinish"><span>Kebersihan Akhir</span><input class="qa-score" id="qaFinish" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field" for="qaConsistency"><span>Konsistensi</span><input class="qa-score" id="qaConsistency" type="number" min="0" max="10" step="0.1" value="8.5" /></label>
+                        <label class="qa-score-field qa-score-field--penalty" for="qaDefect"><span>Pengurang Nilai</span><input id="qaDefect" type="number" min="0" max="10" step="0.1" value="0" /></label>
+                      </div>
+                    </fieldset>
+                  </section>
+
+                  <section class="panel qa-section" aria-labelledby="qaDialInTitle">
+                    <div class="qa-section__heading">
+                      <div><span>03 · Dial-in Notes</span><h4 id="qaDialInTitle">Hipotesis &amp; Arah Iterasi</h4></div>
+                      <small>Catat satu variabel utama agar hasil iterasi tetap dapat ditelusuri.</small>
+                    </div>
+                    <div class="qa-field-grid">
+                      <label id="qaVariableWrap" class="qa-field qa-field--wide qa-variable-control">
+                        <span class="checkbox-line"><input id="qaHasVariable" type="checkbox" /> Ada variabel utama yang diubah</span>
+                        <input id="qaVariable" placeholder="Contoh: grind lebih halus / suhu +1°C" disabled />
+                      </label>
+                      <label class="qa-field qa-field--wide" for="qaHypothesis"><span>Hipotesis</span><textarea id="qaHypothesis" rows="2" placeholder="Apa yang ingin diperbaiki dari brew sebelumnya?"></textarea></label>
+                      <label class="qa-field" for="qaPrimaryIssue">
+                        <span>Masalah Utama</span>
+                        <select id="qaPrimaryIssue">
+                          <option value="none">Belum ditentukan</option><option value="sour">Masih asam mentah</option><option value="sharp">Acidity terlalu tajam</option><option value="bitter">Pahit dominan</option><option value="dry">Kering atau sepat</option><option value="thin">Body terlalu tipis</option><option value="flat">Rasa datar</option><option value="muddy">Rasa keruh</option><option value="weak_aroma">Aroma lemah</option>
+                        </select>
+                      </label>
+                      <label class="qa-field" for="qaTargetFocus">
+                        <span>Target Berikutnya</span>
+                        <select id="qaTargetFocus"><option value="balanced">Lebih seimbang</option><option value="lebih manis">Lebih manis</option><option value="lebih jernih">Lebih jernih</option><option value="body lebih penuh">Body lebih penuh</option><option value="acidity lebih lembut">Acidity lebih lembut</option><option value="hasil lebih konsisten">Lebih konsisten</option></select>
+                      </label>
+                      <label class="qa-field" for="qaApproval">
+                        <span>Persetujuan Manual</span>
+                        <select id="qaApproval"><option value="No">Tidak</option><option value="Yes">Ya</option></select>
+                        <small>Publikasi tetap mengikuti peran dan moderasi yang sudah berlaku.</small>
+                      </label>
+                      <label class="qa-field qa-field--wide" for="qaNotes"><span>Catatan Hasil</span><textarea id="qaNotes" rows="3" placeholder="Catat hasil sensorik dan keputusan dial-in"></textarea></label>
+                    </div>
+                  </section>
+
+                  <section class="panel qa-section qa-intelligence-panel" aria-labelledby="qaInsightTitle">
+                    <div class="qa-section__heading">
+                      <div><span>04 · Decision Support</span><h4 id="qaInsightTitle">Diagnosis &amp; Pembanding</h4></div>
+                      <small>Insight membaca nilai yang sama; tidak mengubah formula QA.</small>
+                    </div>
+                    <div id="qaGuidance" class="qa-guidance-card" data-status="review" role="status" aria-live="polite">
+                      <strong>Evaluasi otomatis akan muncul di sini.</strong><small>Sistem membaca kekuatan dan parameter terlemah dari nilai sensorik.</small>
+                    </div>
+                    <div class="qa-intelligence-grid"><div id="qaDiagnosticPlan" class="qa-diagnostic-card"></div><div id="qaComparisonCard" class="qa-comparison-card"></div></div>
+                    <div id="qaMetricMap" class="qa-metric-map"></div>
+                  </section>
+                </form>
+
+                <aside class="panel qa-review-rail" aria-labelledby="qaReviewTitle">
+                  <div class="qa-review-rail__heading">
+                    <span>05 · Review &amp; Save</span><h4 id="qaReviewTitle">Periksa Sebelum Simpan</h4>
+                    <p>QA baru akan ditautkan ke Brew yang dipilih. Existing QA tidak diedit dari form ini.</p>
+                  </div>
+                  <div class="qa-result" role="status" aria-live="polite" aria-atomic="true">
+                    <span>Final QA</span><strong id="qaFinalPreview">8.50</strong><span id="qaStatusPreview" class="qa-retest">RETEST</span>
+                  </div>
+                  <dl class="qa-review-list" aria-live="polite">
+                    <div><dt>Brew</dt><dd id="qaReviewBrew">Belum dipilih</dd></div>
+                    <div><dt>Hasil</dt><dd id="qaReviewResult">8.50 · RETEST</dd></div>
+                    <div><dt>Validasi</dt><dd id="qaReviewValidation">Pilih Brew ID</dd></div>
+                  </dl>
+                  <div id="qaSaveState" class="qa-save-state" data-state="ready" role="status" aria-live="polite" aria-atomic="true">
+                    <span class="qa-save-state__indicator" aria-hidden="true"></span>
+                    <div><strong id="qaSaveStateTitle">READY</strong><small id="qaSaveStateText">Pilih Brew dan periksa hasil evaluasi sebelum menyimpan.</small></div>
+                  </div>
+                  <button id="qaSubmitBtn" class="primary qa-save-action" type="button" form="qaForm" aria-describedby="qaSaveStateText">Simpan QA</button>
+                  <small class="qa-save-disclosure">Penyimpanan memakai kontrak existing: QA dibuat, lalu ringkasan Brew diperbarui. Mutasi gagal tetap masuk antrean sinkronisasi.</small>
+                </aside>
+              </div>
+            </section>
+
+            <div id="brewLogDetailModal" class="v45-modal brew-detail-modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="brewLogDetailTitle">
+              <article class="v45-modal__panel brew-detail-panel">
+                <header class="brew-detail-header">
+                  <div><span>Brew detail</span><h2 id="brewLogDetailTitle">Detail Brew</h2><p id="brewLogDetailMeta">Workspace record</p></div>
+                  <button class="modal-close" type="button" data-ui-close aria-label="Tutup detail Brew">×</button>
+                </header>
+                <div id="brewLogDetailBody" class="brew-detail-body"></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="tab-public-brews" class="tab-panel public-brews-workspace" data-analytics-public-foundation="v45-phase-4e">
+            <header class="v45-page-header public-brews-page-header" aria-labelledby="publicBrewsPageTitle">
+              <div>
+                <span class="phase4e-page-eyebrow">Approved community brews</span>
+                <h2 id="publicBrewsPageTitle">Hasil Seduhan Publik</h2>
+                <p>Jelajahi resep dan hasil yang telah lolos QA serta moderasi publik.</p>
+              </div>
+              <div class="phase4e-page-actions">
+                <button id="refreshPublicBrews" class="secondary" type="button">Muat ulang</button>
+                <button class="primary" type="button" data-jump-tab="input-seduhan">Tambah hasil seduhan</button>
+              </div>
+            </header>
+
+            <section class="panel public-brews-directory" aria-labelledby="publicBrewsDirectoryTitle">
+              <div class="phase4e-section-heading">
+                <div>
+                  <span class="phase4e-section-eyebrow">Katalog publik</span>
+                  <h3 id="publicBrewsDirectoryTitle">Temukan baseline seduh</h3>
+                  <p>Hanya hasil publik, disetujui moderator, recipe-ready, dan memiliki QA minimal 6.5 yang dapat muncul.</p>
+                </div>
+                <p id="publicBrewResultStatus" class="phase4e-result-status" role="status" aria-live="polite">Menyiapkan hasil publik…</p>
+              </div>
+
+              <div class="public-feed-toolbar public-explorer-toolbar" role="search" aria-label="Cari dan filter hasil seduhan publik">
+                <label class="phase4e-filter phase4e-filter--search" for="publicBrewSearch">
+                  <span>Cari hasil publik</span>
+                  <input id="publicBrewSearch" type="search" aria-label="Cari hasil seduhan publik" placeholder="Kopi, brewer, metode, atau catatan…" autocomplete="off" />
+                </label>
+                <label class="phase4e-filter" for="publicBrewMethod">
+                  <span>Metode</span>
+                  <select id="publicBrewMethod" aria-label="Filter metode seduh"><option value="all">Semua metode</option><option>Hot V60</option><option>Japanese Iced</option></select>
+                </label>
+                <label class="phase4e-filter" for="publicBrewMinQA">
+                  <span>QA minimum</span>
+                  <select id="publicBrewMinQA" aria-label="Filter nilai minimum QA"><option value="0">Semua nilai QA</option><option value="6.5">QA ≥ 6.5</option><option value="7">QA ≥ 7.0</option><option value="8">QA ≥ 8.0</option></select>
+                </label>
+                <label class="phase4e-filter" for="publicBrewSort">
+                  <span>Urutkan</span>
+                  <select id="publicBrewSort" aria-label="Urutkan hasil seduhan publik"><option value="newest">Terbaru</option><option value="qa">QA tertinggi</option><option value="recipe">Resep paling lengkap</option></select>
+                </label>
+                <details class="public-filter-details">
+                  <summary>Filter lainnya</summary>
+                  <div class="public-filter-details__body">
+                    <label class="phase4e-filter" for="publicBrewDripper"><span>Dripper</span><select id="publicBrewDripper" aria-label="Filter dripper"><option value="all">Semua dripper</option></select></label>
+                    <label class="phase4e-filter" for="publicBrewProcess"><span>Proses</span><select id="publicBrewProcess" aria-label="Filter proses pascapanen"><option value="all">Semua proses</option></select></label>
+                    <label class="phase4e-filter" for="publicBrewRoast"><span>Roast</span><select id="publicBrewRoast" aria-label="Filter profil sangrai"><option value="all">Semua roast</option></select></label>
+                  </div>
+                </details>
+              </div>
+
+              <div id="publicBrewListState" class="phase4e-list-state hidden" data-state="loading" role="status" aria-live="polite"></div>
+              <div class="public-explorer-summary" id="publicExplorerSummary" aria-label="Ringkasan hasil filter" aria-live="polite"></div>
+              <div class="public-brew-card-grid" id="publicBrewCards" role="list" aria-label="Daftar hasil seduhan publik" aria-live="polite"></div>
+
+              <details class="public-table-disclosure">
+                <summary><span><strong>Tampilan tabel</strong><small>Alternatif ringkas untuk semua hasil yang cocok.</small></span></summary>
+                <div class="table-wrap public-brew-table-wrap">
+                  <table id="publicBrewTable">
+                    <caption class="sr-only">Semua hasil seduhan publik yang cocok dengan filter</caption>
+                    <thead><tr><th scope="col">Kopi</th><th scope="col">Brewer</th><th scope="col">Metode</th><th scope="col">QA</th><th scope="col">Aksi</th></tr></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </details>
+            </section>
+          </section>
+
+          <section id="tab-analytics" class="tab-panel analytics-workspace" data-analytics-public-foundation="v45-phase-4e">
+            <header class="v45-page-header analytics-page-header" aria-labelledby="analyticsPageTitle">
+              <div>
+                <span class="phase4e-page-eyebrow">Decision dashboard</span>
+                <h2 id="analyticsPageTitle">Analytics</h2>
+                <p>Baca kualitas, konsumsi, dan pola performa dari data yang tersedia pada cakupan aktif.</p>
+              </div>
+              <div class="phase4e-page-actions">
+                <button class="secondary" type="button" data-jump-tab="qa">Buka Log Seduh &amp; QA</button>
+                <button class="secondary" type="button" data-jump-tab="reports">Buka laporan</button>
+              </div>
+            </header>
+
+            <section class="panel analytics-filter-panel" aria-labelledby="analyticsFilterTitle">
+              <div class="phase4e-section-heading phase4e-section-heading--compact">
+                <div><span class="phase4e-section-eyebrow">Cakupan analisis</span><h3 id="analyticsFilterTitle">Filter data</h3></div>
+                <p id="analyticsResultStatus" class="phase4e-result-status" role="status" aria-live="polite">Menyiapkan Analytics…</p>
+              </div>
+              <div class="analytics-toolbar analytics-toolbar-v41" role="group" aria-label="Filter Analytics">
+                <label class="phase4e-filter" for="analyticsScope"><span>Cakupan data</span><select id="analyticsScope" aria-label="Pilih cakupan data analitik"><option value="all">Workspace + publik</option><option value="workspace">Workspace aktif</option><option value="public">Publik disetujui</option></select></label>
+                <label class="phase4e-filter" for="analyticsPeriod"><span>Periode</span><select id="analyticsPeriod" aria-label="Pilih periode analitik"><option value="30">30 hari terakhir</option><option value="90" selected>90 hari terakhir</option><option value="180">6 bulan terakhir</option><option value="365">12 bulan terakhir</option><option value="0">Semua data tersinkron</option></select></label>
+                <label class="phase4e-filter" for="analyticsMinQA"><span>Nilai QA minimum</span><select id="analyticsMinQA" aria-label="Pilih nilai minimum QA analitik"><option value="0">Semua QA</option><option value="6.5">QA ≥ 6.5</option><option value="7">QA ≥ 7.0</option><option value="8">QA ≥ 8.0</option></select></label>
+                <button id="refreshAnalitik" class="secondary analytics-refresh-btn" type="button">Perbarui data</button>
+              </div>
+            </section>
+
+            <div id="analyticsListState" class="phase4e-list-state hidden" data-state="loading" role="status" aria-live="polite"></div>
+            <div id="analyticsFinanceNotice" class="analytics-finance-notice" role="status" aria-live="polite"></div>
+
+            <section class="analytics-summary-section" aria-labelledby="analyticsSummaryTitle">
+              <div class="phase4e-section-heading phase4e-section-heading--compact">
+                <div><span class="phase4e-section-eyebrow">Ringkasan terpilih</span><h3 id="analyticsSummaryTitle">KPI utama</h3></div>
+                <small>Nilai mengikuti filter di atas; biaya hanya memakai Brew dengan relasi stok dan harga yang valid.</small>
+              </div>
+              <div class="analytics-kpi-grid" id="analyticsMetricGrid" aria-live="polite"></div>
+              <div id="analyticsContextMetrics" class="analytics-context-metrics" aria-label="Konteks operasional Analytics"></div>
+            </section>
+
+            <div class="analytics-decision-grid">
+              <section class="analytics-card analytics-trend-card analytics-card--wide" aria-labelledby="analyticsTrendTitle">
+                <div class="analytics-card-head"><div><span class="mini-label">Kualitas</span><strong id="analyticsTrendTitle">Tren QA</strong></div><small>Rata-rata QA per tanggal seduh; maksimum 10 tanggal terbaru pada filter.</small></div>
+                <div class="analytics-chart" id="analyticsTrendChart" aria-describedby="analyticsTrendDescription"></div>
+                <div id="analyticsTrendDescription" class="analytics-trend-equivalent" aria-label="Nilai tren QA"></div>
+              </section>
+              <section class="analytics-card analytics-insight-card" aria-labelledby="analyticsInsightTitle">
+                <div class="analytics-card-head"><div><span class="mini-label">Perlu perhatian</span><strong id="analyticsInsightTitle">Interpretasi data</strong></div><small>Deskriptif dari data terpilih; bukan hubungan sebab-akibat.</small></div>
+                <div class="analytics-insight-list" id="analyticsInsightList"></div>
+              </section>
+            </div>
+
+            <section class="analytics-comparison-section" aria-labelledby="analyticsComparisonTitle">
+              <div class="phase4e-section-heading phase4e-section-heading--compact"><div><span class="phase4e-section-eyebrow">Perbandingan</span><h3 id="analyticsComparisonTitle">Pola performa</h3></div><small>Peringkat berdasarkan rata-rata QA pada data terpilih; tidak menyatakan kausalitas.</small></div>
+              <div class="analytics-split-grid">
+                <section class="analytics-card"><div class="analytics-card-head"><div><span class="mini-label">Dripper</span><strong>QA rata-rata per dripper</strong></div></div><div class="analytics-rank-list" id="analyticsDripperRank"></div></section>
+                <section class="analytics-card"><div class="analytics-card-head"><div><span class="mini-label">Proses</span><strong>QA rata-rata per proses</strong></div></div><div class="analytics-rank-list" id="analyticsProcessRank"></div></section>
+              </div>
+            </section>
+
+            <div class="analytics-resource-grid">
+              <section class="analytics-card" aria-labelledby="analyticsConsumptionTitle">
+                <div class="analytics-card-head"><div><span class="mini-label">Konsumsi</span><strong id="analyticsConsumptionTitle">Pemakaian biji</strong></div><small>Hanya penggunaan yang terhubung dengan stok.</small></div>
+                <div class="analytics-consumption-chart" id="analyticsConsumptionChart"></div>
+              </section>
+              <section class="analytics-card" aria-labelledby="analyticsCostTitle">
+                <div class="analytics-card-head"><div><span class="mini-label">Biaya</span><strong id="analyticsCostTitle">Kontributor biaya biji</strong></div><small>Estimasi, bukan pencatatan akuntansi.</small></div>
+                <div class="analytics-cost-breakdown" id="analyticsCostBreakdown"></div>
+              </section>
+            </div>
+
+            <section class="analytics-card analytics-table-card" aria-labelledby="analyticsTableTitle">
+              <div class="analytics-card-head"><div><span class="mini-label">Detail pendukung</span><strong id="analyticsTableTitle">Seduhan dengan QA tertinggi</strong></div><small>Biaya tampil jika Brew terhubung ke stok yang memiliki harga.</small></div>
+              <div class="table-wrap"><table id="analyticsTopTable"><caption class="sr-only">Sepuluh hasil seduhan dengan nilai QA tertinggi pada filter aktif</caption><thead><tr><th scope="col">Kopi</th><th scope="col">Profil</th><th scope="col">Metode</th><th scope="col">Resep</th><th scope="col">Biaya Biji</th><th scope="col">QA</th></tr></thead><tbody></tbody></table></div>
+            </section>
+          </section>
+
+          <section id="tab-quality" class="tab-panel operations-notification-workspace" data-operations-admin-foundation="v45-phase-4f">
+            <header class="v45-page-header operations-page-header" aria-labelledby="notificationPageTitle">
+              <div>
+                <span class="phase4f-page-eyebrow">Operational data quality</span>
+                <h2 id="notificationPageTitle">Notifikasi</h2>
+                <p>Temukan masalah kualitas pada data workspace yang tersinkron dan referensi yang dipakai aplikasi.</p>
+              </div>
+              <div class="phase4f-page-actions" aria-label="Aksi terkait notifikasi">
+                <button id="refreshQuality" class="secondary" type="button">Perbarui temuan</button>
+                <button class="ghost" type="button" data-jump-tab="qa">Buka Log &amp; QA</button>
+                <button class="ghost" type="button" data-jump-tab="reports">Buka laporan</button>
+              </div>
+            </header>
+
+            <div id="notificationListState" class="phase4f-list-state hidden" data-state="ready" role="status" aria-live="polite"></div>
+
+            <section class="notification-summary" aria-label="Ringkasan temuan" aria-live="polite">
+              <article class="notification-summary__item notification-summary__item--critical"><span>Kritis</span><strong id="notifCriticalCount">0</strong><small>Perlu diperiksa segera</small></article>
+              <article class="notification-summary__item notification-summary__item--warning"><span>Peringatan</span><strong id="notifWarningCount">0</strong><small>Perlu validasi</small></article>
+              <article class="notification-summary__item notification-summary__item--info"><span>Informasi</span><strong id="notifInfoCount">0</strong><small>Penyempurnaan data</small></article>
+              <article class="notification-summary__item"><span>Di luar filter</span><strong id="notifResolvedCount">—</strong><small>Temuan yang tidak ditampilkan</small></article>
+            </section>
+
+            <section class="panel notification-directory" aria-labelledby="notificationDirectoryTitle">
+              <div class="phase4f-section-heading">
+                <div>
+                  <span class="phase4f-section-eyebrow">Temuan aktif</span>
+                  <h3 id="notificationDirectoryTitle">Periksa dan tindak lanjuti</h3>
+                  <p>Temuan dihitung ulang dari data saat ini; tidak ada status baca atau hapus yang disimpan.</p>
+                </div>
+                <p id="notificationResultStatus" class="phase4f-result-status" role="status" aria-live="polite">Menyiapkan temuan…</p>
+              </div>
+
+              <div class="v45-filter-bar notification-filters" role="search" aria-label="Filter notifikasi">
+                <label class="phase4f-filter" for="qualityScope"><span>Modul</span>
+                  <select id="qualityScope">
+                    <option value="all">Semua modul</option>
+                    <option value="brew">Log Seduh</option>
+                    <option value="qa">QA</option>
+                    <option value="stock">Stok</option>
+                    <option value="public">Publik</option>
+                    <option value="library">Pustaka</option>
+                  </select>
+                </label>
+                <label class="phase4f-filter" for="qualitySeverity"><span>Tingkat</span>
+                  <select id="qualitySeverity">
+                    <option value="all">Semua tingkat</option>
+                    <option value="critical">Kritis</option>
+                    <option value="warning">Peringatan</option>
+                    <option value="info">Informasi</option>
+                  </select>
+                </label>
+                <div class="notification-quick-filters" aria-label="Filter cepat tingkat temuan">
+                  <button class="ghost" type="button" data-notif-filter="critical">Kritis</button>
+                  <button class="ghost" type="button" data-notif-filter="warning">Peringatan</button>
+                  <button class="ghost" type="button" data-notif-filter="all">Semua</button>
+                </div>
+              </div>
+
+              <div class="notification-module-switcher" aria-label="Filter cepat modul">
+                <button type="button" data-notif-scope="all">Semua</button>
+                <button type="button" data-notif-scope="brew">Log Seduh</button>
+                <button type="button" data-notif-scope="qa">QA</button>
+                <button type="button" data-notif-scope="stock">Stok</button>
+                <button type="button" data-notif-scope="public">Publik</button>
+                <button type="button" data-notif-scope="library">Pustaka</button>
+              </div>
+
+              <div class="notification-quality-context">
+                <div class="quality-score-card" id="qualityScoreCard" aria-live="polite"></div>
+                <div class="quality-metric-grid" id="qualityMetricGrid" aria-live="polite"></div>
+              </div>
+
+              <div class="notification-action-layout">
+                <section class="notification-list-card" aria-labelledby="notificationPriorityTitle">
+                  <div class="phase4f-card-head"><div><span class="mini-label">Prioritas</span><strong id="notificationPriorityTitle">Temuan yang perlu ditinjau</strong></div><small>Maksimum delapan temuan pertama.</small></div>
+                  <div class="quality-issue-list" id="qualityIssueList" role="list" aria-live="polite"></div>
+                </section>
+                <section class="notification-check-card" aria-labelledby="notificationChecklistTitle">
+                  <div class="phase4f-card-head"><div><span class="mini-label">Kesiapan data</span><strong id="notificationChecklistTitle">Checklist utama</strong></div></div>
+                  <div class="quality-checklist" id="qualityChecklist" aria-live="polite"></div>
+                </section>
+              </div>
+
+              <details class="notification-table-disclosure">
+                <summary><span><strong>Semua detail temuan</strong><small>Tampilan tabel ringkas untuk audit data.</small></span></summary>
+                <div class="v45-table-shell notification-table-shell">
+                  <table id="qualityIssueTable">
+                    <caption class="sr-only">Temuan kualitas data sesuai filter aktif</caption>
+                    <thead><tr><th scope="col">Tingkat</th><th scope="col">Modul</th><th scope="col">Item</th><th scope="col">Masalah</th><th scope="col">Tindak lanjut</th></tr></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </details>
+            </section>
+          </section>
+
+          <section id="tab-reports" class="tab-panel operations-report-workspace" data-operations-admin-foundation="v45-phase-4f">
+            <header class="v45-page-header operations-page-header" aria-labelledby="reportsPageTitle">
+              <div>
+                <span class="phase4f-page-eyebrow">Authorized data outputs</span>
+                <h2 id="reportsPageTitle">Ekspor &amp; Laporan</h2>
+                <p>Pilih cakupan, periksa ringkasan, lalu unduh format yang sesuai tanpa mengubah data sumber.</p>
+              </div>
+              <div class="phase4f-page-actions" aria-label="Aksi terkait laporan">
+                <button class="ghost" type="button" data-jump-tab="analytics">Buka Analytics</button>
+                <button class="ghost" type="button" data-jump-tab="library">Buka Pustaka</button>
+              </div>
+            </header>
+
+            <section class="panel report-scope-panel" aria-labelledby="reportScopeTitle">
+              <div class="phase4f-section-heading phase4f-section-heading--compact">
+                <div><span class="phase4f-section-eyebrow">Cakupan output</span><h3 id="reportScopeTitle">Siapkan data laporan</h3></div>
+                <p id="reportGenerationStatus" class="phase4f-result-status" data-state="ready" role="status" aria-live="polite">Siap membuat file</p>
+              </div>
+              <div class="v45-filter-bar report-filters" role="group" aria-label="Pengaturan ekspor">
+                <label class="phase4f-filter" for="reportScope"><span>Cakupan data</span>
+                  <select id="reportScope">
+                    <option value="workspace">Workspace aktif</option>
+                    <option value="public">Publik disetujui</option>
+                    <option value="all">Workspace + publik</option>
+                  </select>
+                </label>
+                <label class="phase4f-filter" for="reportLibraryDataset"><span>Dataset pustaka</span>
+                  <select id="reportLibraryDataset">
+                    <option value="varieties">Varietas</option>
+                    <option value="drippers">Dripper / Setup</option>
+                    <option value="filters">Filter Kertas</option>
+                    <option value="processes">Proses</option>
+                    <option value="roasts">Profil Sangrai</option>
+                    <option value="waters">Air</option>
+                    <option value="grinders">Grinder</option>
+                  </select>
+                </label>
+                <button class="secondary" id="refreshReports" type="button">Perbarui pratinjau</button>
+              </div>
+              <div class="report-scope-shortcuts" aria-label="Pilih cakupan cepat">
+                <button class="ghost" type="button" data-report-scope-shortcut="workspace">Workspace</button>
+                <button class="ghost" type="button" data-report-scope-shortcut="public">Publik</button>
+                <button class="ghost" type="button" data-report-scope-shortcut="all">Semua data</button>
+              </div>
+            </section>
+
+            <section class="report-preview-section" aria-labelledby="reportPreviewTitle">
+              <div class="phase4f-section-heading phase4f-section-heading--compact">
+                <div><span class="phase4f-section-eyebrow">Pratinjau</span><h3 id="reportPreviewTitle">Data yang akan digunakan</h3></div>
+                <small>Metrik mengikuti cakupan aktif; nilai kosong tidak dibuat-buat.</small>
+              </div>
+              <div class="report-preview-grid" id="reportPreviewGrid" aria-live="polite"></div>
+              <section class="report-sample-card" id="reportSampleCard" aria-live="polite"></section>
+            </section>
+
+            <div class="report-output-grid">
+              <section class="panel report-output-panel" aria-labelledby="reportCsvTitle">
+                <div class="phase4f-card-head"><div><span class="mini-label">CSV</span><strong id="reportCsvTitle">Data terstruktur</strong></div><small>UTF-8, formula-safe, dan sesuai cakupan.</small></div>
+                <div class="report-action-list">
+                  <article><div><strong>Log Seduh</strong><small>Seluruh Brew yang terbaca pada cakupan aktif.</small></div><button class="primary" type="button" data-report-action="brew-csv">Unduh CSV Seduhan</button></article>
+                  <article><div><strong>Nilai QA</strong><small>QA hanya dari workspace aktif.</small></div><button class="secondary" type="button" data-report-action="qa-csv">Unduh CSV QA</button></article>
+                  <article><div><strong>Stok Biji Kopi</strong><small>Stok hanya dari workspace aktif.</small></div><button class="secondary" type="button" data-report-action="stock-csv">Unduh CSV Stok</button></article>
+                  <article><div><strong>Hasil Seduhan Publik</strong><small>Hanya hasil approved dan recipe-ready.</small></div><button class="secondary" type="button" data-report-action="public-csv">Unduh CSV Publik</button></article>
+                  <article><div><strong>Dataset Pustaka</strong><small>Dataset yang dipilih, termasuk sumber bila tersedia.</small></div><button class="secondary" type="button" data-report-action="library-csv">Unduh CSV Pustaka</button></article>
+                </div>
+              </section>
+
+              <section class="panel report-output-panel" aria-labelledby="reportDocumentTitle">
+                <div class="phase4f-card-head"><div><span class="mini-label">Dokumen</span><strong id="reportDocumentTitle">Laporan &amp; cetak</strong></div><small>Output browser yang sudah tersedia.</small></div>
+                <div class="report-action-list">
+                  <article><div><strong>Laporan Analytics</strong><small>Ringkasan HTML yang dapat disimpan atau dicetak.</small></div><button class="primary" type="button" data-report-action="analytics-html">Unduh HTML</button></article>
+                  <article><div><strong>Kartu Resep Aktif</strong><small>Membuka dialog cetak untuk rekomendasi saat ini.</small></div><button class="secondary" type="button" data-report-action="recipe-print">Cetak Kartu Resep</button></article>
+                  <article><div><strong>Backup Lokal JSON</strong><small>Arsip state browser; bukan backup cloud.</small></div><button class="ghost" type="button" data-report-action="json-backup">Unduh Backup JSON</button></article>
+                </div>
+              </section>
+            </div>
+
+            <section class="panel report-recovery-panel commercial-recovery-center" aria-labelledby="reportRecoveryTitle">
+              <div class="phase4f-section-heading">
+                <div><span class="phase4f-section-eyebrow">Pemulihan lokal</span><h3 id="reportRecoveryTitle">Backup terverifikasi</h3><p>Checksum dan format diperiksa sebelum data lokal browser diganti. Data cloud tidak berubah.</p></div>
+              </div>
+              <div class="report-recovery-grid">
+                <article>
+                  <div><strong>Buat backup browser</strong><small>Stok, Log Seduh, QA, dan saran lokal dalam satu file.</small></div>
+                  <button id="createSecureBackupBtn" class="secondary" type="button">Unduh Backup Terverifikasi</button>
+                </article>
+                <article>
+                  <div><strong>Pulihkan backup lokal</strong><small>Pilih file untuk memeriksa versi, checksum, dan jumlah data.</small></div>
+                  <input id="restoreBackupInput" type="file" accept="application/json,.json" class="sr-only" />
+                  <div class="inline-actions"><button id="selectBackupFileBtn" class="secondary" type="button">Pilih File</button><button id="restoreBackupBtn" class="danger" type="button" disabled>Pulihkan ke Browser</button></div>
+                  <span id="recoveryFileName" class="recovery-file-name">Belum ada file dipilih.</span>
+                  <div id="recoveryPreview" class="recovery-preview" role="status" aria-live="polite">Pratinjau backup akan muncul di sini.</div>
+                </article>
+              </div>
+            </section>
+          </section>
+
+          <section id="tab-suggestion" class="tab-panel global-route-workspace">
+                    <header class="v45-page-header global-page-header suggestion-page-header" aria-labelledby="suggestionPageTitle">
+                      <div>
+                        <span class="global-page-eyebrow">Resources · Masukan pengguna</span>
+                        <h2 id="suggestionPageTitle">Saran</h2>
+                        <p>Kirim koreksi data, laporan masalah, atau ide yang membantu pengembangan Lestari Coffee Dashboard.</p>
+                      </div>
+                      <div class="global-page-actions" aria-label="Aksi terkait saran">
+                        <button class="secondary" type="button" data-jump-tab="library">Buka Pustaka</button>
+                      </div>
+                    </header>
+
+                  <div class="grid two-col top-align">
+                    <section class="panel suggestion-form-panel" aria-labelledby="suggestionFormTitle">
+                      <div class="global-section-heading">
+                        <div><span class="global-section-eyebrow">Masukan</span><h3 id="suggestionFormTitle">Kirim saran</h3></div>
+                        <p>Sertakan konteks atau referensi agar masukan lebih mudah ditindaklanjuti.</p>
+                      </div>
+                      <form id="suggestionForm" class="form-grid compact">
+                        <label>Nama<input id="suggestionName" placeholder="Nama / brand" /></label>
+                        <label>Email<input id="suggestionEmail" autocomplete="email" inputmode="email" type="email" placeholder="opsional@email.com" /></label>
+                        <label>Kategori
+                          <select id="suggestionCategory">
+                            <option>Dripper</option>
+                            <option>Varietas</option>
+                            <option>Pascapanen</option>
+                            <option>Profil Sangrai</option>
+                            <option>Setting Grinder</option>
+                            <option>Air Mineral</option>
+                            <option>Bug / Error Web</option>
+                            <option>Ide Fitur</option>
+                            <option>Lainnya</option>
+                          </select>
+                        </label>
+                        <label>Prioritas
+                          <select id="suggestionPriority"><option>Normal</option><option>Penting</option><option>Kompetisi / urgent</option></select>
+                        </label>
+                        <label class="span-2">Saran / Masukan<textarea id="suggestionMessage" rows="6" required placeholder="Tulis data yang perlu ditambah/dikoreksi, sumber referensi jika ada, atau bug yang ditemukan."></textarea></label>
+                        <button class="primary span-2" type="submit">Kirim Saran</button>
+                      </form>
+                    </section>
+                    <section class="panel suggestion-guidance-panel" aria-labelledby="suggestionGuideTitle">
+                      <div class="global-section-heading">
+                        <div><span class="global-section-eyebrow">Panduan</span><h3 id="suggestionGuideTitle">Saran yang mudah ditindaklanjuti</h3></div>
+                      </div>
+                      <ol class="workflow">
+                        <li>Sebutkan bagian data yang ingin diperbaiki, misalnya dripper, varietas, proses pascapanen, profil sangrai, pengaturan grinder, atau air mineral.</li>
+                        <li>Tambahkan sumber/referensi jika ada, terutama untuk angka TDS air mineral dan rentang klik grinder.</li>
+                        <li>Untuk bug, tulis langkah yang kamu lakukan sampai error muncul.</li>
+                      </ol>
+                      <div class="account-box" id="suggestionSaveInfo" role="status" aria-live="polite">Saran akan disimpan ke Supabase jika tabel tersedia. Jika belum, saran disimpan sementara di browser lokal.</div>
+                    </section>
+                  </div>
+                </section>
+
+          <section id="tab-admin" class="tab-panel administration-workspace" data-operations-admin-foundation="v45-phase-4f">
+            <header class="v45-page-header operations-page-header" aria-labelledby="adminPageTitle">
+              <div>
+                <span class="phase4f-page-eyebrow">Account · workspace · access</span>
+                <h2 id="adminPageTitle">Akses &amp; Workspace</h2>
+                <p>Kelola sesi, workspace aktif, anggota, dan kontrol administratif sesuai peran yang sebenarnya.</p>
+              </div>
+              <div class="phase4f-page-actions" aria-label="Aksi akun dan workspace">
+                <button id="adminQuickLoginBtn" class="secondary" type="button">Masuk</button>
+                <button id="adminQuickSignupBtn" class="ghost" type="button">Buat akun</button>
+                <button id="adminQuickWorkspaceBtn" class="ghost" type="button">Pilih workspace</button>
+                <button id="refreshSecuritySessionBtn" class="ghost" type="button">Perbarui sesi</button>
+              </div>
+            </header>
+
+            <nav class="admin-section-nav" aria-label="Bagian Akses dan Workspace">
+              <a href="#accountAccessPanel">Akun</a>
+              <a href="#workspacePanel">Workspace</a>
+              <a href="#workspaceUserPanel">Anggota</a>
+              <a href="#auditTrailPanel">Aktivitas</a>
+              <a href="#adminPanel">Moderasi</a>
+            </nav>
+
+            <section class="admin-status-strip" id="adminStatusStrip" aria-label="Konteks akses aktif" aria-live="polite">
+              <article><span>Mode</span><strong id="adminModeMetric">Tamu</strong><small id="adminModeHint">Masuk untuk membuka fitur privat.</small></article>
+              <article><span>Peran aktif</span><strong id="adminRoleMetric">-</strong><small id="adminRoleHint">Mengikuti workspace yang dipilih.</small></article>
+              <article><span>Workspace</span><strong id="adminWorkspaceMetric">-</strong><small id="adminWorkspaceHint">Pilih atau buat workspace.</small></article>
+              <article><span>Status akses</span><strong id="adminStatusMetric">-</strong><small id="adminStatusHint">Belum ada akses aktif.</small></article>
+            </section>
+
+            <section class="security-overview-grid" aria-label="Ringkasan keamanan" aria-live="polite">
+              <article class="panel security-score-card">
+                <span class="mini-label">Kesiapan keamanan</span>
+                <div class="security-score-ring" id="securityScoreRing"><strong id="securityScoreMetric">0</strong><small>/100</small></div>
+                <p id="securityScoreHint">Masuk dan pilih workspace untuk menjalankan pemeriksaan.</p>
+              </article>
+              <article class="panel security-session-card">
+                <div class="phase4f-card-head"><div><span class="mini-label">Sesi saat ini</span><strong>Identitas sesi</strong></div></div>
+                <dl class="security-session-list" id="securitySessionList"></dl>
+              </article>
+              <article class="panel security-check-card">
+                <div class="phase4f-card-head"><div><span class="mini-label">Pemeriksaan</span><strong>Kontrol utama</strong></div></div>
+                <div class="security-check-list" id="securityCheckList"></div>
+              </article>
+            </section>
+
+            <div class="admin-account-workspace-grid">
+              <section class="panel account-auth-panel" id="accountAccessPanel" aria-labelledby="authPanelTitle">
+                <div class="phase4f-card-head"><div><span class="mini-label">Akun</span><strong id="authPanelTitle">Masuk ke dashboard</strong></div></div>
+                <div id="authSignupShortcut" class="auth-signup-shortcut hidden">
+                  <div><strong>Buat akun untuk menyimpan data ke workspace.</strong><small>Gunakan email aktif dan pilih peran sesuai tanggung jawab.</small></div>
+                  <button id="openSignupDetailsBtn" class="secondary" type="button">Buka pendaftaran</button>
+                </div>
+                <div id="authLoggedOutArea">
+                  <form id="loginForm" class="form-grid compact">
+                    <label for="authEmail">Email<input id="authEmail" inputmode="email" type="email" placeholder="nama@email.com" autocomplete="email" /></label>
+                    <label for="authPassword">Kata sandi<input id="authPassword" type="password" placeholder="Kata sandi akun" autocomplete="current-password" /></label>
+                    <div class="span-2 inline-actions"><button class="primary" id="loginBtn" type="button">Masuk</button></div>
+                  </form>
+                  <details class="signup-details" id="signupDetails">
+                    <summary>Belum punya akun? Daftar</summary>
+                    <form id="signupForm" class="form-grid compact signup-form">
+                      <label for="signupEmail">Email<input id="signupEmail" inputmode="email" type="email" placeholder="nama@email.com" autocomplete="email" /></label>
+                      <label for="signupPassword">Kata sandi<input id="signupPassword" type="password" placeholder="Minimal 8 karakter" autocomplete="new-password" /></label>
+                      <label for="authDisplayName">Nama tampilan<input id="authDisplayName" placeholder="Nama atau nama usaha" autocomplete="name" /></label>
+                      <label for="signupRole">Peran yang dibutuhkan<select id="signupRole"><option value="admin">Admin Workspace</option><option value="brewer">Brewer</option><option value="qa">QA / Peninjau Kualitas</option></select></label>
+                      <label id="signupWorkspaceWrap" class="span-2 hidden" for="signupWorkspace">Workspace tujuan<select id="signupWorkspace"></select></label>
+                      <p id="signupApprovalHint" class="hint small-note span-2 hidden">Permintaan Brewer atau QA akan ditinjau Admin Workspace.</p>
+                      <label class="signup-consent span-2" for="signupConsent"><input id="signupConsent" type="checkbox" /><span>Saya menyetujui <a href="ketentuan/" target="_blank" rel="noopener">Ketentuan Penggunaan</a> dan <a href="privasi/" target="_blank" rel="noopener">Kebijakan Privasi</a>.</span></label>
+                      <div class="span-2 inline-actions"><button class="secondary" id="signupBtn" type="button">Buat akun</button></div>
+                    </form>
+                  </details>
+                </div>
+                <div id="authLoggedInArea" class="logged-in-actions hidden"><p class="hint small-note">Keluar setelah memakai perangkat bersama.</p><button class="ghost" id="logoutBtn" type="button">Keluar dari sesi ini</button></div>
+                <div class="account-profile-title"><span>Akun aktif</span><strong>Identitas dan akses saat ini</strong></div>
+                <div class="account-box" id="accountBox">Belum masuk.</div>
+              </section>
+
+              <section class="panel workspace-access-panel" id="workspacePanel" aria-labelledby="workspacePanelTitle">
+                <div class="phase4f-card-head"><div><span class="mini-label">Workspace</span><strong id="workspacePanelTitle">Ruang kerja tim</strong></div><p id="workspaceSwitchStatus" class="workspace-switch-status" data-state="ready" role="status" aria-live="polite">Belum ada workspace aktif.</p></div>
+                <p class="hint" id="workspacePanelHint">Admin membuat dan mengelola workspace. Brewer atau QA memilih tujuan lalu menunggu persetujuan.</p>
+                <div class="form-grid compact"><label for="adminWorkspaceSelect">Workspace aktif<select id="adminWorkspaceSelect"></select></label></div>
+                <div id="workspaceCreateArea">
+                  <hr class="soft-line" />
+                  <form id="workspaceForm" class="form-grid compact">
+                    <label for="workspaceName">Nama workspace<input id="workspaceName" placeholder="Contoh: Lestari Roastery" maxlength="120" /></label>
+                    <label for="workspaceSlug">Slug workspace<input id="workspaceSlug" placeholder="lestari-roastery" maxlength="80" /></label>
+                    <label for="workspaceVisibility">Visibilitas direktori<select id="workspaceVisibility"><option value="public" selected>Publik — tersedia saat pendaftaran</option><option value="private">Privat — hanya anggota</option></select></label>
+                    <label class="span-2" for="workspaceDescription">Deskripsi<textarea id="workspaceDescription" rows="2" maxlength="500" placeholder="Profil singkat coffee shop atau roastery"></textarea></label>
+                    <button class="primary span-2" id="createWorkspaceBtn" type="submit">Buat workspace</button>
+                  </form>
+                </div>
+                <div id="workspaceMemberArea" class="hidden"><hr class="soft-line" /><div class="account-box">Jika status masih menunggu, hubungi Admin Workspace yang dipilih saat pendaftaran.</div></div>
+                <div id="workspaceSecuritySettings" class="workspace-security-settings hidden">
+                  <hr class="soft-line" />
+                  <div class="phase4f-card-head"><div><span class="mini-label">Pengaturan workspace</span><strong>Visibilitas direktori</strong></div></div>
+                  <p class="hint small-note">Visibilitas direktori tidak membuka Stok, Log Seduh, QA, atau data internal yang dilindungi RLS.</p>
+                  <div class="form-grid compact"><label for="workspaceVisibilitySetting">Visibilitas<select id="workspaceVisibilitySetting"><option value="public">Publik — tersedia saat pendaftaran</option><option value="private">Privat — hanya anggota</option></select></label><button id="saveWorkspaceVisibilityBtn" class="secondary" type="button">Simpan visibilitas</button></div>
+                </div>
+              </section>
+            </div>
+
+            <section class="panel admin-pro-dashboard" id="adminProDashboard" aria-labelledby="adminDashboardTitle">
+              <div class="phase4f-section-heading"><div><span class="phase4f-section-eyebrow">Administrasi workspace</span><h3 id="adminDashboardTitle">Pekerjaan yang perlu ditinjau</h3></div><small>Hanya kemampuan yang tersedia bagi peran aktif yang dapat dijalankan.</small></div>
+              <div class="admin-pro-grid" id="adminProMetricGrid" aria-live="polite"></div>
+              <div class="admin-workflow-grid" id="adminWorkflowGrid" aria-live="polite"></div>
+            </section>
+
+            <section class="panel" id="memberApprovalPanel" aria-labelledby="memberApprovalTitle">
+              <div class="phase4f-section-heading phase4f-section-heading--compact"><div><span class="phase4f-section-eyebrow">Permintaan anggota</span><h3 id="memberApprovalTitle">Akses menunggu keputusan</h3></div><div class="admin-toolbar"><button id="refreshMemberRequests" class="secondary" type="button">Muat ulang</button><button id="bulkApproveMembers" class="ghost" type="button">Setujui semua yang tampil</button></div></div>
+              <p class="hint">Periksa identitas dan peran yang diminta sebelum mengaktifkan akses.</p>
+              <div class="v45-table-shell admin-responsive-table"><table id="memberRequestTable"><caption class="sr-only">Permintaan akses workspace aktif</caption><thead><tr><th scope="col">Nama / Email</th><th scope="col">Peran diminta</th><th scope="col">Status</th><th scope="col">Diajukan</th><th scope="col">Aksi</th></tr></thead><tbody></tbody></table></div>
+            </section>
+
+            <section class="panel" id="workspaceUserPanel" aria-labelledby="workspaceUserTitle">
+              <div class="phase4f-section-heading phase4f-section-heading--compact"><div><span class="phase4f-section-eyebrow">Anggota</span><h3 id="workspaceUserTitle">Pengguna workspace</h3></div><button id="refreshWorkspaceUsers" class="secondary" type="button">Muat ulang anggota</button></div>
+              <p class="hint">Admin dapat mengubah peran, menangguhkan akses, mengaktifkan kembali, atau melepas keanggotaan. Akun Auth tidak dihapus.</p>
+              <div class="v45-table-shell admin-responsive-table"><table id="workspaceUserTable" tabindex="-1"><caption class="sr-only">Anggota workspace aktif</caption><thead><tr><th scope="col">Nama / Email</th><th scope="col">Peran</th><th scope="col">Status</th><th scope="col">Bergabung</th><th scope="col">Diperbarui</th><th scope="col">Aksi</th></tr></thead><tbody></tbody></table></div>
+            </section>
+
+            <details class="panel admin-support-disclosure" open>
+              <summary><span><strong>Hak akses dan kesiapan operasional</strong><small>Matriks izin, status sistem, dan diagnostik lokal.</small></span></summary>
+              <div class="admin-support-grid">
+                <section class="permission-matrix-panel" aria-labelledby="permissionMatrixTitle"><div class="phase4f-card-head"><div><span class="mini-label">Hak akses</span><strong id="permissionMatrixTitle">Izin per peran</strong></div></div><div class="v45-table-shell permission-table-wrap"><table id="permissionMatrixTable"><caption class="sr-only">Matriks kemampuan per peran</caption><thead><tr><th scope="col">Kemampuan</th><th scope="col">Tamu</th><th scope="col">Brewer</th><th scope="col">QA</th><th scope="col">Admin</th></tr></thead><tbody></tbody></table></div></section>
+                <section class="commercial-readiness-panel" id="diagnosticsPanel" aria-labelledby="diagnosticsTitle"><div class="phase4f-card-head"><div><span class="mini-label">Aplikasi</span><strong id="diagnosticsTitle">Status &amp; diagnostik</strong></div></div><p class="hint">Maksimum 25 error teknis yang telah disanitasi; kata sandi dan token tidak disertakan.</p><div class="diagnostic-actions"><a class="secondary" href="status/">Buka status sistem</a><span><strong id="diagnosticErrorCount" class="diagnostic-count">0</strong> catatan</span><button id="downloadDiagnosticsBtn" class="secondary" type="button">Unduh diagnostik</button><button id="clearDiagnosticsBtn" class="ghost" type="button">Hapus riwayat</button></div></section>
+              </div>
+            </details>
+
+            <section class="panel audit-trail-panel" id="auditTrailPanel" aria-labelledby="auditTrailTitle">
+              <div class="phase4f-section-heading"><div><span class="phase4f-section-eyebrow">Riwayat aktivitas</span><h3 id="auditTrailTitle">Perubahan penting di workspace</h3><p>Riwayat bersifat append-only; ketersediaan cloud mengikuti migration audit yang ada.</p></div><button id="refreshAuditTrail" class="secondary" type="button">Perbarui riwayat</button></div>
+              <div class="admin-toolbar audit-toolbar"><label for="auditCategoryFilter" class="sr-only">Kategori aktivitas</label><select id="auditCategoryFilter" aria-label="Filter kategori aktivitas"><option value="all">Semua kategori</option><option value="access">Akses</option><option value="workspace">Workspace</option><option value="moderation">Moderasi</option><option value="stock">Stok</option><option value="brew">Seduhan</option><option value="qa">QA</option><option value="suggestion">Masukan</option><option value="security">Keamanan</option><option value="auth">Autentikasi</option></select><label for="auditSeverityFilter" class="sr-only">Tingkat aktivitas</label><select id="auditSeverityFilter" aria-label="Filter tingkat aktivitas"><option value="all">Semua tingkat</option><option value="critical">Kritis</option><option value="warning">Peringatan</option><option value="notice">Perhatian</option><option value="info">Informasi</option></select><label for="auditPeriodFilter" class="sr-only">Periode aktivitas</label><select id="auditPeriodFilter" aria-label="Filter periode aktivitas"><option value="7">7 hari</option><option value="30" selected>30 hari</option><option value="90">90 hari</option><option value="0">Semua waktu</option></select></div>
+              <div id="auditAvailabilityNotice" class="audit-availability-notice" role="status" aria-live="polite"></div>
+              <div class="v45-table-shell admin-responsive-table"><table id="auditTrailTable"><caption class="sr-only">Riwayat aktivitas workspace aktif</caption><thead><tr><th scope="col">Waktu</th><th scope="col">Pelaku</th><th scope="col">Aktivitas</th><th scope="col">Kategori</th><th scope="col">Hasil</th><th scope="col">Sumber</th></tr></thead><tbody></tbody></table></div>
+            </section>
+
+            <section class="panel" id="suggestionInboxPanel" aria-labelledby="suggestionInboxTitle">
+              <div class="phase4f-section-heading phase4f-section-heading--compact"><div><span class="phase4f-section-eyebrow">Masukan pengguna</span><h3 id="suggestionInboxTitle">Kotak saran masuk</h3></div><div class="admin-toolbar"><button id="refreshSuggestions" class="secondary" type="button">Muat ulang</button><button id="bulkReviewSuggestions" class="ghost" type="button">Tandai ditinjau</button><button id="bulkCloseSuggestions" class="ghost" type="button">Tutup yang ditinjau</button></div></div>
+              <div class="v45-table-shell admin-responsive-table"><table id="suggestionInboxTable"><caption class="sr-only">Masukan pada workspace aktif atau komunitas publik</caption><thead><tr><th scope="col">Status</th><th scope="col">Kategori</th><th scope="col">Masukan</th><th scope="col">Pengirim</th><th scope="col">Dibuat</th><th scope="col">Aksi</th></tr></thead><tbody></tbody></table></div>
+            </section>
+
+            <section class="panel" id="adminPanel" aria-labelledby="moderationTitle">
+              <div class="phase4f-section-heading"><div><span class="phase4f-section-eyebrow">Moderasi</span><h3 id="moderationTitle">Tinjau hasil seduhan dan QA</h3><p>QA dan Admin dapat menyetujui atau menolak data sesuai aturan yang sudah ada.</p></div></div>
+              <div class="admin-toolbar"><label for="moderationDataset" class="sr-only">Dataset moderasi</label><select id="moderationDataset" aria-label="Pilih data yang ditinjau"><option value="brew_logs">Log Seduh</option><option value="qa_scores">Nilai QA</option></select><label for="moderationStatus" class="sr-only">Status moderasi</label><select id="moderationStatus" aria-label="Pilih status peninjauan"><option value="pending">Menunggu tinjauan</option><option value="approved">Disetujui</option><option value="rejected">Ditolak</option><option value="all">Semua status</option></select><button id="refreshModeration" class="secondary" type="button">Muat ulang</button><button id="bulkApproveModeration" class="secondary" type="button">Setujui yang tampil</button><button id="bulkRejectModeration" class="danger" type="button">Tolak yang tampil</button></div>
+              <div class="v45-table-shell admin-responsive-table"><table id="moderationTable"><caption class="sr-only">Antrean moderasi workspace aktif</caption><thead></thead><tbody></tbody></table></div>
+              <p class="hint small-note">Penghapusan permanen hanya tersedia untuk Admin Workspace.</p>
+            </section>
+
+            <dialog id="memberActionDialog" class="v45-confirm-dialog" aria-labelledby="memberActionDialogTitle" aria-describedby="memberActionDialogDescription">
+              <form method="dialog">
+                <div class="v45-confirm-dialog__icon" aria-hidden="true">!</div>
+                <div><span class="mini-label">Konfirmasi akses</span><h3 id="memberActionDialogTitle">Konfirmasi tindakan anggota</h3><p id="memberActionDialogDescription">Periksa tindakan sebelum melanjutkan.</p></div>
+                <div class="v45-confirm-dialog__actions"><button id="memberActionCancel" class="ghost" type="submit" value="cancel">Batal</button><button id="memberActionConfirm" class="danger" type="submit" value="confirm">Lanjutkan</button></div>
+              </form>
+            </dialog>
+          </section>
+
+          <section id="tab-library" class="tab-panel resources-library-workspace" data-operations-admin-foundation="v45-phase-4f">
+            <header class="v45-page-header operations-page-header" aria-labelledby="libraryPageTitle">
+              <div>
+                <span class="phase4f-page-eyebrow">Coffee reference browser</span>
+                <h2 id="libraryPageTitle">Pustaka Data</h2>
+                <p>Telusuri referensi yang juga digunakan oleh mesin Rekomendasi tanpa mencampurnya dengan stok workspace.</p>
+              </div>
+              <div class="phase4f-page-actions" aria-label="Aksi terkait Pustaka Data">
+                <button class="secondary" type="button" data-jump-tab="brew">Buka Rekomendasi</button>
+                <button class="ghost" type="button" data-jump-tab="suggestion">Sarankan data</button>
+              </div>
+            </header>
+
+            <section class="panel library-browser" aria-labelledby="libraryBrowserTitle">
+              <div class="phase4f-section-heading">
+                <div><span class="phase4f-section-eyebrow">386 referensi · 7 kategori</span><h3 id="libraryBrowserTitle">Cari referensi</h3><p>Data bersifat read-only dan berasal dari paket referensi aplikasi.</p></div>
+                <p id="libraryResultStatus" class="phase4f-result-status" role="status" aria-live="polite">Menyiapkan Pustaka…</p>
+              </div>
+
+              <div class="v45-filter-bar library-controls library-controls--premium" role="search" aria-label="Cari dan filter Pustaka Data">
+                <label class="phase4f-filter" for="libraryDataset"><span>Kategori</span>
+                  <select id="libraryDataset"><option value="varieties">Varietas</option><option value="drippers">Dripper / Setup</option><option value="filters">Filter Kertas</option><option value="processes">Proses</option><option value="roasts">Profil Sangrai</option><option value="waters">Air</option><option value="grinders">Grinder</option></select>
+                </label>
+                <label class="phase4f-filter phase4f-filter--search" for="librarySearch"><span>Cari referensi</span><input id="librarySearch" type="search" placeholder="Nama, karakter, wilayah, atau sumber…" autocomplete="off" /></label>
+              </div>
+
+              <div class="library-focus-toolbar" id="libraryFocusToolbar" aria-label="Filter cepat Pustaka Data">
+                <button type="button" class="active" data-library-focus="all">Semua</button>
+                <button type="button" data-library-focus="source">Sumber tersedia</button>
+                <button type="button" data-library-focus="local-id">Indonesia / lokal</button>
+                <button type="button" data-library-focus="new">USDA · Kopyol · Mix</button>
+                <button type="button" data-library-focus="brew-risk">Fermentasi tinggi / risiko</button>
+              </div>
+
+              <div class="library-reference-note" role="note"><strong>Gunakan sebagai titik awal.</strong><span>Nilai air dan setting grinder perlu dikalibrasi kembali untuk batch, alat, dan hasil seduhan aktual.</span></div>
+              <div class="library-overview-grid" id="libraryOverview" aria-live="polite"></div>
+              <div class="library-spotlight-strip" id="librarySpotlightStrip" aria-live="polite"></div>
+
+              <div class="library-explorer-layout">
+                <div class="library-main-column">
+                  <div class="phase4f-card-head"><div><span class="mini-label">Hasil terpilih</span><strong>Referensi ringkas</strong></div><small>Pilih kartu atau baris untuk membuka detail.</small></div>
+                  <div class="library-card-grid" id="libraryCardGrid" aria-label="Hasil referensi" aria-live="polite"></div>
+                  <details class="library-table-disclosure">
+                    <summary><span><strong>Tampilan tabel</strong><small>Alternatif padat untuk hasil pencarian yang sama.</small></span></summary>
+                    <div class="v45-table-shell library-table-shell"><table id="libraryTable"><caption class="sr-only">Referensi pada kategori dan filter aktif</caption><thead></thead><tbody></tbody></table></div>
+                  </details>
+                </div>
+                <aside class="library-detail-panel" id="libraryDetailPanel" tabindex="-1" aria-label="Detail referensi terpilih" aria-live="polite"></aside>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="publicBrewModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="publicBrewModalTitle">
+    <div class="modal-card public-brew-detail-card">
+      <button id="publicBrewModalClose" class="modal-close" type="button" aria-label="Tutup detail">×</button>
+      <div id="publicBrewModalBody"></div>
+    </div>
+  </div>
+
+  <template id="metricTemplate"><div class="metric"><strong></strong><span></span></div></template>
+
+  <script src="assets/app-config.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/maintenance.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/routes.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/navigation.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/runtime.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/storage-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/error-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/release-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/monitoring-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/backup-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/security-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/audit-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/event-bus.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/validation.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/app-state.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/data-safety.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/coffee-inventory-view.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/page-modules.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/core/ui-foundation.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/beranda.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/cara-pakai.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/rekomendasi-seduh.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/input-seduhan.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/beans.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/stock.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/brew-log-qa.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/hasil-seduhan-publik.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/data-analytics.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/notification.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/export-report.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/saran.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/akun-role.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/pages/pustaka-data.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/supabase-config.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/supabase-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/auth-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/stock-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/brew-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/recommendation-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/qa-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/analytics-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/services/notification-service.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/data.js?v=20260820-v44-rc4-routing-stability"></script>
+  <script src="assets/app.js?v=20260820-v44-rc4-routing-stability"></script>
+</body>
+</html>

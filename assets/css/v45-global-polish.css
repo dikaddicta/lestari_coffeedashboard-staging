@@ -1,0 +1,865 @@
+/* Lestari V45 Phase 5 — global UI/UX consistency layer.
+   This file loads after every route stylesheet. It normalizes presentation only;
+   route, data, authorization, persistence, and service contracts remain unchanged. */
+
+body.v45-ui-foundation {
+  --v45-panel-padding: var(--v45-space-5);
+}
+
+body.v45-ui-foundation .tab-panel,
+body.v45-ui-foundation .tab-panel > *,
+body.v45-ui-foundation .tab-panel :where(section, article, aside, form, fieldset, div) {
+  min-width: 0;
+}
+
+body.v45-ui-foundation .tab-panel.active {
+  gap: var(--v45-page-section-gap) !important;
+}
+
+body.v45-ui-foundation :where(
+  #tab-quality.operations-notification-workspace,
+  #tab-reports.operations-report-workspace,
+  #tab-library.resources-library-workspace,
+  #tab-admin.administration-workspace,
+  #tab-guide.global-route-workspace,
+  #tab-suggestion.global-route-workspace
+) {
+  display: grid;
+  gap: var(--v45-page-section-gap) !important;
+}
+
+body.v45-ui-foundation :where(
+  #tab-quality.operations-notification-workspace,
+  #tab-reports.operations-report-workspace,
+  #tab-library.resources-library-workspace,
+  #tab-admin.administration-workspace
+) > * + * {
+  margin-top: 0 !important;
+}
+
+/* One operational page-header rhythm across all fourteen routes. */
+body.v45-ui-foundation :is(
+  #tab-home .home-command-header,
+  #tab-guide .global-page-header,
+  #tab-brew .brew-page-header,
+  #tab-input-seduhan .manual-brew-page-header,
+  #tab-beans .coffee-page-header,
+  #tab-stock .inventory-page-header,
+  #tab-qa .brew-log-page-header,
+  #tab-public-brews .public-brews-page-header,
+  #tab-analytics .analytics-page-header,
+  #tab-quality .operations-page-header,
+  #tab-reports .operations-page-header,
+  #tab-suggestion .global-page-header,
+  #tab-admin .operations-page-header,
+  #tab-library .operations-page-header
+) {
+  min-width: 0;
+  display: flex;
+  align-items: flex-end !important;
+  justify-content: space-between;
+  gap: var(--v45-space-5) !important;
+  padding: var(--v45-space-1) 0 var(--v45-space-3) !important;
+  border-bottom: var(--v45-border-thin) !important;
+}
+
+body.v45-ui-foundation :is(
+  #tab-home .home-command-header,
+  #tab-guide .global-page-header,
+  #tab-brew .brew-page-header,
+  #tab-input-seduhan .manual-brew-page-header,
+  #tab-beans .coffee-page-header,
+  #tab-stock .inventory-page-header,
+  #tab-qa .brew-log-page-header,
+  #tab-public-brews .public-brews-page-header,
+  #tab-analytics .analytics-page-header,
+  #tab-quality .operations-page-header,
+  #tab-reports .operations-page-header,
+  #tab-suggestion .global-page-header,
+  #tab-admin .operations-page-header,
+  #tab-library .operations-page-header
+) > div:first-child {
+  min-width: 0;
+  max-width: var(--v45-reading-width);
+}
+
+body.v45-ui-foundation :is(
+  #tab-home .home-command-header h2,
+  #tab-guide .global-page-header h2,
+  #tab-brew .brew-page-header h2,
+  #tab-input-seduhan .manual-brew-page-header h2,
+  #tab-beans .coffee-page-header h2,
+  #tab-stock .inventory-page-header h2,
+  #tab-qa .brew-log-page-header h2,
+  #tab-public-brews .public-brews-page-header h2,
+  #tab-analytics .analytics-page-header h2,
+  #tab-quality .operations-page-header h2,
+  #tab-reports .operations-page-header h2,
+  #tab-suggestion .global-page-header h2,
+  #tab-admin .operations-page-header h2,
+  #tab-library .operations-page-header h2
+) {
+  margin: 0 !important;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-page-title-size) !important;
+  font-weight: var(--v45-weight-bold) !important;
+  letter-spacing: -0.025em !important;
+  line-height: var(--v45-line-tight) !important;
+  text-wrap: balance;
+}
+
+body.v45-ui-foundation :is(
+  #tab-home .home-command-header p,
+  #tab-guide .global-page-header p,
+  #tab-brew .brew-page-header p,
+  #tab-input-seduhan .manual-brew-page-header p,
+  #tab-beans .coffee-page-header p,
+  #tab-stock .inventory-page-header p,
+  #tab-qa .brew-log-page-header p,
+  #tab-public-brews .public-brews-page-header p,
+  #tab-analytics .analytics-page-header p,
+  #tab-quality .operations-page-header p,
+  #tab-reports .operations-page-header p,
+  #tab-suggestion .global-page-header p,
+  #tab-admin .operations-page-header p,
+  #tab-library .operations-page-header p
+) {
+  max-width: var(--v45-reading-width);
+  margin: var(--v45-space-2) 0 0 !important;
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-sm) !important;
+  line-height: var(--v45-line-normal) !important;
+  text-wrap: pretty;
+}
+
+body.v45-ui-foundation :is(
+  .home-command-header__eyebrow,
+  .global-page-eyebrow,
+  .brew-page-header__eyebrow,
+  .manual-brew-page-header__eyebrow,
+  .coffee-page-header__eyebrow,
+  .inventory-page-header__eyebrow,
+  .brew-log-page-header__eyebrow,
+  .phase4e-page-eyebrow,
+  .phase4f-page-eyebrow
+) {
+  display: block;
+  margin: 0 0 var(--v45-space-1) !important;
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  font-weight: var(--v45-weight-semibold) !important;
+  letter-spacing: 0.07em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body.v45-ui-foundation :is(
+  .home-context-badges,
+  .global-page-actions,
+  .brew-page-header__actions,
+  .manual-brew-page-header__actions,
+  .coffee-page-header__actions,
+  .inventory-page-header__actions,
+  .brew-log-page-header__actions,
+  .phase4e-page-actions,
+  .phase4f-page-actions
+) {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2) !important;
+}
+
+/* Shared section hierarchy without replacing route-specific components. */
+body.v45-ui-foundation :is(
+  .global-section-heading,
+  .home-section-heading,
+  .brew-section-heading,
+  .manual-brew-section__heading,
+  .coffee-section-heading,
+  .inventory-section-heading,
+  .brew-log-section-heading,
+  .qa-section__heading,
+  .phase4e-section-heading,
+  .phase4f-section-heading
+) {
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-4) !important;
+}
+
+body.v45-ui-foundation :is(
+  .global-section-heading,
+  .home-section-heading,
+  .brew-section-heading,
+  .manual-brew-section__heading,
+  .coffee-section-heading,
+  .inventory-section-heading,
+  .brew-log-section-heading,
+  .qa-section__heading,
+  .phase4e-section-heading,
+  .phase4f-section-heading
+) > div:first-child {
+  min-width: 0;
+}
+
+body.v45-ui-foundation :is(
+  .global-section-heading h3,
+  .home-section-heading h3,
+  .brew-section-heading h3,
+  .manual-brew-section__heading h3,
+  .coffee-section-heading h3,
+  .inventory-section-heading h3,
+  .brew-log-section-heading h3,
+  .qa-section__heading h4,
+  .phase4e-section-heading h3,
+  .phase4f-section-heading h3
+) {
+  margin: 0 !important;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-section-title-size) !important;
+  font-weight: var(--v45-weight-bold) !important;
+  letter-spacing: -0.02em !important;
+  line-height: var(--v45-line-tight) !important;
+  text-wrap: balance;
+}
+
+body.v45-ui-foundation :is(
+  .global-section-eyebrow,
+  .home-section-heading__eyebrow,
+  .brew-section-heading__eyebrow,
+  .manual-brew-section__step,
+  .coffee-section-heading__eyebrow,
+  .inventory-section-heading__eyebrow,
+  .brew-log-section-heading__eyebrow,
+  .phase4e-section-eyebrow,
+  .phase4f-section-eyebrow
+) {
+  display: block;
+  margin: 0 0 var(--v45-space-1) !important;
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  font-weight: var(--v45-weight-semibold) !important;
+  letter-spacing: 0.07em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body.v45-ui-foundation .global-section-heading {
+  margin-bottom: var(--v45-space-4);
+}
+
+body.v45-ui-foundation .global-section-heading > p {
+  max-width: 44ch;
+  margin: 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+  text-align: right;
+}
+
+/* Shared component safeguards: controls, forms, tables, status, and states. */
+body.v45-ui-foundation :where(.panel, .card, .v45-card) {
+  padding: var(--v45-panel-padding) !important;
+}
+
+body.v45-ui-foundation :where(
+  button.primary,
+  button.secondary,
+  button.ghost,
+  button.danger,
+  .button-primary,
+  .button-secondary,
+  .button-ghost,
+  .button-danger,
+  .file-button
+):not(.small-action):not(.button-sm) {
+  min-height: var(--v45-touch-target) !important;
+}
+
+body.v45-ui-foundation :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  scroll-margin: calc(var(--v45-topbar-min-height) + var(--v45-space-4));
+}
+
+body.v45-ui-foundation :where(.form-grid, .v45-form-grid) {
+  gap: var(--v45-space-4) !important;
+}
+
+body.v45-ui-foundation :where(.form-grid, .v45-form-grid) > label {
+  min-width: 0;
+  align-content: start;
+  gap: var(--v45-space-2) !important;
+  line-height: 1.35;
+}
+
+body.v45-ui-foundation :where(.hint, .field-hint, .form-hint, .input-hint) {
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  line-height: var(--v45-line-normal) !important;
+}
+
+body.v45-ui-foundation :where(.table-wrap, .table-shell, .v45-table-shell, [class$="table-shell"]) {
+  max-width: 100%;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+}
+
+body.v45-ui-foundation table :where(th, td) {
+  line-height: 1.4;
+}
+
+body.v45-ui-foundation tbody tr:focus-within {
+  background: color-mix(in srgb, var(--v45-color-brand-soft) 64%, transparent);
+  box-shadow: inset 3px 0 0 var(--v45-color-focus);
+}
+
+body.v45-ui-foundation :where(
+  .badge,
+  .status-pill,
+  .v45-badge,
+  .brew-log-qa-badge,
+  .brew-log-record-badge,
+  .coffee-status-pill,
+  .inventory-status-pill,
+  .public-catalog-badge,
+  .phase4e-result-status,
+  .phase4f-result-status,
+  .workspace-switch-status
+) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-weight: var(--v45-weight-semibold) !important;
+}
+
+body.v45-ui-foundation :where(
+  .empty-state,
+  .v45-empty-state,
+  .loading-state,
+  .v45-loading-state,
+  .coffee-list-state,
+  .inventory-list-state,
+  .brew-log-state,
+  .phase4e-list-state,
+  .phase4f-list-state,
+  .access-notice
+) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+body.v45-ui-foundation :where(.modal-card, .v45-modal__panel, .v45-confirm-dialog) {
+  max-width: min(720px, calc(100vw - 2 * var(--v45-page-gutter))) !important;
+}
+
+body.v45-ui-foundation :where(.modal-close, [data-ui-close]) {
+  min-width: var(--v45-touch-target) !important;
+  min-height: var(--v45-touch-target) !important;
+}
+
+body.v45-ui-foundation :where(.v45-confirm-dialog__actions, .modal-actions, .dialog-actions) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+/* Cara Pakai: concise operational guidance, no marketing hero treatment. */
+body.v45-ui-foundation #tab-guide .guide-first-run-lane {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-guide .first-run-card {
+  width: 100%;
+  min-height: 0;
+  display: grid !important;
+  grid-template-columns: var(--v45-touch-target) minmax(0, 1fr);
+  align-content: start;
+  align-items: center;
+  gap: var(--v45-space-1) var(--v45-space-3);
+  color: var(--v45-color-text) !important;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-guide .first-run-card:hover {
+  border-color: var(--v45-color-border-strong) !important;
+  background: var(--v45-color-surface-subtle) !important;
+  box-shadow: var(--v45-shadow-sm) !important;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-guide .first-run-card b {
+  grid-row: 1 / span 2;
+  width: var(--v45-touch-target);
+  height: var(--v45-touch-target);
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-brand);
+  background: var(--v45-color-brand-soft);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-guide .first-run-card strong {
+  align-self: end;
+  margin: 0;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-md);
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation #tab-guide .first-run-card small {
+  align-self: start;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: 1.45;
+}
+
+body.v45-ui-foundation #tab-guide .guide-demo-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v45-space-5);
+  padding: var(--v45-space-4) var(--v45-space-5);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  background: var(--v45-color-surface-subtle);
+  box-shadow: none;
+}
+
+body.v45-ui-foundation #tab-guide .guide-demo-callout :where(strong, p) {
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-guide .guide-demo-callout strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-md);
+}
+
+body.v45-ui-foundation #tab-guide .guide-demo-callout p {
+  max-width: var(--v45-reading-width);
+  margin-top: var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation #tab-guide .guide-operational-shell {
+  overflow: visible;
+  background: var(--v45-color-surface) !important;
+}
+
+body.v45-ui-foundation #tab-guide :where(.guide-flow-grid, .guide-faq-grid) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-guide .guide-faq-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.v45-ui-foundation #tab-guide :where(
+  .guide-flow-card,
+  .guide-menu-card,
+  .guide-faq-card,
+  .guide-note-box,
+  .guide-role-panel-premium
+) {
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  color: var(--v45-color-text);
+  background: var(--v45-color-surface-subtle);
+  box-shadow: none;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-guide :where(.guide-flow-card, .guide-menu-card, .guide-faq-card, .guide-note-box):hover {
+  border-color: var(--v45-color-border-strong);
+  box-shadow: none;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-guide .guide-flow-step {
+  width: 36px;
+  height: 36px;
+  margin: 0 0 var(--v45-space-3);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-text-inverse);
+  background: var(--v45-color-brand);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-guide :where(
+  .guide-flow-card h3,
+  .guide-faq-card h4,
+  .guide-menu-card h4,
+  .guide-section-head h3,
+  .guide-role-header h3
+) {
+  margin: 0;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-md);
+  letter-spacing: -0.015em;
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation #tab-guide :where(
+  .guide-flow-card p,
+  .guide-faq-card p,
+  .guide-menu-card p,
+  .guide-role-header p,
+  .guide-section-copy,
+  .guide-note-box li
+) {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation #tab-guide .guide-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: end;
+  gap: var(--v45-space-4);
+  margin: var(--v45-space-6) 0 var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-guide .guide-kicker {
+  margin: 0 0 var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.07em;
+}
+
+body.v45-ui-foundation #tab-guide .guide-section-copy {
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-tabs-premium {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--v45-space-2);
+  margin: 0 0 var(--v45-space-3);
+  padding: 0;
+  border: 0;
+  overflow: visible;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn {
+  min-height: var(--v45-touch-target);
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-1);
+  padding: var(--v45-space-3);
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-sm) !important;
+  color: var(--v45-color-text) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: none !important;
+  text-align: left;
+  transform: none !important;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn::after {
+  display: none;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn:hover {
+  border-color: var(--v45-color-border-strong) !important;
+  background: var(--v45-color-surface-subtle) !important;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn.active {
+  border-color: var(--v45-color-brand) !important;
+  background: var(--v45-color-brand-soft) !important;
+  box-shadow: inset 0 -3px 0 var(--v45-color-brand) !important;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn :where(.role-btn-kicker, strong, small) {
+  color: inherit !important;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn .role-btn-kicker {
+  font-size: var(--v45-font-size-xs);
+  letter-spacing: 0.06em;
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn strong {
+  font-size: var(--v45-font-size-md);
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-btn small {
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-guide .guide-role-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: var(--v45-space-4);
+  margin-bottom: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-guide .guide-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+  margin: 0 0 var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-guide .guide-path span {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--v45-space-1) var(--v45-space-3);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-guide .guide-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-guide .guide-note-box {
+  margin-top: var(--v45-space-3);
+  border-left: 3px solid var(--v45-color-info);
+  background: var(--v45-color-info-soft);
+}
+
+/* Saran: concise two-panel form with an announced persistence note. */
+body.v45-ui-foundation #tab-suggestion .two-col {
+  gap: var(--v45-page-section-gap) !important;
+}
+
+body.v45-ui-foundation #tab-suggestion :where(.suggestion-form-panel, .suggestion-guidance-panel) {
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-suggestion .global-section-heading {
+  margin-bottom: 0;
+}
+
+body.v45-ui-foundation #tab-suggestion .suggestion-guidance-panel .workflow {
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-suggestion #suggestionSaveInfo {
+  margin: 0;
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-left: 3px solid var(--v45-color-info);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-info-soft);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+}
+
+@media (max-width: 980px) {
+  body.v45-ui-foundation :is(
+    #tab-home .home-command-header,
+    #tab-guide .global-page-header,
+    #tab-brew .brew-page-header,
+    #tab-input-seduhan .manual-brew-page-header,
+    #tab-beans .coffee-page-header,
+    #tab-stock .inventory-page-header,
+    #tab-qa .brew-log-page-header,
+    #tab-public-brews .public-brews-page-header,
+    #tab-analytics .analytics-page-header,
+    #tab-quality .operations-page-header,
+    #tab-reports .operations-page-header,
+    #tab-suggestion .global-page-header,
+    #tab-admin .operations-page-header,
+    #tab-library .operations-page-header
+  ) {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation :is(
+    .home-context-badges,
+    .global-page-actions,
+    .brew-page-header__actions,
+    .manual-brew-page-header__actions,
+    .coffee-page-header__actions,
+    .inventory-page-header__actions,
+    .brew-log-page-header__actions,
+    .phase4e-page-actions,
+    .phase4f-page-actions
+  ) {
+    justify-content: flex-start !important;
+  }
+
+  body.v45-ui-foundation #tab-guide :where(.guide-flow-grid, .guide-role-tabs-premium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.v45-ui-foundation #tab-guide :where(.guide-section-head, .guide-role-header) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body.v45-ui-foundation {
+    --v45-panel-padding: var(--v45-space-4);
+  }
+
+  body.v45-ui-foundation :is(
+    .global-page-actions,
+    .brew-page-header__actions,
+    .manual-brew-page-header__actions,
+    .coffee-page-header__actions,
+    .inventory-page-header__actions,
+    .brew-log-page-header__actions,
+    .phase4e-page-actions,
+    .phase4f-page-actions
+  ) {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  body.v45-ui-foundation :is(
+    .global-page-actions,
+    .brew-page-header__actions,
+    .manual-brew-page-header__actions,
+    .coffee-page-header__actions,
+    .inventory-page-header__actions,
+    .brew-log-page-header__actions,
+    .phase4e-page-actions,
+    .phase4f-page-actions
+  ) > :where(button, .button-primary, .button-secondary, .button-ghost) {
+    flex: 1 1 180px;
+  }
+
+  body.v45-ui-foundation :is(
+    .global-section-heading,
+    .home-section-heading,
+    .brew-section-heading,
+    .manual-brew-section__heading,
+    .coffee-section-heading,
+    .inventory-section-heading,
+    .brew-log-section-heading,
+    .qa-section__heading,
+    .phase4e-section-heading,
+    .phase4f-section-heading
+  ) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation :is(
+    .global-section-heading,
+    .home-section-heading,
+    .brew-section-heading,
+    .manual-brew-section__heading,
+    .coffee-section-heading,
+    .inventory-section-heading,
+    .brew-log-section-heading,
+    .qa-section__heading,
+    .phase4e-section-heading,
+    .phase4f-section-heading
+  ) > :where(p, small) {
+    max-width: var(--v45-reading-width) !important;
+    text-align: left !important;
+  }
+
+  body.v45-ui-foundation #tab-guide :where(
+    .guide-first-run-lane,
+    .guide-flow-grid,
+    .guide-role-tabs-premium,
+    .guide-menu-grid,
+    .guide-faq-grid
+  ) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.v45-ui-foundation #tab-guide .guide-demo-callout {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation #tab-guide .guide-demo-callout button {
+    width: 100%;
+  }
+
+  body.v45-ui-foundation :where(.v45-confirm-dialog__actions, .modal-actions, .dialog-actions) > button {
+    flex: 1 1 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.v45-ui-foundation :is(
+    #tab-home .home-command-header h2,
+    #tab-guide .global-page-header h2,
+    #tab-brew .brew-page-header h2,
+    #tab-input-seduhan .manual-brew-page-header h2,
+    #tab-beans .coffee-page-header h2,
+    #tab-stock .inventory-page-header h2,
+    #tab-qa .brew-log-page-header h2,
+    #tab-public-brews .public-brews-page-header h2,
+    #tab-analytics .analytics-page-header h2,
+    #tab-quality .operations-page-header h2,
+    #tab-reports .operations-page-header h2,
+    #tab-suggestion .global-page-header h2,
+    #tab-admin .operations-page-header h2,
+    #tab-library .operations-page-header h2
+  ) {
+    font-size: var(--v45-font-size-xl) !important;
+  }
+
+  body.v45-ui-foundation :is(
+    .global-page-actions,
+    .brew-page-header__actions,
+    .manual-brew-page-header__actions,
+    .coffee-page-header__actions,
+    .inventory-page-header__actions,
+    .brew-log-page-header__actions,
+    .phase4e-page-actions,
+    .phase4f-page-actions
+  ) > :where(button, .button-primary, .button-secondary, .button-ghost) {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  body.v45-ui-foundation :where(.modal-card, .v45-modal__panel, .v45-confirm-dialog) {
+    max-width: calc(100vw - 1rem) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.v45-ui-foundation #tab-guide :where(.first-run-card, .guide-role-btn, .guide-flow-card, .guide-menu-card, .guide-faq-card) {
+    transition: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  body.v45-ui-foundation :where(.panel, .card, .v45-card, .status-pill, .v45-badge) {
+    border: 1px solid CanvasText !important;
+  }
+
+  body.v45-ui-foundation :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid Highlight !important;
+  }
+}

@@ -1,0 +1,732 @@
+/* V45 Phase 4D Coffee and Inventory operational workspaces.
+   Route-scoped presentation layered after the shared V45 foundation. */
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) {
+  width: 100%;
+  min-width: 0;
+}
+
+body.v45-ui-foundation :where(#tab-beans.coffee-beans-workspace, #tab-stock.inventory-workspace) {
+  display: grid;
+  gap: var(--v45-space-5);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header, .inventory-page-header) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-5);
+  padding: var(--v45-space-1) 0 var(--v45-space-2);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header__eyebrow, .inventory-page-header__eyebrow, .coffee-section-heading__eyebrow, .inventory-section-heading__eyebrow, .coffee-detail-header > span, .inventory-detail-header > span) {
+  display: block;
+  margin: 0 0 var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header h2, .inventory-page-header h2, .coffee-section-heading h3, .inventory-section-heading h3, .coffee-detail-header h2, .inventory-detail-header h2) {
+  margin: 0;
+  color: var(--v45-color-text);
+  letter-spacing: -0.02em;
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header h2, .inventory-page-header h2) {
+  font-size: var(--v45-font-size-2xl);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-section-heading h3, .inventory-section-heading h3) {
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header p, .inventory-page-header p, .coffee-section-heading p, .inventory-section-heading p, .coffee-detail-header p, .inventory-detail-header p) {
+  max-width: 70ch;
+  margin: var(--v45-space-2) 0 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header__actions, .inventory-page-header__actions) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) .access-notice {
+  margin: 0 !important;
+  padding: var(--v45-space-4) !important;
+  border: var(--v45-border-thin) !important;
+  border-left: 4px solid var(--v45-color-warning) !important;
+  border-radius: var(--v45-radius-sm) !important;
+  color: var(--v45-color-text) !important;
+  background: var(--v45-color-warning-soft) !important;
+}
+
+body.v45-ui-foundation :where(#tab-beans, #tab-stock) .access-notice small {
+  display: block;
+  margin-top: var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-summary, #tab-stock .inventory-summary) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-summary__item, #tab-stock .inventory-summary__item) {
+  min-width: 0;
+  display: grid;
+  gap: var(--v45-space-1);
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  background: var(--v45-color-surface);
+  box-shadow: var(--v45-shadow-xs);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-summary__item, #tab-stock .inventory-summary__item) > span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-summary__item, #tab-stock .inventory-summary__item) > strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-2xl);
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-summary__item, #tab-stock .inventory-summary__item) > small {
+  overflow: hidden;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-directory, #tab-stock .inventory-list, #tab-stock .inventory-editor, #tab-stock .inventory-workspace-status) {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-4);
+  padding: var(--v45-space-5) !important;
+  overflow: visible !important;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-section-heading, #tab-stock .inventory-section-heading) {
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-section-heading, #tab-stock .inventory-section-heading) > div {
+  min-width: 0;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-result-status, #tab-stock .inventory-result-status) {
+  flex: 0 0 auto;
+  max-width: 36ch;
+  margin: 0;
+  padding: var(--v45-space-2) var(--v45-space-3);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  text-align: right;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-filters, #tab-stock .inventory-filters) {
+  display: grid;
+  align-items: end;
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-4);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-beans .coffee-filters {
+  grid-template-columns: minmax(240px, 1.8fr) repeat(3, minmax(140px, 1fr)) auto;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-filters {
+  grid-template-columns: minmax(260px, 1.8fr) repeat(2, minmax(155px, 1fr)) auto;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-filter, #tab-stock .inventory-filter) {
+  min-width: 0;
+  display: grid !important;
+  gap: var(--v45-space-2);
+  margin: 0 !important;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-filter, #tab-stock .inventory-filter) > span:first-child {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-filter-reset, #tab-stock .inventory-filter-reset) {
+  min-height: var(--v45-control-height);
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state) {
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--v45-space-2);
+  padding: var(--v45-space-6);
+  border: 1px dashed var(--v45-color-border-strong);
+  border-radius: var(--v45-radius-md);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  text-align: center;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state).hidden {
+  display: none !important;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state) > strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state) > p {
+  max-width: 58ch;
+  margin: 0;
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state)[data-state="loading"]::before {
+  width: 22px;
+  height: 22px;
+  content: "";
+  border: 3px solid var(--v45-color-surface-muted);
+  border-top-color: var(--v45-color-brand);
+  border-radius: 50%;
+  animation: v45-phase4d-spin 700ms linear infinite;
+}
+
+@keyframes v45-phase4d-spin {
+  to { transform: rotate(360deg); }
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-table-shell, #tab-stock .inventory-table-shell) {
+  max-height: none !important;
+  overflow-x: auto;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-table-shell, #tab-stock .inventory-table-shell) table {
+  width: 100%;
+  min-width: 900px;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-table-shell, #tab-stock .inventory-table-shell) :where(th, td) {
+  vertical-align: top;
+  white-space: normal;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-primary, #tab-stock .inventory-primary) {
+  min-width: 160px;
+  display: grid;
+  gap: 2px;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-primary, #tab-stock .inventory-primary) > strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-primary, #tab-stock .inventory-primary) > small,
+body.v45-ui-foundation :where(#tab-beans .coffee-cell-meta, #tab-stock .inventory-cell-meta) {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-stock-stack, #tab-stock .inventory-quantity-stack, #tab-stock .inventory-status-stack) {
+  display: grid;
+  justify-items: start;
+  gap: var(--v45-space-1);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-stock-value, #tab-stock .inventory-quantity-value) {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-status-pill, #tab-stock .inventory-status-pill) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px var(--v45-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--v45-radius-pill);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation :where(#tab-beans .stock-ready, #tab-stock .stock-ready) {
+  border-color: color-mix(in srgb, var(--v45-color-success) 25%, transparent);
+  color: var(--v45-color-success);
+  background: var(--v45-color-success-soft);
+}
+
+body.v45-ui-foundation :where(#tab-beans .stock-low, #tab-stock .stock-low) {
+  border-color: color-mix(in srgb, var(--v45-color-warning) 25%, transparent);
+  color: var(--v45-color-warning);
+  background: var(--v45-color-warning-soft);
+}
+
+body.v45-ui-foundation :where(#tab-beans .stock-critical, #tab-stock .stock-critical, #tab-beans .stock-empty, #tab-stock .stock-empty) {
+  border-color: color-mix(in srgb, var(--v45-color-danger) 24%, transparent);
+  color: var(--v45-color-danger);
+  background: var(--v45-color-danger-soft);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-actions, #tab-stock .inventory-actions) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--v45-space-1);
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-actions, #tab-stock .inventory-actions) button {
+  min-height: var(--v45-control-height-sm);
+  padding: 0 var(--v45-space-3) !important;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation :where(#tab-beans .coffee-mobile-list, #tab-stock .inventory-mobile-list) {
+  display: none;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-management-grid {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.32fr);
+  align-items: start;
+  gap: var(--v45-space-5);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-section-heading--compact {
+  align-items: center;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-section-heading--form {
+  align-items: flex-start;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-form {
+  display: grid !important;
+  gap: var(--v45-space-5);
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field-group {
+  min-width: 0;
+  display: grid;
+  gap: var(--v45-space-4);
+  margin: 0;
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field-group > legend {
+  padding: 0 var(--v45-space-2);
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field-group--quantity {
+  border-color: color-mix(in srgb, var(--v45-color-info) 28%, var(--v45-color-border));
+  background: var(--v45-color-info-soft);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field-grid {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field-grid--profile {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field {
+  min-width: 0;
+  display: grid !important;
+  align-content: start;
+  gap: var(--v45-space-2);
+  margin: 0 !important;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field--wide {
+  grid-column: 1 / -1;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field > small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-medium);
+  line-height: 1.4;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-field em {
+  color: var(--v45-color-danger);
+  font-style: normal;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-unit-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-unit-input input {
+  width: 100%;
+  min-width: 0;
+  padding-right: 44px !important;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-unit-input > span {
+  position: absolute;
+  right: var(--v45-space-3);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  pointer-events: none;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-unit-input--prefix input {
+  padding-right: var(--v45-space-3) !important;
+  padding-left: 38px !important;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-unit-input--prefix > span {
+  left: var(--v45-space-3);
+  right: auto;
+}
+
+body.v45-ui-foundation #tab-stock .inventory-quantity-context {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-quantity-context > div {
+  display: grid;
+  gap: var(--v45-space-1);
+  padding: var(--v45-space-3);
+  border: 1px solid color-mix(in srgb, var(--v45-color-info) 22%, var(--v45-color-border));
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-quantity-context span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-quantity-context strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-xl);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-form-actions,
+body.v45-ui-foundation #tab-stock .inventory-workspace-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-form-error {
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border: 1px solid color-mix(in srgb, var(--v45-color-danger) 28%, var(--v45-color-border));
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-danger);
+  background: var(--v45-color-danger-soft);
+  font-size: var(--v45-font-size-sm);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-stock .inventory-workspace-status {
+  position: sticky;
+  top: calc(var(--v45-topbar-min-height) + var(--v45-space-4));
+}
+
+body.v45-ui-foundation #tab-stock .inventory-safety-note {
+  margin: 0;
+  padding: var(--v45-space-3);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-accent-soft);
+  font-size: var(--v45-font-size-xs);
+  line-height: 1.5;
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) {
+  z-index: var(--v45-z-modal) !important;
+  padding: var(--v45-space-4) !important;
+  background: var(--v45-color-overlay) !important;
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) :where(.coffee-detail-card, .inventory-detail-card) {
+  width: min(760px, calc(100vw - 2 * var(--v45-space-4)));
+  max-height: min(780px, calc(100dvh - 2 * var(--v45-space-4)));
+  overflow: auto;
+  padding: var(--v45-space-6) !important;
+  border: 0 !important;
+  border-radius: var(--v45-radius-lg) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: var(--v45-shadow-lg) !important;
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) :where(.coffee-detail-body, .inventory-detail-body) {
+  display: grid;
+  gap: var(--v45-space-4);
+  margin-top: var(--v45-space-5);
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-section {
+  display: grid;
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-md);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-section h3 {
+  margin: 0;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-grid > div {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-grid span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-grid strong,
+body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-notes {
+  overflow-wrap: anywhere;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+}
+
+@media (max-width: 1199px) {
+  body.v45-ui-foundation :where(#tab-beans .coffee-summary, #tab-stock .inventory-summary) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.v45-ui-foundation #tab-beans .coffee-filters,
+  body.v45-ui-foundation #tab-stock .inventory-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-filter--search, #tab-stock .inventory-filter--search) {
+    grid-column: 1 / -1;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-filter-reset, #tab-stock .inventory-filter-reset) {
+    justify-self: start;
+  }
+
+  body.v45-ui-foundation #tab-stock .inventory-management-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.v45-ui-foundation #tab-stock .inventory-workspace-status {
+    position: static;
+  }
+
+  body.v45-ui-foundation #tab-stock .inventory-field-grid--profile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header, .inventory-page-header, .coffee-section-heading, .inventory-section-heading) {
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header__actions, .inventory-page-header__actions) {
+    justify-content: stretch;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans, #tab-stock) :where(.coffee-page-header__actions, .inventory-page-header__actions) > button {
+    min-height: 44px;
+    flex: 1 1 150px;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-summary, #tab-stock .inventory-summary) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--v45-space-2);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-summary__item, #tab-stock .inventory-summary__item) {
+    padding: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-directory, #tab-stock .inventory-list, #tab-stock .inventory-editor, #tab-stock .inventory-workspace-status) {
+    padding: var(--v45-space-4) !important;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-result-status, #tab-stock .inventory-result-status) {
+    align-self: flex-start;
+    max-width: none;
+    text-align: left;
+  }
+
+  body.v45-ui-foundation #tab-beans .coffee-filters,
+  body.v45-ui-foundation #tab-stock .inventory-filters,
+  body.v45-ui-foundation #tab-stock .inventory-field-grid,
+  body.v45-ui-foundation #tab-stock .inventory-field-grid--profile,
+  body.v45-ui-foundation #tab-stock .inventory-quantity-context,
+  body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) .record-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-filter--search, #tab-stock .inventory-filter--search) {
+    grid-column: auto;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-filter-reset, #tab-stock .inventory-filter-reset) {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-table-shell, #tab-stock .inventory-table-shell) {
+    display: none;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-list, #tab-stock .inventory-mobile-list) {
+    display: grid;
+    gap: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card, #tab-stock .inventory-mobile-card) {
+    min-width: 0;
+    display: grid;
+    gap: var(--v45-space-3);
+    padding: var(--v45-space-4);
+    border: var(--v45-border-thin);
+    border-radius: var(--v45-radius-md);
+    background: var(--v45-color-surface);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__header, #tab-stock .inventory-mobile-card__header) {
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--v45-space-3);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__header, #tab-stock .inventory-mobile-card__header) > div {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__header, #tab-stock .inventory-mobile-card__header) strong {
+    overflow-wrap: anywhere;
+    color: var(--v45-color-text);
+    font-size: var(--v45-font-size-md);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__header, #tab-stock .inventory-mobile-card__header) small,
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__meta, #tab-stock .inventory-mobile-card__meta) {
+    color: var(--v45-color-text-muted);
+    font-size: var(--v45-font-size-xs);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card__meta, #tab-stock .inventory-mobile-card__meta) {
+    display: grid;
+    gap: var(--v45-space-1);
+  }
+
+  body.v45-ui-foundation :where(#tab-beans .coffee-mobile-card, #tab-stock .inventory-mobile-card) :where(.coffee-actions, .inventory-actions) button {
+    min-height: 44px;
+    flex: 1 1 100px;
+  }
+
+  body.v45-ui-foundation #tab-stock .inventory-field--wide {
+    grid-column: auto;
+  }
+
+  body.v45-ui-foundation #tab-stock .inventory-form-actions > button,
+  body.v45-ui-foundation #tab-stock .inventory-workspace-actions > button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) {
+    align-items: flex-end !important;
+    padding: 0 !important;
+  }
+
+  body.v45-ui-foundation :where(#coffeeDetailModal, #stockDetailModal) :where(.coffee-detail-card, .inventory-detail-card) {
+    width: 100%;
+    max-width: none;
+    max-height: 88dvh;
+    padding: var(--v45-space-5) !important;
+    border-radius: var(--v45-radius-lg) var(--v45-radius-lg) 0 0 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.v45-ui-foundation :where(#tab-beans .coffee-summary, #tab-stock .inventory-summary) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.v45-ui-foundation :where(#tab-beans .coffee-list-state, #tab-stock .inventory-list-state)[data-state="loading"]::before {
+    animation: none;
+  }
+}

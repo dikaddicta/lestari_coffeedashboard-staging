@@ -1,0 +1,927 @@
+/* V45 Phase 4E Analytics and Public Brews.
+   Route-scoped presentation layered after the shared foundation and legacy CSS. */
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) {
+  width: 100%;
+  min-width: 0;
+}
+
+body.v45-ui-foundation :where(#tab-analytics.analytics-workspace, #tab-public-brews.public-brews-workspace) {
+  gap: var(--v45-space-5);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.analytics-page-header, .public-brews-page-header) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-5);
+  padding: var(--v45-space-1) 0 var(--v45-space-2);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.phase4e-page-eyebrow, .phase4e-section-eyebrow) {
+  display: block;
+  margin: 0 0 var(--v45-space-1);
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.analytics-page-header h2, .public-brews-page-header h2, .phase4e-section-heading h3) {
+  margin: 0;
+  color: var(--v45-color-text);
+  letter-spacing: -0.025em;
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.analytics-page-header h2, .public-brews-page-header h2) {
+  font-size: var(--v45-font-size-2xl);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-section-heading h3 {
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.analytics-page-header p, .public-brews-page-header p, .phase4e-section-heading p) {
+  max-width: 70ch;
+  margin: var(--v45-space-2) 0 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-sm);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-page-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-section-heading {
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-section-heading > div {
+  min-width: 0;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-section-heading > :where(small, p) {
+  max-width: 52ch;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+  text-align: right;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-result-status {
+  flex: 0 0 auto;
+  max-width: 40ch;
+  margin: 0;
+  padding: var(--v45-space-2) var(--v45-space-3);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  text-align: right;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-filter {
+  min-width: 0;
+  display: grid !important;
+  gap: var(--v45-space-2);
+  margin: 0 !important;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-filter > span:first-child {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-list-state {
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--v45-space-2);
+  padding: var(--v45-space-6);
+  border: 1px dashed var(--v45-color-border-strong);
+  border-radius: var(--v45-radius-md);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  text-align: center;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-list-state.hidden {
+  display: none !important;
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-list-state > strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-list-state > p {
+  max-width: 58ch;
+  margin: 0;
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-list-state[data-state="loading"]::before {
+  width: 22px;
+  height: 22px;
+  content: "";
+  border: 3px solid var(--v45-color-surface-muted);
+  border-top-color: var(--v45-color-brand);
+  border-radius: 50%;
+  animation: v45-phase4e-spin 700ms linear infinite;
+}
+
+@keyframes v45-phase4e-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Analytics */
+body.v45-ui-foundation #tab-analytics .analytics-filter-panel,
+body.v45-ui-foundation #tab-public-brews .public-brews-directory {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: var(--v45-space-4);
+  padding: var(--v45-space-5) !important;
+  overflow: visible !important;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-toolbar-v41 {
+  grid-template-columns: repeat(3, minmax(150px, 1fr)) auto;
+  gap: var(--v45-space-3);
+  margin: 0;
+  padding: var(--v45-space-4);
+  border: 0;
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-finance-notice {
+  min-height: 0;
+  margin: 0;
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-left: 4px solid var(--v45-color-info);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-info-soft);
+  font-size: var(--v45-font-size-sm);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-finance-notice::before {
+  flex-basis: 22px;
+  width: 22px;
+  height: 22px;
+  background: var(--v45-color-info);
+}
+
+body.v45-ui-foundation #tab-analytics :where(.analytics-summary-section, .analytics-comparison-section) {
+  min-width: 0;
+  display: grid;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-metric-card {
+  min-width: 0;
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-4) !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: var(--v45-shadow-xs) !important;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-metric-card > span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-metric-card > strong {
+  overflow-wrap: anywhere;
+  color: var(--v45-color-text);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-metric-card > small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-context-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-context-metric {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border-right: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-context-metric:last-child {
+  border-right: 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-context-metric span,
+body.v45-ui-foundation #tab-analytics .analytics-context-metric small {
+  overflow: hidden;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-context-metric strong {
+  overflow: hidden;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-md);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation #tab-analytics :where(.analytics-decision-grid, .analytics-resource-grid, .analytics-split-grid) {
+  min-width: 0;
+  display: grid;
+  gap: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-decision-grid {
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.85fr);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-resource-grid,
+body.v45-ui-foundation #tab-analytics .analytics-split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card {
+  min-width: 0;
+  padding: var(--v45-space-5) !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: var(--v45-shadow-xs) !important;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card:hover {
+  transform: none !important;
+  box-shadow: var(--v45-shadow-xs) !important;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--v45-space-4);
+  margin-bottom: var(--v45-space-4);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card-head > div {
+  min-width: 0;
+  display: grid;
+  gap: var(--v45-space-1);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card-head strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+  line-height: var(--v45-line-tight);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-card-head > small {
+  max-width: 34ch;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+  text-align: right;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-chart {
+  min-height: 260px;
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-line-chart {
+  min-height: 260px;
+  padding: var(--v45-space-2);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-trend-equivalent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+  margin-top: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-trend-equivalent > span {
+  display: inline-flex;
+  gap: var(--v45-space-1);
+  padding: 5px var(--v45-space-2);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-trend-equivalent b {
+  color: var(--v45-color-text);
+}
+
+body.v45-ui-foundation #tab-analytics :where(.analytics-insight-list, .analytics-rank-list, .analytics-cost-breakdown) {
+  display: grid;
+  gap: var(--v45-space-2);
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-insight-item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-3) 0;
+  border: 0;
+  border-bottom: var(--v45-border-thin);
+  border-radius: 0;
+  background: transparent;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-insight-item:last-child {
+  border-bottom: 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-insight-item > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--v45-color-brand-hover);
+  background: var(--v45-color-brand-soft);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-bold);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-insight-item p {
+  margin: var(--v45-space-1) 0 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-rank-item {
+  padding: var(--v45-space-3) 0;
+  border-bottom: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-rank-item:last-child {
+  border-bottom: 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-rank-item strong {
+  color: var(--v45-color-text);
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-consumption-chart {
+  min-height: 260px;
+  padding: var(--v45-space-4) 0 0;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-table-card .table-wrap {
+  max-height: none;
+  overflow-x: auto;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-table-card table {
+  min-width: 860px;
+}
+
+body.v45-ui-foundation #tab-analytics .analytics-empty {
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  padding: var(--v45-space-5);
+  border: 1px dashed var(--v45-color-border-strong);
+  border-radius: var(--v45-radius-sm);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  text-align: center;
+}
+
+/* Public Brews */
+body.v45-ui-foundation #tab-public-brews .public-explorer-toolbar {
+  grid-template-columns: minmax(240px, 1.7fr) repeat(3, minmax(140px, 0.8fr));
+  align-items: end;
+  gap: var(--v45-space-3);
+  margin: 0;
+  padding: var(--v45-space-4);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-filter-details {
+  grid-column: 1 / -1;
+  border-top: var(--v45-border-thin);
+  padding-top: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-filter-details > summary {
+  width: max-content;
+  cursor: pointer;
+  color: var(--v45-color-brand-hover);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-filter-details__body {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+  padding-top: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-explorer-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-stat-card {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  gap: 2px;
+  padding: var(--v45-space-3) var(--v45-space-4);
+  border: 0;
+  border-right: var(--v45-border-thin);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-stat-card:last-child {
+  border-right: 0;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-stat-card span,
+body.v45-ui-foundation #tab-public-brews .public-stat-card small {
+  overflow: hidden;
+  color: var(--v45-color-text-muted) !important;
+  font-size: var(--v45-font-size-xs) !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-stat-card strong {
+  overflow: hidden;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-font-size-md) !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-brew-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--v45-space-3);
+  margin: 0;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-card {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-4) !important;
+  border: var(--v45-border-thin) !important;
+  border-radius: var(--v45-radius-md) !important;
+  background: var(--v45-color-surface) !important;
+  box-shadow: var(--v45-shadow-xs) !important;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-card::before {
+  display: none;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-card:hover {
+  transform: none !important;
+  border-color: var(--v45-color-border-strong) !important;
+  box-shadow: var(--v45-shadow-sm) !important;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-card-topline em {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-style: normal;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-main {
+  display: block;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-method {
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  color: var(--v45-color-brand-hover);
+  background: transparent;
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-card h3 {
+  margin: var(--v45-space-1) 0 !important;
+  color: var(--v45-color-text) !important;
+  font-size: var(--v45-font-size-lg) !important;
+  line-height: var(--v45-line-tight) !important;
+  letter-spacing: -0.02em !important;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-card p {
+  margin: 0;
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-badge {
+  display: flex;
+  align-items: baseline;
+  gap: var(--v45-space-1);
+  margin-top: var(--v45-space-2);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-badge :where(small, strong) {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-recipe-strip--catalog {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: var(--v45-space-1);
+  margin: 0 !important;
+  padding: 0;
+  background: transparent;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-recipe-strip--catalog span {
+  padding: 4px var(--v45-space-2);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-pill);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-catalog-notes {
+  flex: 1;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+  background: transparent;
+  color: var(--v45-color-text-muted) !important;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-card-footer {
+  display: grid;
+  gap: var(--v45-space-3);
+  margin-top: auto;
+  padding-top: var(--v45-space-3);
+  border-top: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-card-footer > div,
+body.v45-ui-foundation #tab-public-brews .public-brew-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-card-footer button,
+body.v45-ui-foundation #tab-public-brews .public-brew-actions button {
+  min-height: var(--v45-control-height-sm);
+  padding: 0 var(--v45-space-3) !important;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-empty-card {
+  grid-column: 1 / -1;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--v45-space-2);
+  padding: var(--v45-space-6);
+  border: 1px dashed var(--v45-color-border-strong);
+  border-radius: var(--v45-radius-md);
+  color: var(--v45-color-text-muted);
+  background: var(--v45-color-surface-subtle);
+  text-align: center;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-empty-card strong {
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-lg);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-table-disclosure {
+  border-top: var(--v45-border-thin);
+  padding-top: var(--v45-space-3);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-table-disclosure > summary {
+  cursor: pointer;
+  color: var(--v45-color-text);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-table-disclosure > summary span {
+  display: inline-grid;
+  gap: 2px;
+  margin-left: var(--v45-space-1);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-table-disclosure > summary small {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation #tab-public-brews .public-brew-table-wrap {
+  max-height: none;
+  margin-top: var(--v45-space-3);
+  overflow-x: auto;
+}
+
+body.v45-ui-foundation #tab-public-brews .public-brew-table-wrap table {
+  min-width: 760px;
+}
+
+/* Public detail lives at shell level, outside the route panel. */
+body.v45-ui-foundation .public-brew-detail-card {
+  width: min(820px, calc(100vw - 32px));
+  max-height: min(86vh, 840px);
+  overflow-y: auto;
+}
+
+body.v45-ui-foundation .public-detail-header {
+  display: grid;
+  gap: var(--v45-space-2);
+  padding-right: var(--v45-space-8);
+}
+
+body.v45-ui-foundation .public-detail-header > span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+  font-weight: var(--v45-weight-semibold);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+body.v45-ui-foundation .public-detail-header h3 {
+  margin: 0;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-xl);
+}
+
+body.v45-ui-foundation .public-detail-header p {
+  margin: 0;
+  color: var(--v45-color-text-muted);
+}
+
+body.v45-ui-foundation .public-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v45-space-4);
+  margin-top: var(--v45-space-5);
+}
+
+body.v45-ui-foundation .public-detail-grid > section {
+  min-width: 0;
+  padding: var(--v45-space-4);
+  border: var(--v45-border-thin);
+  border-radius: var(--v45-radius-sm);
+  background: var(--v45-color-surface-subtle);
+}
+
+body.v45-ui-foundation .public-detail-grid h4 {
+  margin: 0 0 var(--v45-space-3);
+  color: var(--v45-color-text);
+}
+
+body.v45-ui-foundation .public-detail-grid .detail-section-wide {
+  grid-column: 1 / -1;
+}
+
+body.v45-ui-foundation .public-detail-grid .detail-line {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.7fr) minmax(0, 1.3fr);
+  gap: var(--v45-space-3);
+  padding: var(--v45-space-2) 0;
+  border-bottom: var(--v45-border-thin);
+}
+
+body.v45-ui-foundation .public-detail-grid .detail-line:last-child {
+  border-bottom: 0;
+}
+
+body.v45-ui-foundation .public-detail-grid .detail-line span {
+  color: var(--v45-color-text-muted);
+  font-size: var(--v45-font-size-xs);
+}
+
+body.v45-ui-foundation .public-detail-grid .detail-line strong,
+body.v45-ui-foundation .public-detail-grid .detail-text {
+  overflow-wrap: anywhere;
+  color: var(--v45-color-text);
+  font-size: var(--v45-font-size-sm);
+  line-height: var(--v45-line-normal);
+}
+
+body.v45-ui-foundation .public-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v45-space-2);
+  margin-top: var(--v45-space-4);
+}
+
+@media (max-width: 1180px) {
+  body.v45-ui-foundation #tab-analytics .analytics-kpi-grid,
+  body.v45-ui-foundation #tab-public-brews .public-explorer-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.v45-ui-foundation #tab-public-brews .public-stat-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  body.v45-ui-foundation #tab-public-brews .public-stat-card:nth-child(-n + 2) {
+    border-bottom: var(--v45-border-thin);
+  }
+
+  body.v45-ui-foundation #tab-public-brews .public-brew-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  body.v45-ui-foundation #tab-analytics .analytics-toolbar-v41,
+  body.v45-ui-foundation #tab-public-brews .public-explorer-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.v45-ui-foundation #tab-analytics :where(.analytics-decision-grid, .analytics-resource-grid) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) :where(.analytics-page-header, .public-brews-page-header, .phase4e-section-heading) {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-page-actions {
+    justify-content: stretch;
+  }
+
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-page-actions button {
+    flex: 1 1 180px;
+  }
+
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-section-heading > :where(small, p),
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) .phase4e-result-status {
+    max-width: none;
+    text-align: left;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-filter-panel,
+  body.v45-ui-foundation #tab-public-brews .public-brews-directory,
+  body.v45-ui-foundation #tab-analytics .analytics-card {
+    padding: var(--v45-space-4) !important;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-toolbar-v41,
+  body.v45-ui-foundation #tab-public-brews .public-explorer-toolbar,
+  body.v45-ui-foundation #tab-public-brews .public-filter-details__body,
+  body.v45-ui-foundation #tab-analytics .analytics-kpi-grid,
+  body.v45-ui-foundation #tab-analytics .analytics-context-metrics,
+  body.v45-ui-foundation #tab-analytics .analytics-split-grid,
+  body.v45-ui-foundation #tab-public-brews .public-brew-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-context-metric,
+  body.v45-ui-foundation #tab-public-brews .public-stat-card {
+    border-right: 0;
+    border-bottom: var(--v45-border-thin);
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-context-metric:last-child,
+  body.v45-ui-foundation #tab-public-brews .public-stat-card:last-child {
+    border-bottom: 0;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-card-head {
+    flex-direction: column;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-card-head > small {
+    max-width: none;
+    text-align: left;
+  }
+
+  body.v45-ui-foundation #tab-analytics .analytics-chart,
+  body.v45-ui-foundation #tab-analytics .analytics-line-chart {
+    min-height: 220px;
+  }
+
+  body.v45-ui-foundation .public-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.v45-ui-foundation .public-detail-grid .detail-section-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body.v45-ui-foundation #tab-public-brews .public-explorer-summary {
+    grid-template-columns: 1fr;
+  }
+
+  body.v45-ui-foundation #tab-public-brews .public-stat-card:nth-child(2) {
+    border-bottom: var(--v45-border-thin);
+  }
+
+  body.v45-ui-foundation .public-detail-grid .detail-line {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) *,
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) *::before,
+  body.v45-ui-foundation :where(#tab-analytics, #tab-public-brews) *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

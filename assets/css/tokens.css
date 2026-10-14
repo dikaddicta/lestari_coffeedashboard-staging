@@ -1,0 +1,140 @@
+/* Lestari V45 UI foundation tokens.
+   Shared shell and components must consume these variables instead of adding
+   page-specific visual values. Legacy --cb-* aliases remain for compatibility. */
+:root {
+  color-scheme: light;
+
+  /* Typography */
+  --v45-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --v45-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --v45-font-size-xs: 0.75rem;
+  --v45-font-size-sm: 0.8125rem;
+  --v45-font-size-md: 0.9375rem;
+  --v45-font-size-lg: 1.0625rem;
+  --v45-font-size-xl: 1.25rem;
+  --v45-font-size-2xl: clamp(1.5rem, 1.25rem + 0.7vw, 2rem);
+  --v45-line-tight: 1.2;
+  --v45-line-normal: 1.55;
+  --v45-line-relaxed: 1.7;
+  --v45-weight-medium: 560;
+  --v45-weight-semibold: 650;
+  --v45-weight-bold: 740;
+
+  /* Neutral surfaces and coffee-oriented accents */
+  --v45-color-canvas: #f6f5f1;
+  --v45-color-surface: #ffffff;
+  --v45-color-surface-subtle: #f1efe9;
+  --v45-color-surface-muted: #e9e6de;
+  --v45-color-overlay: rgba(31, 26, 23, 0.56);
+  --v45-color-sidebar: #241d19;
+  --v45-color-sidebar-hover: #332924;
+  --v45-color-sidebar-active: #f8f5ef;
+  --v45-color-text: #28221e;
+  --v45-color-text-muted: #6d655e;
+  --v45-color-text-subtle: #817870;
+  --v45-color-text-inverse: #fbf9f5;
+  --v45-color-border: #ded9d0;
+  --v45-color-border-strong: #c9c1b6;
+  --v45-color-brand: #704a31;
+  --v45-color-brand-hover: #583722;
+  --v45-color-brand-active: #452a1a;
+  --v45-color-brand-soft: #eee4da;
+  --v45-color-accent: #657158;
+  --v45-color-accent-soft: #e7ebe2;
+  --v45-color-success: #2e6a52;
+  --v45-color-success-soft: #e4f0e9;
+  --v45-color-warning: #925e1b;
+  --v45-color-warning-soft: #f7ead3;
+  --v45-color-danger: #a33f38;
+  --v45-color-danger-soft: #f7e4e2;
+  --v45-color-info: #39657d;
+  --v45-color-info-soft: #e4eef3;
+  --v45-color-focus: #bd6c27;
+
+  /* Spacing */
+  --v45-space-0: 0;
+  --v45-space-1: 0.25rem;
+  --v45-space-2: 0.5rem;
+  --v45-space-3: 0.75rem;
+  --v45-space-4: 1rem;
+  --v45-space-5: 1.25rem;
+  --v45-space-6: 1.5rem;
+  --v45-space-8: 2rem;
+  --v45-space-10: 2.5rem;
+  --v45-space-12: 3rem;
+  --v45-space-16: 4rem;
+
+  /* Shape, borders, and depth */
+  --v45-radius-xs: 0.375rem;
+  --v45-radius-sm: 0.625rem;
+  --v45-radius-md: 0.875rem;
+  --v45-radius-lg: 1.125rem;
+  --v45-radius-xl: 1.5rem;
+  --v45-radius-pill: 999px;
+  --v45-border-thin: 1px solid var(--v45-color-border);
+  --v45-border-strong: 1px solid var(--v45-color-border-strong);
+  --v45-shadow-xs: 0 1px 2px rgba(39, 31, 27, 0.04);
+  --v45-shadow-sm: 0 6px 18px rgba(39, 31, 27, 0.055);
+  --v45-shadow-md: 0 16px 38px rgba(39, 31, 27, 0.09);
+  --v45-shadow-lg: 0 28px 70px rgba(31, 25, 21, 0.16);
+
+  /* Layering */
+  --v45-z-base: 1;
+  --v45-z-sticky: 30;
+  --v45-z-dropdown: 50;
+  --v45-z-drawer: 70;
+  --v45-z-overlay: 80;
+  --v45-z-modal: 90;
+  --v45-z-toast: 100;
+
+  /* Motion */
+  --v45-duration-fast: 120ms;
+  --v45-duration-normal: 180ms;
+  --v45-duration-slow: 260ms;
+  --v45-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --v45-ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Layout */
+  --v45-content-max: 1440px;
+  --v45-sidebar-width: 272px;
+  --v45-sidebar-collapsed-width: 80px;
+  --v45-topbar-min-height: 76px;
+  --v45-control-height: 42px;
+  --v45-control-height-sm: 34px;
+  --v45-page-gutter: clamp(1rem, 2vw, 2rem);
+  --v45-shell-gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  --v45-page-section-gap: var(--v45-space-5);
+  --v45-panel-padding: var(--v45-space-5);
+  --v45-page-title-size: var(--v45-font-size-2xl);
+  --v45-section-title-size: var(--v45-font-size-lg);
+  --v45-reading-width: 68ch;
+  --v45-touch-target: 44px;
+
+  /* Compatibility aliases used by the modular page layer. */
+  --cb-font-sans: var(--v45-font-sans);
+  --cb-canvas: var(--v45-color-canvas);
+  --cb-surface: var(--v45-color-surface);
+  --cb-surface-soft: var(--v45-color-surface-subtle);
+  --cb-ink: var(--v45-color-text);
+  --cb-muted: var(--v45-color-text-muted);
+  --cb-line: var(--v45-color-border);
+  --cb-accent: var(--v45-color-brand);
+  --cb-accent-strong: var(--v45-color-brand-hover);
+  --cb-success: var(--v45-color-success);
+  --cb-warning: var(--v45-color-warning);
+  --cb-danger: var(--v45-color-danger);
+  --cb-radius-sm: var(--v45-radius-sm);
+  --cb-radius-md: var(--v45-radius-md);
+  --cb-radius-lg: var(--v45-radius-lg);
+  --cb-shadow-sm: var(--v45-shadow-sm);
+  --cb-shadow-md: var(--v45-shadow-md);
+  --cb-space-1: var(--v45-space-1);
+  --cb-space-2: var(--v45-space-2);
+  --cb-space-3: var(--v45-space-3);
+  --cb-space-4: var(--v45-space-4);
+  --cb-space-5: var(--v45-space-5);
+  --cb-space-6: var(--v45-space-6);
+  --cb-space-8: var(--v45-space-8);
+  --cb-space-10: var(--v45-space-10);
+  --cb-content-max: var(--v45-content-max);
+}
